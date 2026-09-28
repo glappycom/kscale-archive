@@ -6,6 +6,10 @@ K-Scale Labs shut down in November 2025. `kscale.dev` and `docs.kscale.dev` no l
 
 The mirror exists so the work stays readable and restorable if those GitHub organizations disappear. It is not a product of K-Scale Labs, Zeroth Robotics, or Glappy Inc. **This archive does not claim ownership of the upstream work.** Copyright stays with the authors named in each repository. License files are unchanged; read [LICENSES.md](LICENSES.md) before you reuse anything.
 
+## Analysis
+
+[Why K-Scale Labs failed](WHY-KSCALE-FAILED.md) is a post-mortem written for the owner of this archive, included as written. The investor whitepaper PDF cited in that document is not stored here. The Wayback Machine link in the post-mortem is the reference.
+
 ## What is in this repository
 
 | Path | What it is |
