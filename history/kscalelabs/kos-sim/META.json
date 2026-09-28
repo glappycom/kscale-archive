@@ -1,0 +1,67 @@
+{
+  "full_name": "kscalelabs/kos-sim",
+  "upstream_url": "https://github.com/kscalelabs/kos-sim",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 24342,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "yes",
+  "snapshot_status": "yes",
+  "notes": [
+    "Snapshot working tree includes fetched LFS objects (pointers checked out)."
+  ],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "Simulation backend for KOS",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-05-06T20:20:34Z",
+  "branches": {
+    "actuator_abstraction_feetech_integration": "0d7172f45ec0b4cd8e5799b1e563df297d48e8f9",
+    "add_gt_obs_getter": "5f78f6f001f617441d44b5afbfd9b919d6a0e161",
+    "add_render_decimation": "b69be2ee7ae2881167134e4d4342bb982673613b",
+    "auto-docs": "a6e6da11b0db7e06eb2d657bca0f6afdd635fca4",
+    "master": "dd44e1ba6a19ec4746f39c6c383b82da86d8e170",
+    "pawel/debug_lab": "42c3bc0d15504e7014c8c3de1cc23108c26f6798",
+    "trapezoid_planner": "9752e7626b19a56c84a816fb6d44247aa4775edd",
+    "user/ampho12/fix-gitmodules-maybe": "ce5517c15df11cc0f90790dfe98b4c7a4c8338f0",
+    "zbot_mit": "295e4ac2a1ddecc0ad423a6462f620fd3c26e457"
+  },
+  "tags": {
+    "0.0.10": "254cbd585db311c9e1cc7fc713dbf424acc54982",
+    "0.0.11": "a9549d0879a1a7d456c8b4d21e80328319d35746",
+    "0.0.12": "1a1a0f95dc19dc634f65e1cbf6078863f1b28520",
+    "0.0.13": "985305444fa849b77fab03fd0a4dc2fd6b0751cb",
+    "0.0.14": "dd44e1ba6a19ec4746f39c6c383b82da86d8e170",
+    "0.0.7": "7bf636a8e3397b7d7146e246af6461bfd9e3e0b9",
+    "0.0.8": "93edf3289ff1c59c1f41dfeed53b27dc90151dd9",
+    "0.0.9": "6802e9d721b2b8fe64c34f12f8c361f80eb114a0"
+  },
+  "default_branch_sha": "dd44e1ba6a19ec4746f39c6c383b82da86d8e170",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2023 K-Scale Labs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 25011156,
+  "bundle_sha256": "b74c036de61cb060edecc90d2cc4a52cc58af9ca08ddf9deca02e222cc356ca7",
+  "lfs_pointer_bytes": 5400000,
+  "lfs_object_count": 3,
+  "lfs_files": [
+    "lfs-objects.tar"
+  ],
+  "lfs_archive_bytes": 5529600,
+  "lfs_archive_sha256": "ee9f2e1b14d40272d5083b06f041fd35ab79ac359e4fc5529739046b36d1afa9",
+  "snapshot_bytes": 3772466,
+  "snapshot_files": 32
+}

@@ -1,0 +1,63 @@
+{
+  "full_name": "kscalelabs/zbot-web-frontend",
+  "upstream_url": "https://github.com/kscalelabs/zbot-web-frontend",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 772361,
+  "inventory_default_branch": "master",
+  "inventory_fork": true,
+  "priority_tier": "3-fork",
+  "history_status": "yes",
+  "history_method": "delta-bundle-of-diverging-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "no",
+  "notes": [
+    "Delta bundle contains commits not reachable from 3f405e6b34f7421dc3ed3465845d15ab10477791. That base is in zeroth-robotics/zeroth-frontend, which is fully bundled in this archive, so the fork history is recoverable here."
+  ],
+  "default_branch": "master",
+  "fork": true,
+  "parent": "zeroth-robotics/zeroth-frontend",
+  "parent_default_branch": "main",
+  "github_license_spdx": "MIT",
+  "description": "Zeroth Bot web frontend.",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2026-01-28T20:16:35Z",
+  "branches": {
+    "9-vercel-blob-and-content-update": "21fc12cb78c3d15dd3e8c2976e65b62317627178",
+    "dependabot/npm_and_yarn/glob-10.5.0": "35766ef6ce5ea02b1146bdd5f9f93f1d7e2788ed",
+    "dependabot/npm_and_yarn/js-yaml-3.14.2": "58ceb292530b263408c4993a39c712c00ccb4583",
+    "dependabot/npm_and_yarn/lodash-4.17.23": "2e34f38efb5b1c5509909ba2d2058acfb0cb54ac",
+    "dependabot/npm_and_yarn/multi-c22e25d29b": "c876fab8303134d1233adc2bf8863579ff619df7",
+    "dependabot/npm_and_yarn/next-16.1.5": "98f3dfb90318958f6aedc0bd371fb7ef2dd6615a",
+    "dependabot/npm_and_yarn/undici-5.29.0": "c0b88c98584071b43db408b1bf994d3231d77711",
+    "fix/branding": "21fc12cb78c3d15dd3e8c2976e65b62317627178",
+    "fix/cta": "9225de8b7705527d98c4ffe25f5d1a43525114ca",
+    "fix/twitter-preview": "6aa474ffa2b7e57ebbcf78d4342837e0e656ce48",
+    "master": "6e98f70dfa57f3ef2c589075b07b39ed4548fedd",
+    "revert-11-9-vercel-blob-and-content-update": "ad527da2fcc973a9796b29ba6a96fa9d7317c314",
+    "staging": "de6bced2213fef7ad136b5257cf397bcf8410383",
+    "vercel/react-server-components-cve-vu-c3z853": "fee3fb28f1468db9bf0bdae4ef46d7816c387b66"
+  },
+  "tags": {},
+  "default_branch_sha": "6e98f70dfa57f3ef2c589075b07b39ed4548fedd",
+  "fork_compare": {
+    "ahead_by": 291,
+    "behind_by": 4,
+    "merge_base": "3f405e6b34f7421dc3ed3465845d15ab10477791",
+    "status": "diverged"
+  },
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2025 Jingxiang Mo\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "delta.bundle.part-001",
+    "delta.bundle.part-002"
+  ],
+  "bundle_bytes": 109772307,
+  "bundle_sha256": "3e0a0f4ebf4cf03406b90dbf9cfcc445b0cd82dbbd58df56c2dfd8480e9c74d1",
+  "delta_prerequisite_sha": "3f405e6b34f7421dc3ed3465845d15ab10477791",
+  "delta_prerequisite_repo": "zeroth-robotics/zeroth-frontend"
+}

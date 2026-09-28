@@ -1,0 +1,62 @@
+{
+  "full_name": "kscalelabs/onshape",
+  "upstream_url": "https://github.com/kscalelabs/onshape",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 715,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "K-Scale's library for programmatically interacting with OnShape",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-09-16T00:28:59Z",
+  "branches": {
+    "bump": "c09da571f9cb9f1e9b90015d515ae65285ac56e3",
+    "master": "8e054626049179102df80790ce06af53d9fc121a",
+    "renaming": "25654707fba971ff58d495d9fc6cf8b0402e4f53",
+    "underscrore_collision_path": "d556fac5004f2c8b7779121b741e72b748f3b006"
+  },
+  "tags": {
+    "0.2.17": "b399260558f64cc943ab880971420c49a932f696",
+    "0.2.22": "2d19265c60760aecba71fd046f941af7f2382918",
+    "0.2.23": "254f3125a3d782e10cf0388bfc695a280950b4e1",
+    "0.2.25": "296f6acbcc59cc18e9ec02fea200964e797e19fe",
+    "0.2.26": "961be32c3a97b0a559e92451dff28c5cd629a20e",
+    "0.2.27": "f45d8a6140c9919a840ec1bb1dea20a7626baa9c",
+    "0.2.28": "275fbde07fae45e0ca33a272be7aa67382ed3dc1",
+    "0.2.29": "fde20a4b4fe3f512f2dc4d4d5747bd04450b7246",
+    "0.2.30": "7d3a4f82e05d7d100ed3c965ffcccd375920d7c5",
+    "0.2.31": "17db5b52d5fada024511e651adc866d4cb61941d",
+    "0.2.32": "d9ae3e0787e7202be9e2c8992b16b1d764321644",
+    "0.2.33": "0dcff12d1ab7712e4d485c4d74110f2cdac515f6",
+    "0.2.34": "16d5647ed8f695a4ca929860e1deffdf1a50097c",
+    "0.2.35": "a82a4608b3613870bc0f169f600412fe48bf46bd",
+    "0.2.36": "1efe71040ac6477162c7ca48f168785476c4587b",
+    "0.2.37": "5b8031715f0b33d79079d10e556249cf4a629f55",
+    "0.2.38": "8e054626049179102df80790ce06af53d9fc121a"
+  },
+  "default_branch_sha": "8e054626049179102df80790ce06af53d9fc121a",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2023 Benjamin Bolte\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 1047498,
+  "bundle_sha256": "b3076a6c4bab7cb3cefa86cad5e528abff5c7c53bdf8484ef2ca63db8147a404",
+  "snapshot_bytes": 485484,
+  "snapshot_files": 81
+}

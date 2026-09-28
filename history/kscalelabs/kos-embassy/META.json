@@ -1,0 +1,41 @@
+{
+  "full_name": "kscalelabs/kos-embassy",
+  "upstream_url": "https://github.com/kscalelabs/kos-embassy",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 29,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "Control-Hat I/O Co-Processor Firmware (Embassy-STM32)",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-07-07T02:55:06Z",
+  "branches": {
+    "master": "7f36f4747ac4b72eb403917163569b3091f76781"
+  },
+  "tags": {},
+  "default_branch_sha": "7f36f4747ac4b72eb403917163569b3091f76781",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2025 K-Scale Labs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 30321,
+  "bundle_sha256": "1653927203a8234c9d2251035c0fa578e6f7af6e21bc2cefea0e174a4c15c0e1",
+  "snapshot_bytes": 91236,
+  "snapshot_files": 26
+}

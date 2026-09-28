@@ -1,0 +1,33 @@
+{
+  "full_name": "zeroth-robotics/cvi-camera",
+  "upstream_url": "https://github.com/zeroth-robotics/cvi-camera",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 36953,
+  "inventory_default_branch": "main",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "no",
+  "notes": [],
+  "default_branch": "main",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-10-23T01:29:54Z",
+  "branches": {
+    "main": "0a2a8943fe29da38ad93ee08519f8c5222292a8a"
+  },
+  "tags": {},
+  "default_branch_sha": "0a2a8943fe29da38ad93ee08519f8c5222292a8a",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 37840809,
+  "bundle_sha256": "6b3f9b1cbde8895834b39696edbb28bd1c832d11ed0ae9040acc427e5286aa14"
+}

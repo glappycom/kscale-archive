@@ -1,0 +1,61 @@
+{
+  "full_name": "kscalelabs/klab",
+  "upstream_url": "https://github.com/kscalelabs/klab",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 22756,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "yes",
+  "snapshot_status": "yes",
+  "notes": [
+    "Repo has .gitmodules. Submodule commits were not vendored; submodule URLs remain in the tree.",
+    "Snapshot working tree includes fetched LFS objects (pointers checked out)."
+  ],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-07-19T01:49:52Z",
+  "branches": {
+    "draft_eval_setup": "b551b7dded72709e929b53f9f18f497ac23d4af0",
+    "master": "479e7feaf1b8e17784dc33f86fb3904f0bba4d0e",
+    "mujoco_example": "423c85709b69c388e6546d59eb6d9644e791828c",
+    "mujoco_example_kbot": "fce8089f57dac9998e3fbae0f5cda62317d769ff",
+    "pawel/bam": "f19f5fccc21317605e9ff0a515c41f5c276349d9",
+    "pawel/pendulum_bam": "bfccc0a7126cd4767d99642bf037106bacb79870",
+    "pendulum": "67c87a4f07a86050be557643efcaac9de923ce61",
+    "periodic_commands": "1c4719bf461ef61184cef408cc0da74f630b6e00",
+    "stealing_g1_setup": "277cd97446f90fdbd1fa40d2ebb861670f2502c7",
+    "zbot_kbot_updates": "d4c25d89d785066fcb7900abb7641c5b78f95929",
+    "zbot_sanity_checks": "f9fe4313e0aca03cf590fda0168b02efe05d3264"
+  },
+  "tags": {},
+  "default_branch_sha": "479e7feaf1b8e17784dc33f86fb3904f0bba4d0e",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 23327990,
+  "bundle_sha256": "efc9a3177fb54403a45d616ba4c7929271cbae47a290bfd3f1d92a25da280938",
+  "lfs_pointer_bytes": 597436800,
+  "lfs_object_count": 33,
+  "lfs_files": [
+    "lfs-objects.tar.part-001",
+    "lfs-objects.tar.part-002",
+    "lfs-objects.tar.part-003",
+    "lfs-objects.tar.part-004",
+    "lfs-objects.tar.part-005",
+    "lfs-objects.tar.part-006",
+    "lfs-objects.tar.part-007"
+  ],
+  "lfs_archive_bytes": 595445760,
+  "lfs_archive_sha256": "73f5598cea1967c2e34702390fe5ac419c1a2842d920295d0eb2b63d05e1bf82",
+  "snapshot_bytes": 78804540,
+  "snapshot_files": 71
+}

@@ -1,0 +1,48 @@
+{
+  "full_name": "kscalelabs/kbot",
+  "upstream_url": "https://github.com/kscalelabs/kbot",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 2189,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [
+    "Repo has .gitmodules. Submodule commits were not vendored; submodule URLs remain in the tree."
+  ],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "The K-Scale Robot",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-11-07T18:49:54Z",
+  "branches": {
+    "master": "76aba70e3372fecf3583ed6dbe5f379d44c8511c"
+  },
+  "tags": {},
+  "default_branch_sha": "76aba70e3372fecf3583ed6dbe5f379d44c8511c",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2025 K-Scale Labs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    },
+    {
+      "path": "LICENSE-HW",
+      "detected_from_text": "CERN-OHL-S",
+      "excerpt": "CERN Open Hardware Licence Version 2 - Strongly Reciprocal\n\n\nPreamble\n\nCERN has developed this licence to promote collaboration among\nhardware designers and to provide a legal tool which supports the\nfreedom to use, study, modify, share and distribute hardware designs\nand products based on those designs. Version 2 of the CERN Open\nHardware Licence comes in three variants: CERN-OHL-P (permissive); and\ntwo reciprocal licences: CERN-OHL-W (weakly reciprocal) and this\nlicence, CERN-OHL-S (strongly reciprocal).\n\nThe CERN-OHL-S is copyright CERN 2020. Anyone is welcome to use it, in\nunmodified form only.\n\nUse of this Licence does not imply any endorsement by CERN of any\nLicensor or their designs nor does it imply any involvement by CERN in\ntheir development.\n\n\n1 Definitions\n\n  1.1 'Licence' means this CERN-OHL-S.\n"
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 2238263,
+  "bundle_sha256": "dafaf34126b244197529d43491ce3bdc1f04bda8f93cb367dd03b163ed68ab82",
+  "snapshot_bytes": 2229039,
+  "snapshot_files": 12
+}

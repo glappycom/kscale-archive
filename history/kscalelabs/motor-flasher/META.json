@@ -1,0 +1,39 @@
+{
+  "full_name": "kscalelabs/motor-flasher",
+  "upstream_url": "https://github.com/kscalelabs/motor-flasher",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 19331,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "Motor flasher repository",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-08-06T20:29:44Z",
+  "branches": {
+    "CanDaddyAtopile": "d5fa3ccd3799e7dcba3a7033f694d1f518863936",
+    "CanDaddyBaseEdition": "b75ffdcda024cbf943727d490d5170c38576a944",
+    "CanDaddyRev1": "bbb654a02d0d3aa7f0e88873ea8baff87d241809",
+    "CanDaddyRev2": "eaeb429e36fdc87d50c0728effbc70811eafc306",
+    "master": "5664f03724d58fc971dcb4d04577e01e05428ed3"
+  },
+  "tags": {},
+  "default_branch_sha": "5664f03724d58fc971dcb4d04577e01e05428ed3",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 19795407,
+  "bundle_sha256": "585022ccc064e41a0758ea6764c4620ea3ce69f3890307eab22805189b793064",
+  "snapshot_bytes": 22289148,
+  "snapshot_files": 141
+}

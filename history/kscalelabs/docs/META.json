@@ -1,0 +1,41 @@
+{
+  "full_name": "kscalelabs/docs",
+  "upstream_url": "https://github.com/kscalelabs/docs",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 45269,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "K-Scale documentation",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2026-02-14T09:27:05Z",
+  "branches": {
+    "dependabot/npm_and_yarn/js-yaml-3.14.2": "94f2f739271660f00c4ad0fba6ea447c8b532a19",
+    "dependabot/npm_and_yarn/lodash-4.17.23": "37182dc17c769ebdbfbc63faff4ae2c9162f8670",
+    "dependabot/npm_and_yarn/mdast-util-to-hast-13.2.1": "d98181a69c9786821258bbb855a805db2e652a3e",
+    "dependabot/npm_and_yarn/multi-a07fd7252a": "bdf2896eb9c87a256ea72cf735c51d8fc6f41e05",
+    "dependabot/npm_and_yarn/node-forge-1.3.2": "8e46ca3fbe1fe6ca79e82c50d431c38d86f45973",
+    "dependabot/npm_and_yarn/webpack-5.105.0": "2f2c593c9dd48245767984a77ffbe6937940a89c",
+    "master": "d4ca00ddc760197661d66495d0793b85dd31bea8"
+  },
+  "tags": {},
+  "default_branch_sha": "d4ca00ddc760197661d66495d0793b85dd31bea8",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 45532246,
+  "bundle_sha256": "dce4d95e25b0fe8de4467426ae07ddf455e1289a3ea79a69db8964c7a3d0bd0c",
+  "snapshot_bytes": 46473819,
+  "snapshot_files": 50
+}

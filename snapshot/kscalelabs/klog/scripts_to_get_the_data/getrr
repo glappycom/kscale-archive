@@ -1,0 +1,13 @@
+#!/bin/bash
+
+ssh -qt dpsh@klog '~/klog/klog-server/klog_server/scripts/getlog' | tee /tmp/run_id
+
+dirs="$(grep -o '/mnt/klog1\(/\w\+\)\+' /tmp/run_id)" 
+
+read -p "Press enter to get rerun file from: $dirs"
+
+for dir in $dirs; do
+    id="$(printf "$dir" | awk -F'/' '{print $NF}')"
+    mkdir "$id"
+    rsync -aP "dpsh@klog:$dir/run.rrd" "$id/run.rrd"
+done

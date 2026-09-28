@@ -1,0 +1,35 @@
+{
+  "full_name": "kscalelabs/lekbot_vla_data",
+  "upstream_url": "https://github.com/kscalelabs/lekbot_vla_data",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 10346,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-10-28T23:37:26Z",
+  "branches": {
+    "master": "2a8c22ab765d725d2a1744eb57bd620897aac758"
+  },
+  "tags": {},
+  "default_branch_sha": "2a8c22ab765d725d2a1744eb57bd620897aac758",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 10594819,
+  "bundle_sha256": "98eb1067480bb6e9dfae452b1c1d681d56fd9f324e034f60b99b837b3aa3b355",
+  "snapshot_bytes": 11427900,
+  "snapshot_files": 37
+}

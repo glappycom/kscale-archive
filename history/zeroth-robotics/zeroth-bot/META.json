@@ -1,0 +1,56 @@
+{
+  "full_name": "zeroth-robotics/zeroth-bot",
+  "upstream_url": "https://github.com/zeroth-robotics/zeroth-bot",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 71791,
+  "inventory_default_branch": "main",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [
+    "Repo has .gitmodules. Submodule commits were not vendored; submodule URLs remain in the tree."
+  ],
+  "default_branch": "main",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "3D-printed open-source humanoid robot platform for sim-to-real and RL",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-05-24T02:12:38Z",
+  "branches": {
+    "add-pcb-files": "84d22a78be6f2de016b635bc210d160ce3fa3bdc",
+    "api_improvements_2": "85e6b04811313f57e5f03a59eb41d8997c528db1",
+    "cviruntime-inference-demo": "0a8f23b8cc3037e3e10776cf1acbfc3148fa5a43",
+    "factory_validation": "a9c3c9b56bc85daf1e88b369bc3857373d66e16b",
+    "formatter-and-bug-fix": "f27cf1c968f251f7f8bbb9f0ec542075048db649",
+    "grpc-web": "8534306f50acf027f2068e1072fb63d52921dfd2",
+    "inference": "31ab876b5b0d94faa6d51408597a70e8e10c964c",
+    "main": "97bf404c26ed10253e8426ff797a6a1ad3dc3b24",
+    "pawel/experiments": "045b0fcb0185e1775d08177a4a09c99f1af342a1",
+    "update_inference": "808077c96f0724c520de295c051c0d2b55d670a2",
+    "walking-experiments": "0d92f27398c5371d8fabf6cb1d5bc0269c07baf9"
+  },
+  "tags": {
+    "V0.2.1": "d52b7ac5a8133b9511822b6800830620616bc762",
+    "V0.3.1": "d52b7ac5a8133b9511822b6800830620616bc762"
+  },
+  "default_branch_sha": "97bf404c26ed10253e8426ff797a6a1ad3dc3b24",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2024 Jingxiang Mo\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 77347455,
+  "bundle_sha256": "da0afc402a474c2300d078acc4a2e46c6a313304d505d106bc3aaa69747f165f",
+  "snapshot_bytes": 130748,
+  "snapshot_files": 5
+}

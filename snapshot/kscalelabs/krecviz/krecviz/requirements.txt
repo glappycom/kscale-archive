@@ -1,0 +1,13 @@
+# requirements.txt
+
+# Data serialization
+krec
+numpy
+scipy
+Pillow
+tqdm
+
+# Visualization
+rerun-sdk
+trimesh
+urdf_parser_py

@@ -1,0 +1,35 @@
+{
+  "full_name": "kscalelabs/feetech-sniffer",
+  "upstream_url": "https://github.com/kscalelabs/feetech-sniffer",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 4,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-04-16T06:12:31Z",
+  "branches": {
+    "master": "7dd566e9f4e665eca940e11db6e8a10b4f4980a6"
+  },
+  "tags": {},
+  "default_branch_sha": "7dd566e9f4e665eca940e11db6e8a10b4f4980a6",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 4958,
+  "bundle_sha256": "1227aa6143ad6684e005ebf6317dd129ac2a0f931e5e04f0f2316335ae80a4fa",
+  "snapshot_bytes": 18940,
+  "snapshot_files": 3
+}

@@ -1,0 +1,233 @@
+"""Repo-config I/O for the Zeroth-01 build.
+
+All calibration and motion data lives as JSON in the repo (see
+docs/User_Manual.md §6). A ConfigStore binds those files to a *root*
+directory: the repo checkout on the laptop, a synced copy on the Pi.
+Writes are atomic (temp file + os.replace) so concurrent readers — e.g.
+the GUI's 250 ms live poll — never see a half-written file.
+"""
+
+import json
+import os
+import re
+from datetime import date
+from pathlib import Path
+
+from pydantic import BaseModel, Field
+
+
+def write_json_atomic(path: Path, obj) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(json.dumps(obj, indent=2, sort_keys=True) + "\n",
+                   encoding="utf-8")
+    os.replace(tmp, path)
+
+
+def read_json(path: Path, default):
+    if path.exists():
+        # utf-8-sig: tolerate a UTF-8 BOM — Windows editors/redirects
+        # (PowerShell!) routinely prepend one to hand-edited configs
+        return json.loads(path.read_text(encoding="utf-8-sig"))
+    return default
+
+
+# ------------------------------------------------------------ demo format
+
+class DemoStep(BaseModel):
+    angles: dict[str, float]           # joint name -> target angle (CAD deg)
+    title: str = Field("", max_length=60)   # optional label shown in the editor/log
+    center: bool = False               # center step: angles resolve to the center pose at playback
+    settle: bool | None = None         # load-sag settle pass: None = only on steps with a pause and on the last step
+    speed: int = Field(500, ge=1, le=3400)
+    acc: int = Field(50, ge=0, le=254)
+    pause_s: float = Field(0.0, ge=0, le=10)
+
+
+class Demo(BaseModel):
+    name: str = Field(min_length=1, max_length=40,
+                      pattern=r"^[A-Za-z0-9_\- ]+$")
+    description: str = ""
+    steps: list[DemoStep] = Field(min_length=1)
+
+
+def demo_slug(name: str) -> str:
+    slug = re.sub(r"[^a-z0-9_-]+", "_", name.strip().lower()).strip("_")
+    if not slug:
+        raise ValueError("Invalid demo name.")
+    return slug
+
+
+# ------------------------------------------------------------ joint limits
+
+def mirror_joint(joint: str) -> str | None:
+    """The same joint on the other body side, or None for a center joint."""
+    if "left" in joint:
+        return joint.replace("left", "right", 1)
+    if "right" in joint:
+        return joint.replace("right", "left", 1)
+    return None
+
+
+def limit_log_line(joint: str, min_deg: float, max_deg: float,
+                   mirrored: str | None, skipped: str | None) -> str:
+    """One log wording for both backends."""
+    return (f"joint limits saved: {joint} [{min_deg:+.1f}, {max_deg:+.1f}]"
+            + (f" + mirrored to {mirrored}" if mirrored else "")
+            + (f" ({skipped} kept its own direct values)" if skipped else ""))
+
+
+# ------------------------------------------------------------ config store
+
+# Connection defaults: how a host reaches the servo bus / the Pi service.
+# "port": "auto" = pick the single USB serial adapter (works for COMx and
+# /dev/tty*); an explicit value pins it (prefer /dev/serial/by-id/... on Pi).
+DEFAULT_CONNECTION = {
+    "mode": "usb",                          # "usb" (local) | "wireless" (Pi)
+    "port": "auto",
+    "pi_url": "http://192.168.178.147:8460",
+}
+
+class ConfigStore:
+    """Paths + typed accessors for the build's JSON configs under one root."""
+
+    def __init__(self, root: Path | str):
+        self.root = Path(root)
+        hw = self.root / "hardware"
+        self.servo_ids_path = hw / "servo_ids.json"
+        self.limits_path = hw / "joint_limits.json"
+        self.offsets_path = hw / "joint_offsets.json"
+        self.model_zero_path = hw / "model_zero_offsets.json"
+        self.model_invert_path = hw / "model_invert.json"
+        self.center_pose_path = hw / "center_pose.json"
+        self.motion_limits_path = hw / "motion_limits.json"
+        self.connection_path = hw / "connection.json"
+        self.demos_dir = self.root / "demos"
+        hw.mkdir(parents=True, exist_ok=True)
+        self.demos_dir.mkdir(parents=True, exist_ok=True)
+
+    # -- reads (missing file -> empty dict, same semantics as before)
+    def servo_ids(self) -> dict:
+        return read_json(self.servo_ids_path, {})
+
+    def limits(self) -> dict:
+        return read_json(self.limits_path, {})
+
+    def offsets(self) -> dict:
+        return read_json(self.offsets_path, {})
+
+    def model_zero(self) -> dict:
+        return read_json(self.model_zero_path, {})
+
+    def model_invert(self) -> dict:
+        return read_json(self.model_invert_path, {})
+
+    # Power limits: every commanded move is clamped to these (speed in ticks/s,
+    # acc in Feetech ramp units; acc 0 = no ramp counts as "above the cap").
+    # Reason: 16 servos accelerating at once sag the 3S pack; acc 254 / speed
+    # 1000 in a demo step tripped the low-voltage cutoff on 2026-09-22.
+    MOTION_LIMITS_DEFAULT = {"max_speed": 300, "max_acc": 30, "stagger_ms": 40}   # stagger: pause between the servos of one group start
+
+    def motion_limits(self) -> dict:
+        d = {**self.MOTION_LIMITS_DEFAULT}
+        for k, v in read_json(self.motion_limits_path, {}).items():
+            if k in d and isinstance(v, (int, float)) and v > 0:
+                d[k] = int(v)
+        return d
+
+    def write_motion_limits(self, d: dict) -> None:
+        write_json_atomic(self.motion_limits_path, d)
+
+    def center_pose(self) -> dict:
+        """Override of the center pose: joint -> CAD deg. Every "center"
+        action (single servo, group, Pi, hold-center re-parks) targets these
+        angles instead of 0 deg; joints not listed stay at 0 deg (mount
+        pose). Empty/missing file = plain mount pose."""
+        return read_json(self.center_pose_path, {})
+
+    def connection(self) -> dict:
+        return {**DEFAULT_CONNECTION, **read_json(self.connection_path, {})}
+
+    # -- writes (atomic)
+    def write_servo_ids(self, d: dict) -> None:
+        write_json_atomic(self.servo_ids_path, d)
+
+    def write_limits(self, d: dict) -> None:
+        write_json_atomic(self.limits_path, d)
+
+    def write_offsets(self, d: dict) -> None:
+        write_json_atomic(self.offsets_path, d)
+
+    def write_model_zero(self, d: dict) -> None:
+        write_json_atomic(self.model_zero_path, d)
+
+    def write_model_invert(self, d: dict) -> None:
+        write_json_atomic(self.model_invert_path, d)
+
+    def write_center_pose(self, d: dict) -> None:
+        write_json_atomic(self.center_pose_path, d)
+
+    def write_connection(self, d: dict) -> None:
+        # persist only the overrides; connection() re-merges the defaults
+        write_json_atomic(self.connection_path, d)
+
+    # -- one joint's range (both backends write the same shape)
+    def save_limit(self, joint: str, min_deg: float, max_deg: float,
+                   symmetric: bool = True) -> dict:
+        """Store ONE joint's safe range, optionally mirrored to the other
+        side. Shared by both backends so the GUI (repo copy) and the Pi
+        service (the copy the robot actually enforces) stay identical.
+
+        Returns {"limits", "mirrored", "skipped"}; raises ValueError when the
+        range is empty."""
+        if min_deg >= max_deg:
+            raise ValueError("min must be smaller than max.")
+        limits = self.limits()
+        entry = {"min_deg": min_deg, "max_deg": max_deg,
+                 "set": "direct", "updated": date.today().isoformat()}
+        limits[joint] = entry
+        mirrored = skipped = None
+        m = mirror_joint(joint)
+        if symmetric and m and m != joint:
+            # never silently overwrite limits someone set directly on the mirror
+            if limits.get(m, {}).get("set") == "direct":
+                skipped = m
+            else:
+                limits[m] = {**entry, "set": "mirrored"}
+                mirrored = m
+        self.write_limits(limits)
+        return {"limits": limits, "mirrored": mirrored, "skipped": skipped}
+
+    # -- demos
+    def demo_path(self, name: str) -> Path:
+        return self.demos_dir / f"{demo_slug(name)}.json"
+
+    def load_demo(self, name: str) -> Demo:
+        path = self.demo_path(name)
+        if not path.exists():
+            raise KeyError(f"Demo '{name}' not found.")
+        return Demo(**json.loads(path.read_text(encoding="utf-8")))
+
+    def load_demos(self, on_invalid=None) -> list[dict]:
+        out = []
+        if self.demos_dir.exists():
+            for f in sorted(self.demos_dir.glob("*.json")):
+                try:
+                    out.append(Demo(**json.loads(
+                        f.read_text(encoding="utf-8"))).model_dump())
+                except Exception:                    # skip broken files
+                    if on_invalid:
+                        on_invalid(f.name)
+        return out
+
+    def save_demo(self, d: Demo) -> Path:
+        path = self.demo_path(d.name)
+        write_json_atomic(path, d.model_dump())
+        return path
+
+    def delete_demo(self, name: str) -> bool:
+        path = self.demo_path(name)
+        if path.exists():
+            path.unlink()
+            return True
+        return False

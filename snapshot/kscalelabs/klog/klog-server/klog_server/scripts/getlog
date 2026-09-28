@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cd /mnt/klog1/
+
+run=$(fdfind metadata.json | xargs cat | \
+jq -r '" | \(.timestamp)\tpolicy:\(.policy)\tname:\(.name)\trun_id:\(.run_id)\tnotes:\(.notes | gsub("\n";" "))\tcommand:\(.command)"' | \
+rg -v 'null' | sort -r | \
+fzf --delimiter '\t' \
+    --with-nth=2,3,4,5,1 \
+    --preview='d="$(echo {3} | sed "s/.*://")/"; batcat --color=always $d/timestamp $d/metadata.json $d/command 2>/dev/null' \
+    --header "Select a run. You can use filters like \`name:whatever\`" -m \
+    --preview-window="top:50%:wrap" | \
+sed 's/.*run_id://;s/\s.*//')
+
+realpath "$run"

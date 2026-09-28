@@ -1,0 +1,404 @@
+#!/bin/bash
+
+# shoutout claude for this gem
+
+DEVICE="/dev/video0"  # Default camera device
+TITLE="V4L2 Camera Settings"
+
+# Set dark color scheme for whiptail (Atom Dark inspired)
+export NEWT_COLORS='
+root=white,black
+border=cyan,black
+window=white,black
+shadow=black,black
+title=brightwhite,black
+button=cyan,black
+actbutton=black,brightcyan
+compactbutton=white,black
+checkbox=white,black
+actcheckbox=black,cyan
+entry=white,black
+label=white,black
+listbox=white,black
+actlistbox=black,cyan
+sellistbox=black,cyan
+actsellistbox=black,brightcyan
+textbox=white,black
+acttextbox=white,black
+emptyscale=,black
+fullscale=,cyan
+disentry=gray,black
+helpline=cyan,black
+'
+
+# Function to get available devices with human-readable names
+get_devices() {
+    local devices=""
+    local current_name=""
+    local first_device=""
+    
+    while IFS= read -r line; do
+        # Check if this is a device name line (doesn't start with whitespace or /dev)
+        if [[ ! "$line" =~ ^[[:space:]] && ! "$line" =~ ^/dev && -n "$line" ]]; then
+            # If we have a previous device, add it to our list
+            if [[ -n "$current_name" && -n "$first_device" ]]; then
+                devices="$devices$first_device|$current_name\n"
+            fi
+            current_name="$line"
+            first_device=""
+        # Check if this is a video device line
+        elif [[ "$line" =~ ^[[:space:]]*/dev/video[0-9]+ ]]; then
+            # Extract the device path and use the first one we find
+            if [[ -z "$first_device" ]]; then
+                first_device=$(echo "$line" | grep -o '/dev/video[0-9]*' | head -1)
+            fi
+        fi
+    done < <(v4l2-ctl --list-devices 2>/dev/null)
+    
+    # Don't forget the last device
+    if [[ -n "$current_name" && -n "$first_device" ]]; then
+        devices="$devices$first_device|$current_name\n"
+    fi
+    
+    echo -e "$devices"
+}
+
+# Function to get current controls for a device
+get_controls() {
+    local device="$1"
+    v4l2-ctl -d "$device" --list-ctrls 2>/dev/null | grep -E "^\s*(brightness|contrast|saturation|hue|gamma|gain|exposure|white_balance|focus|zoom|pan|tilt)" | while read line; do
+        control=$(echo "$line" | awk '{print $1}')
+        current=$(echo "$line" | grep -o "value=[0-9]*" | cut -d= -f2)
+        range=$(echo "$line" | grep -o "min=[0-9]* max=[0-9]*" | sed 's/min=//;s/max=//')
+        echo "$control $current $range"
+    done
+}
+
+# Function to select device
+select_device() {
+    local devices=$(get_devices)
+    if [ -z "$devices" ]; then
+        whiptail --msgbox "No V4L2 devices found!" 8 50
+        exit 1
+    fi
+    
+    local menu_items=""
+    while IFS= read -r line; do
+        if [[ -n "$line" ]]; then
+            local device_path=$(echo "$line" | cut -d'|' -f1)
+            local device_name=$(echo "$line" | cut -d'|' -f2)
+            menu_items="$menu_items \"$device_path\" \"$device_name\""
+        fi
+    done <<< "$devices"
+    
+    DEVICE=$(eval "whiptail --title \"$TITLE\" --menu \"Select Camera Device:\" 15 80 5 $menu_items 3>&1 1>&2 2>&3")
+    
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
+}
+
+# Function to adjust a control
+adjust_control() {
+    local control="$1"
+    local current="$2"
+    local min="$3"
+    local max="$4"
+    
+    local new_value=$(whiptail --title "Adjust $control" --inputbox "Current value: $current\nRange: $min - $max\n\nEnter new value:" 12 50 "$current" 3>&1 1>&2 2>&3)
+    
+    if [ $? -eq 0 ] && [ -n "$new_value" ]; then
+        if [ "$new_value" -ge "$min" ] && [ "$new_value" -le "$max" ]; then
+            v4l2-ctl -d "$DEVICE" --set-ctrl="$control=$new_value"
+            if [ $? -eq 0 ]; then
+                whiptail --msgbox "$control set to $new_value" 8 40
+            else
+                whiptail --msgbox "Failed to set $control" 8 40
+            fi
+        else
+            whiptail --msgbox "Value must be between $min and $max" 8 40
+        fi
+    fi
+}
+
+# Function to adjust boolean controls
+adjust_boolean_control() {
+    local control="$1"
+    local current="$2"
+    
+    local current_text="Off"
+    if [ "$current" = "1" ]; then
+        current_text="On"
+    fi
+    
+    if whiptail --title "Toggle $control" --yesno "Current setting: $current_text\n\nToggle this setting?" 10 50; then
+        local new_value=1
+        if [ "$current" = "1" ]; then
+            new_value=0
+        fi
+        v4l2-ctl -d "$DEVICE" --set-ctrl="$control=$new_value"
+        if [ $? -eq 0 ]; then
+            local new_text="Off"
+            if [ "$new_value" = "1" ]; then
+                new_text="On"
+            fi
+            whiptail --msgbox "$control set to $new_text" 8 40
+        else
+            whiptail --msgbox "Failed to set $control" 8 40
+        fi
+    fi
+}
+
+# Function to adjust menu controls (like auto_exposure)
+adjust_menu_control() {
+    local control="$1"
+    local current="$2"
+    
+    case "$control" in
+        "auto_exposure")
+            local new_value=$(whiptail --title "Auto Exposure Mode" --menu "Current: $current\nSelect mode:" 15 60 4 \
+                "0" "Manual Mode" \
+                "1" "Auto Mode" \
+                "2" "Shutter Priority" \
+                "3" "Aperture Priority" 3>&1 1>&2 2>&3)
+            ;;
+        "power_line_frequency")
+            local new_value=$(whiptail --title "Power Line Frequency" --menu "Current: $current\nSelect frequency:" 12 50 3 \
+                "0" "Disabled" \
+                "1" "50 Hz" \
+                "2" "60 Hz" 3>&1 1>&2 2>&3)
+            ;;
+        *)
+            whiptail --msgbox "Menu control $control not implemented" 8 50
+            return
+            ;;
+    esac
+    
+    if [ $? -eq 0 ] && [ -n "$new_value" ]; then
+        v4l2-ctl -d "$DEVICE" --set-ctrl="$control=$new_value"
+        if [ $? -eq 0 ]; then
+            whiptail --msgbox "$control set to $new_value" 8 40
+        else
+            whiptail --msgbox "Failed to set $control" 8 40
+        fi
+    fi
+}
+reset_controls() {
+    if whiptail --yesno "Reset all controls to default values?" 8 40; then
+        # Get list of controls and reset each one
+        v4l2-ctl -d "$DEVICE" --list-ctrls 2>/dev/null | grep "default=" | while read line; do
+            control=$(echo "$line" | awk '{print $1}')
+            default=$(echo "$line" | grep -o "default=[0-9]*" | cut -d= -f2)
+            if [ -n "$default" ]; then
+                v4l2-ctl -d "$DEVICE" --set-ctrl="$control=$default" 2>/dev/null
+            fi
+        done
+        whiptail --msgbox "Controls reset to defaults" 8 40
+    fi
+}
+
+# Function to show current settings
+show_current_settings() {
+    local settings=$(v4l2-ctl -d "$DEVICE" --list-ctrls 2>/dev/null | grep -E "^\s*(brightness|contrast|saturation|hue|gamma|gain|exposure|white_balance|focus|zoom)" | head -15)
+    whiptail --title "Current Settings - $DEVICE" --msgbox "$settings" 20 80
+}
+
+# Main menu loop
+main_menu() {
+    while true; do
+        local choice=$(whiptail --title "$TITLE - $DEVICE" --menu "Choose an option:" 22 70 14 \
+            "1" "Select Device" \
+            "2" "Show Current Settings" \
+            "3" "Adjust Brightness" \
+            "4" "Adjust Contrast" \
+            "5" "Adjust Saturation" \
+            "6" "Adjust Gain" \
+            "7" "Adjust Sharpness" \
+            "8" "White Balance Auto" \
+            "9" "White Balance Temp" \
+            "A" "Auto Exposure Mode" \
+            "B" "Exposure Time" \
+            "C" "Focus (Manual)" \
+            "D" "Focus Auto" \
+            "E" "Zoom" \
+            "F" "Pan/Tilt" \
+            "G" "Custom Control" \
+            "R" "Reset to Defaults" \
+            "Q" "Quit" 3>&1 1>&2 2>&3)
+        
+        case $choice in
+            1) select_device ;;
+            2) show_current_settings ;;
+            3|4|5|6|7)
+                local controls=("brightness" "contrast" "saturation" "gain" "sharpness")
+                local control_name=${controls[$((choice-3))]}
+                local control_info=$(v4l2-ctl -d "$DEVICE" --list-ctrls 2>/dev/null | grep "^[[:space:]]*$control_name")
+                if [ -n "$control_info" ]; then
+                    local current=$(echo "$control_info" | grep -o "value=[0-9]*" | cut -d= -f2)
+                    local min=$(echo "$control_info" | grep -o "min=[0-9]*" | cut -d= -f2)
+                    local max=$(echo "$control_info" | grep -o "max=[0-9]*" | cut -d= -f2)
+                    adjust_control "$control_name" "$current" "$min" "$max"
+                else
+                    whiptail --msgbox "$control_name not available on this device" 8 50
+                fi
+                ;;
+            8)
+                # White Balance Automatic (boolean)
+                local control_info=$(v4l2-ctl -d "$DEVICE" --list-ctrls 2>/dev/null | grep "^[[:space:]]*white_balance_automatic")
+                if [ -n "$control_info" ]; then
+                    local current=$(echo "$control_info" | grep -o "value=[0-1]" | cut -d= -f2)
+                    adjust_boolean_control "white_balance_automatic" "$current"
+                else
+                    whiptail --msgbox "White balance automatic not available" 8 50
+                fi
+                ;;
+            9)
+                # White Balance Temperature (int, but may be inactive)
+                local control_info=$(v4l2-ctl -d "$DEVICE" --list-ctrls 2>/dev/null | grep "^[[:space:]]*white_balance_temperature[^_]")
+                if [ -n "$control_info" ]; then
+                    if echo "$control_info" | grep -q "flags=inactive"; then
+                        whiptail --msgbox "White balance temperature is inactive\n(Enable manual white balance first)" 10 50
+                    else
+                        local current=$(echo "$control_info" | grep -o "value=[0-9]*" | cut -d= -f2)
+                        local min=$(echo "$control_info" | grep -o "min=[0-9]*" | cut -d= -f2)
+                        local max=$(echo "$control_info" | grep -o "max=[0-9]*" | cut -d= -f2)
+                        adjust_control "white_balance_temperature" "$current" "$min" "$max"
+                    fi
+                else
+                    whiptail --msgbox "White balance temperature not available" 8 50
+                fi
+                ;;
+            A)
+                # Auto Exposure (menu)
+                local control_info=$(v4l2-ctl -d "$DEVICE" --list-ctrls 2>/dev/null | grep "^[[:space:]]*auto_exposure")
+                if [ -n "$control_info" ]; then
+                    local current=$(echo "$control_info" | grep -o "value=[0-9]*" | cut -d= -f2)
+                    adjust_menu_control "auto_exposure" "$current"
+                else
+                    whiptail --msgbox "Auto exposure not available" 8 50
+                fi
+                ;;
+            B)
+                # Exposure Time Absolute (int, may be inactive)
+                local control_info=$(v4l2-ctl -d "$DEVICE" --list-ctrls 2>/dev/null | grep "^[[:space:]]*exposure_time_absolute")
+                if [ -n "$control_info" ]; then
+                    if echo "$control_info" | grep -q "flags=inactive"; then
+                        whiptail --msgbox "Exposure time is inactive\n(Set auto exposure to manual mode first)" 10 50
+                    else
+                        local current=$(echo "$control_info" | grep -o "value=[0-9]*" | cut -d= -f2)
+                        local min=$(echo "$control_info" | grep -o "min=[0-9]*" | cut -d= -f2)
+                        local max=$(echo "$control_info" | grep -o "max=[0-9]*" | cut -d= -f2)
+                        adjust_control "exposure_time_absolute" "$current" "$min" "$max"
+                    fi
+                else
+                    whiptail --msgbox "Exposure time not available" 8 50
+                fi
+                ;;
+            C)
+                # Focus Absolute (int, may be inactive)
+                local control_info=$(v4l2-ctl -d "$DEVICE" --list-ctrls 2>/dev/null | grep "^[[:space:]]*focus_absolute")
+                if [ -n "$control_info" ]; then
+                    if echo "$control_info" | grep -q "flags=inactive"; then
+                        whiptail --msgbox "Manual focus is inactive\n(Disable auto focus first)" 10 50
+                    else
+                        local current=$(echo "$control_info" | grep -o "value=[0-9]*" | cut -d= -f2)
+                        local min=$(echo "$control_info" | grep -o "min=[0-9]*" | cut -d= -f2)
+                        local max=$(echo "$control_info" | grep -o "max=[0-9]*" | cut -d= -f2)
+                        adjust_control "focus_absolute" "$current" "$min" "$max"
+                    fi
+                else
+                    whiptail --msgbox "Manual focus not available" 8 50
+                fi
+                ;;
+            D)
+                # Focus Automatic Continuous (boolean)
+                local control_info=$(v4l2-ctl -d "$DEVICE" --list-ctrls 2>/dev/null | grep "^[[:space:]]*focus_automatic_continuous")
+                if [ -n "$control_info" ]; then
+                    local current=$(echo "$control_info" | grep -o "value=[0-1]" | cut -d= -f2)
+                    adjust_boolean_control "focus_automatic_continuous" "$current"
+                else
+                    whiptail --msgbox "Auto focus not available" 8 50
+                fi
+                ;;
+            E)
+                # Zoom Absolute
+                local control_info=$(v4l2-ctl -d "$DEVICE" --list-ctrls 2>/dev/null | grep "^[[:space:]]*zoom_absolute")
+                if [ -n "$control_info" ]; then
+                    local current=$(echo "$control_info" | grep -o "value=[0-9]*" | cut -d= -f2)
+                    local min=$(echo "$control_info" | grep -o "min=[0-9]*" | cut -d= -f2)
+                    local max=$(echo "$control_info" | grep -o "max=[0-9]*" | cut -d= -f2)
+                    adjust_control "zoom_absolute" "$current" "$min" "$max"
+                else
+                    whiptail --msgbox "Zoom not available" 8 50
+                fi
+                ;;
+            F)
+                # Pan/Tilt submenu
+                local pan_tilt_choice=$(whiptail --title "Pan/Tilt Control" --menu "Choose action:" 12 50 2 \
+                    "1" "Adjust Pan" \
+                    "2" "Adjust Tilt" 3>&1 1>&2 2>&3)
+                
+                case $pan_tilt_choice in
+                    1)
+                        local control_info=$(v4l2-ctl -d "$DEVICE" --list-ctrls 2>/dev/null | grep "^[[:space:]]*pan_absolute")
+                        if [ -n "$control_info" ]; then
+                            local current=$(echo "$control_info" | grep -o "value=[-0-9]*" | cut -d= -f2)
+                            local min=$(echo "$control_info" | grep -o "min=[-0-9]*" | cut -d= -f2)
+                            local max=$(echo "$control_info" | grep -o "max=[-0-9]*" | cut -d= -f2)
+                            adjust_control "pan_absolute" "$current" "$min" "$max"
+                        else
+                            whiptail --msgbox "Pan control not available" 8 50
+                        fi
+                        ;;
+                    2)
+                        local control_info=$(v4l2-ctl -d "$DEVICE" --list-ctrls 2>/dev/null | grep "^[[:space:]]*tilt_absolute")
+                        if [ -n "$control_info" ]; then
+                            local current=$(echo "$control_info" | grep -o "value=[-0-9]*" | cut -d= -f2)
+                            local min=$(echo "$control_info" | grep -o "min=[-0-9]*" | cut -d= -f2)
+                            local max=$(echo "$control_info" | grep -o "max=[-0-9]*" | cut -d= -f2)
+                            adjust_control "tilt_absolute" "$current" "$min" "$max"
+                        else
+                            whiptail --msgbox "Tilt control not available" 8 50
+                        fi
+                        ;;
+                esac
+                ;;
+            G)
+                # Custom control
+                local available_controls=$(v4l2-ctl -d "$DEVICE" --list-ctrls 2>/dev/null | grep -E "^\s*[a-z_]+" | awk '{print $1}' | head -10)
+                local control_name=$(whiptail --title "Custom Control" --inputbox "Available controls:\n$available_controls\n\nEnter control name:" 15 60 3>&1 1>&2 2>&3)
+                if [ -n "$control_name" ]; then
+                    local control_info=$(v4l2-ctl -d "$DEVICE" --list-ctrls 2>/dev/null | grep "^[[:space:]]*$control_name")
+                    if [ -n "$control_info" ]; then
+                        local current=$(echo "$control_info" | grep -o "value=[0-9]*" | cut -d= -f2)
+                        local min=$(echo "$control_info" | grep -o "min=[0-9]*" | cut -d= -f2)
+                        local max=$(echo "$control_info" | grep -o "max=[0-9]*" | cut -d= -f2)
+                        adjust_control "$control_name" "$current" "$min" "$max"
+                    else
+                        whiptail --msgbox "Control '$control_name' not found" 8 50
+                    fi
+                fi
+                ;;
+            R) reset_controls ;;
+            Q) break ;;
+            *) break ;;
+        esac
+    done
+}
+
+# Check if v4l2-ctl is available
+if ! command -v v4l2-ctl &> /dev/null; then
+    whiptail --msgbox "v4l2-ctl not found!\nPlease install v4l-utils:\nsudo apt install v4l-utils" 10 50
+    exit 1
+fi
+
+# Check if whiptail is available
+if ! command -v whiptail &> /dev/null; then
+    echo "whiptail not found! Please install it:"
+    echo "sudo apt install whiptail"
+    exit 1
+fi
+
+# Start the application
+select_device
+main_menu

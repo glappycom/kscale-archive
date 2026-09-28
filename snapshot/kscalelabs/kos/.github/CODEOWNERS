@@ -1,0 +1,10 @@
+# Core components
+/kos/ @codekansas @hatomist @WT-MM
+
+# Python client
+/kos-py/ @codekansas @hatomist @WT-MM
+
+# Build and CI configuration
+/.github/ @codekansas @hatomist @WT-MM
+/toolchain/ @codekansas @hatomist @WT-MM
+*.toml @codekansas @hatomist @WT-MM

@@ -1,0 +1,37 @@
+# .gitignore
+
+# Python
+*.py[oc]
+__pycache__/
+*.egg-info
+.eggs/
+.mypy_cache/*
+.pyre/
+.pytest_cache/
+.ruff_cache/
+.dmypy.json
+venv/
+
+# python protobuf
+kos-py/kos_protos/
+!kos-py/kos_protos/__init__.py
+
+# Rust
+target/
+Cargo.lock
+
+# Databases
+*.db
+
+# Gitlab
+.gitlab-ci-local/
+
+# Build artifacts
+build/
+dist/
+*.so
+out*/
+
+# Dev
+*.patch
+robstridev2/

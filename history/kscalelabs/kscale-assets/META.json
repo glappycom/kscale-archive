@@ -1,0 +1,51 @@
+{
+  "full_name": "kscalelabs/kscale-assets",
+  "upstream_url": "https://github.com/kscalelabs/kscale-assets",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 346,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "yes",
+  "snapshot_status": "yes",
+  "notes": [
+    "Snapshot working tree includes fetched LFS objects (pointers checked out)."
+  ],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "K-Scale Labs assets",
+  "upstream_archived": true,
+  "upstream_pushed_at": "2025-05-03T08:23:29Z",
+  "branches": {
+    "aaron/fix/passive-parameter": "88715e8309651d61f65fda9b60d651dcf16444d4",
+    "imu_bench_updates": "396c1ae144e2ea5087ffff9841bd54f206617975",
+    "master": "f51d6ea19b8b824dd7661600c7a87f3691f770be",
+    "no_flip_lw": "35b3e7bf69df19f4648dd1cfa61c48dd5af57f83",
+    "user/ampho12/issues/duplicate-entries": "cb01c1bef31e412eb78e2d0d5ab7024e2c9bf615"
+  },
+  "tags": {
+    "0.0.9": "be2446a180162430a2527f314dfbc3d327ca7bb6"
+  },
+  "default_branch_sha": "f51d6ea19b8b824dd7661600c7a87f3691f770be",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 393936,
+  "bundle_sha256": "2215486c43b5cebaaa6869cf8b55e16a87d89e7dff8bbe6f6c7c61b204f9527d",
+  "lfs_pointer_bytes": 148122220,
+  "lfs_object_count": 618,
+  "lfs_files": [
+    "lfs-objects.tar.part-001",
+    "lfs-objects.tar.part-002"
+  ],
+  "lfs_archive_bytes": 150231040,
+  "lfs_archive_sha256": "a993328f6359ef283833ab327866f286a7aa9791ded8a2df76af44dd5c406e13",
+  "snapshot_bytes": 78978374,
+  "snapshot_files": 481
+}

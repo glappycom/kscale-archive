@@ -1,0 +1,35 @@
+{
+  "full_name": "zeroth-robotics/.github",
+  "upstream_url": "https://github.com/zeroth-robotics/.github",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 2,
+  "inventory_default_branch": "main",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "main",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-11-10T23:56:48Z",
+  "branches": {
+    "main": "eae53a59576f8648ea1de16d40da80d5be6a9a04"
+  },
+  "tags": {},
+  "default_branch_sha": "eae53a59576f8648ea1de16d40da80d5be6a9a04",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 3026,
+  "bundle_sha256": "b7fb05071803e3267a33f5d79d793f7df5791172293967d198e968ee8ee98a04",
+  "snapshot_bytes": 179,
+  "snapshot_files": 1
+}

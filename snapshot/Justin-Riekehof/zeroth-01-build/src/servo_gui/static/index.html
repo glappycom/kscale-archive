@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Zeroth-01 · Servo Test</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css?v=22">
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three-0.160.1/three.module.js",
+    "three/addons/": "./vendor/three-0.160.1/addons/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="app">
+  <aside id="panel">
+    <h1>Zeroth-01 · Servo Test <span id="buildTag" class="hint"></span></h1>
+    <div id="staleBanner" class="hidden">⚠ BACKEND OUTDATED — restart the
+      server: <code>Ctrl+C</code>, then <code>uv run server.py</code>.
+      Saves/runs will fail until then!</div>
+
+    <section>
+      <h2>Connection</h2>
+      <div class="row" id="modeRow">
+        <label class="check" title="Servo adapter on this computer's USB port — full bench tooling"><input type="radio" name="connMode" id="modeUsb" checked>
+          USB (local)</label>
+        <label class="check" title="Servo adapter on the Raspberry Pi — this page sends intents (demos, stop) to the Pi service"><input type="radio" name="connMode" id="modeWifi">
+          Wireless (Pi)</label>
+      </div>
+      <div class="row usb-only">
+        <select id="port"></select>
+        <button id="refreshPorts" class="icon" title="Rescan serial ports">⟳</button>
+      </div>
+      <div class="row usb-only">
+        <button id="connect">Connect</button>
+        <button id="disconnect" disabled>Disconnect</button>
+      </div>
+      <label class="check usb-only"><input type="checkbox" id="simulate" checked>
+        Simulation (no hardware needed)</label>
+      <div id="connState" class="muted">not connected</div>
+      <div id="battery" class="battery" title="3S pack voltage as the servos measure their supply rail (register 62, 0.1 V steps). Percent is estimated from the LiPo open-circuit curve and reads low under servo load. Wireless: below warn_v the Pi service warns, below shutdown_v for hold_s it halts the OS itself — before the XY-CD63 hardware cutoff can cut its 5 V.">
+        <svg class="batt-icon" viewBox="0 0 34 16" aria-hidden="true">
+          <rect x="0.75" y="0.75" width="29.5" height="14.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="31" y="4.5" width="2.5" height="7" rx="1" fill="currentColor"/>
+          <rect id="battFill" x="2.5" y="2.5" width="0" height="11" rx="1.2" fill="currentColor"/>
+        </svg>
+        <span id="battVolts">–</span>
+        <span id="battPct" class="muted"></span>
+        <span id="battNote" class="muted"></span>
+      </div>
+    </section>
+
+    <section class="usb-only">
+      <h2>Bus IDs <span class="hint">— daisy chain setup</span></h2>
+      <div class="row">
+        <button id="scan" title="Ping IDs 1–60 and list every servo on the bus">scan bus</button>
+      </div>
+      <div id="scanResult" class="muted"></div>
+      <div class="grid2">
+        <label>Current ID <input type="number" id="oldId" value="1" min="1" max="253"></label>
+        <label>New ID <input type="number" id="newId" value="11" min="1" max="253"></label>
+      </div>
+      <div class="row">
+        <button id="setId" title="Persistently write a new ID into the servo EPROM — only one servo with the current ID may be on the bus">set ID</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Servo <span class="hint">— click a part in the model</span></h2>
+      <div id="selName" class="selname">nothing selected</div>
+      <div class="row">
+        <button id="selParent" disabled title="Widen selection to parent group">⬆ parent</button>
+        <button id="selClear" disabled title="Clear the selection — nothing highlighted, every checkbox in the Servos list off">clear</button>
+      </div>
+      <div class="grid2 usb-only">
+        <label>Servo ID <input type="number" id="servoId" value="1" min="1" max="253"></label>
+        <label>Model
+          <select id="servoModel">
+            <option>STS3250</option>
+            <option>STS3215</option>
+          </select>
+        </label>
+      </div>
+      <div class="row usb-only">
+        <button id="saveMap" disabled title="Remember servo ID + model for the selected part">save mapping</button>
+        <button id="ping">ping</button>
+      </div>
+      <div id="livePosRow" class="livepos hidden">live position <span id="livePos">–</span></div>
+      <div id="offsetRow" class="hidden usb-only">
+        <div class="row">
+          <button id="zeroHere" title="Capture the servo's current physical position as this joint's zero (CAD pose). Hand-turn the output to where you want zero, then click.">⊙ set current position as zero</button>
+        </div>
+        <div class="grid2">
+          <label>Mount offset [°] <input type="number" id="offsetDeg" value="0" min="-180" max="180" step="0.5"></label>
+          <label>&nbsp;<button id="saveOffset" title="Servo mounted off-center: store the offset manually — 0° (CAD pose) then maps to tick 2048 + offset for this joint">save offset</button></label>
+        </div>
+      </div>
+      <div id="poseRow" class="hidden">
+        <label>Pose <span id="poseVal">+0.0°</span>
+          <input type="range" id="poseSlider" min="-176.5" max="176.5" step="0.5" value="0">
+        </label>
+        <div class="row">
+          <button id="poseReset">reset pose (all joints)</button>
+          <button id="modelZeroBtn" class="usb-only" title="Display calibration for THIS joint: slide until the model matches reality, then click (view-only, servo angles unaffected)">⌖ model zero</button>
+          <button id="modelInvertBtn" class="usb-only" title="Flip the model's rotation direction for this joint (display only) — use when the model turns opposite to the real servo">↔ invert</button>
+        </div>
+      </div>
+      <div class="row usb-only">
+        <button id="modelZeroAll" title="Model-zero calibration: click joints and pose them with the slider until the whole model matches the real robot's zero pose, then click here — folds every posed angle into the display corrections at once (view-only)">⌖ calibrate model zero (all posed joints)</button>
+      </div>
+      <div class="row">
+        <button id="centerPoseSet" title="Override the center pose: pose the model with the sliders, then click — every ⌂ center action (single servo, group, Pi) moves to THIS pose instead of all 0°. Stored in hardware/center_pose.json; deploy to apply on the Pi">⌂ set model pose as center pose</button>
+        <button id="centerPoseReset" title="Back to the plain mount pose: ⌂ center = all joints 0°">⌂ reset center pose</button>
+      </div>
+      <div id="centerPoseRow" class="hint hidden">center pose override: <span id="centerPoseVal"></span></div>
+      <label class="check"><input type="checkbox" id="groundSnap" checked>
+        ground contact (gravity feel — lowest foot stays on the floor)</label>
+    </section>
+
+    <section id="attachSection" class="hidden">
+      <h2 class="fold" id="attachHead" title="Click to fold / unfold the panel"><span class="chev">▾</span> Attachments <span class="hint">— printed add-ons on the pinned model (resources/cad/attachments)</span></h2>
+      <div id="attachBody">
+        <div id="attachList"></div>
+        <label class="check"><input type="checkbox" id="torsoXray">
+          torso see-through (look at the parts inside)</label>
+      </div>
+    </section>
+
+    <section>
+      <h2>Joint range <span class="hint">— limits &amp; test interval; 0° = center</span></h2>
+      <div class="grid2">
+        <label>Min [°] <input type="number" id="minDeg" value="-90" min="-176.5" max="176.5" step="0.5"></label>
+        <label>Max [°] <input type="number" id="maxDeg" value="90" min="-176.5" max="176.5" step="0.5"></label>
+      </div>
+      <div class="row">
+        <button id="saveLimits" disabled title="Store min/max as the safe range for this joint in hardware/joint_limits.json — every sweep and demo is clamped to it. Wireless: saved to the repo AND to the robot, which enforces it right away">save limits</button>
+      </div>
+      <label class="check"><input type="checkbox" id="symmetric" checked>
+        apply to mirror joint (left ↔ right)</label>
+    </section>
+
+    <section class="usb-only">
+      <h2>Test run <span class="hint">— sweeps the range above</span></h2>
+      <div class="grid2">
+        <label>Speed [ticks/s] <input type="number" id="speed" value="300" min="1" max="3400"></label>
+        <label>Accel <input type="number" id="acc" value="30" min="0" max="254" title="Ramp; every backend clamps to hardware/motion_limits.json (default max 30) to keep 16 simultaneous starts from sagging the pack"></label>
+      </div>
+      <label>Cycles <input type="number" id="cycles" value="1" min="1" max="20"></label>
+      <label>Shaft axis <span class="hint">(part frame — pick the one matching the output shaft)</span>
+        <select id="axis">
+          <option value="Z">Z</option>
+          <option value="X">X</option>
+          <option value="Y">Y</option>
+        </select>
+      </label>
+      <div class="row">
+        <button id="center" title="Move the servo to tick 2048 (180° absolute) — assembly/calibration position">⌂ Move to center (mount position)</button>
+      </div>
+      <div class="row">
+        <button id="run" class="primary">▶ Run test</button>
+        <button id="stop" class="danger" disabled>■ Stop</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Servos <span class="hint">— click a motor in the model or tick it here; orange = selected</span></h2>
+      <div id="groupQuick" class="chips">
+        <button data-sel="all" title="Select every servo (a second click deselects all)">all</button>
+        <button data-sel="none" title="Deselect every servo — release / lock then act on the clicked model joint, or on all servos if none is clicked">none</button>
+        <button data-sel="upper" title="Shoulders + elbows, both sides">upper</button>
+        <button data-sel="lower" title="Hips, knees + ankles, both sides">lower</button>
+        <button data-sel="left" title="Every joint on the left side">left</button>
+        <button data-sel="right" title="Every joint on the right side">right</button>
+      </div>
+      <div id="groupList"></div>
+      <div class="row">
+        <select id="groupMode" class="usb-only">
+          <option value="sequential">sequential (asc. ID)</option>
+          <option value="simultaneous">simultaneous</option>
+        </select>
+      </div>
+      <label class="check usb-only"><input type="checkbox" id="holdCenter" checked>
+        hold center after test (demo — torque stays on)</label>
+      <div class="row usb-only">
+        <button id="groupCenter" title="Move all selected servos to center (mount pose)">⌂ center</button>
+        <button id="groupRun" class="primary" title="Sweep each selected joint within its configured limits">▶ run group</button>
+      </div>
+      <div class="row">
+        <button id="groupRelease" title="Disable torque: checked servos — else the clicked model joint — else all. Teach-in: release, hand-pose, capture">✋ release torque</button>
+        <button id="groupLock" title="Freeze at the CURRENT position (torque on): checked servos — else the clicked model joint — else all. Teach-in: pose a limb, lock it, pose the next">🔒 lock torque</button>
+      </div>
+      <div id="torqueScope" class="hint">release / lock act on: all servos</div>
+      <h2 class="pi-only">Robot <span class="hint">— executed on the Pi</span></h2>
+      <div id="readout">
+        <span id="phase">idle</span>
+        <button id="copyLog" class="icon" title="Copy the full log to the clipboard">⧉ copy</button>
+        <span id="posDeg">–</span>
+      </div>
+      <pre id="log"></pre>
+    </section>
+
+    <section>
+      <h2>Demos <span class="hint">— teach-in sequences (stored in demos/)</span></h2>
+      <div class="row">
+        <select id="demoList"></select>
+        <button id="demoPlay" class="primary" title="Play the selected demo — clamped to joint limits; final pose is held (release via release torque)">▶ play</button>
+      </div>
+      <div class="row pi-only">
+        <button id="piStop" class="danger" title="E-stop on the Pi: abort the run, all torque off">■ STOP</button>
+        <button id="piCenter" title="All servos to center on the Pi (pose is held)">⌂ center</button>
+        <button id="piShutdown" title="Clean OS shutdown of the Pi (SD-card-safe). Servos keep holding their pose; cut the main switch only after the green ACT LED stops (~15 s)">⏻ shutdown Pi</button>
+      </div>
+      <label>Name <input type="text" id="demoName" placeholder="e.g. wave_hello" maxlength="40"></label>
+      <div class="step stephead">
+        <span class="n"></span>
+        <span title="Target speed of the move into this step">spd</span>
+        <span title="Acceleration ramp of the move into this step">acc</span>
+        <span title="Wait after this step is reached, before the next one starts">pause [s]</span>
+      </div>
+      <div class="step" id="demoGlobals" title="Global speed/accel — typing here applies the value to every step; per-step fields can still fine-tune afterwards. Empty = steps have mixed values.">
+        <span class="n">all</span>
+        <input type="number" id="gSpeed" min="1" max="3400" placeholder="mix">
+        <input type="number" id="gAcc" min="0" max="254" placeholder="mix">
+        <input type="text" inputmode="decimal" id="gPause" placeholder="mix" title="Pause after every step [s] — 0…10">
+      </div>
+      <div id="demoSteps"></div>
+      <div class="steplegend">spd <b>1–3400</b> ticks/s · acc <b>0–254</b> ·
+        pause <b>0–10</b> s <span class="hint">(comma or dot)</span><br>
+        <span class="hint">the “all” row stamps its value onto every step</span></div>
+      <div class="row">
+        <button id="demoAddStep" title="Capture the current 3D model pose (pose sliders) as the next step">+ model pose</button>
+        <button id="demoAddRobot" title="Physical teach-in: release torque, hand-pose the robot, then capture its real pose as the next step">+ robot pose</button>
+        <button id="demoAddCenter" title="Append an EXACT center step: the center pose override where set, 0.0° elsewhere — better than hand-posing 'roughly center'">+ center</button>
+      </div>
+      <div class="row">
+        <button id="demoSave" title="Save under the given name into demos/ in the repo (wireless: also onto the robot)">save demo</button>
+        <button id="demoDelete" title="Delete the selected demo file (wireless: also from the robot)">delete</button>
+      </div>
+    </section>
+  </aside>
+
+  <main id="viewport">
+    <canvas id="c"></canvas>
+    <div id="dropHint" class="hidden">
+      <div>
+        <h2>CAD model missing</h2>
+        <p>The pinned GLB snapshot was not found at<br>
+          <code>resources/cad/z001-opus-m-93de7567.glb</code></p>
+        <p><strong>Drag &amp; drop</strong> the exported <code>.glb</code> here,<br>
+          or run <code>python resources/cad/download_model.py</code><br>
+          (see <code>resources/cad/VERSION.md</code>).</p>
+      </div>
+    </div>
+    <div id="headCard" class="pi-only collapsed">
+      <button id="headToggle" class="headhead" title="Camera Module 3 + IMU display board in the head — streamed from the Pi (wireless mode)">
+        <span class="dot" id="headDot"></span>
+        <span class="ttl">Head <span class="hint">— camera · IMU</span></span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="headbody">
+        <div class="cam">
+          <img id="camImg" alt="">
+          <div id="camMsg" class="muted">camera off</div>
+        </div>
+        <div class="imu">
+          <div class="imugrid" id="imuBars">
+            <div class="bar"><span class="k">acc x</span><div class="track"><div class="fill" data-k="ax"></div></div><span class="v" data-v="ax">–</span></div>
+            <div class="bar"><span class="k">acc y</span><div class="track"><div class="fill" data-k="ay"></div></div><span class="v" data-v="ay">–</span></div>
+            <div class="bar"><span class="k">acc z</span><div class="track"><div class="fill" data-k="az"></div></div><span class="v" data-v="az">–</span></div>
+            <div class="bar gyro"><span class="k">gyro x</span><div class="track"><div class="fill" data-k="gx"></div></div><span class="v" data-v="gx">–</span></div>
+            <div class="bar gyro"><span class="k">gyro y</span><div class="track"><div class="fill" data-k="gy"></div></div><span class="v" data-v="gy">–</span></div>
+            <div class="bar gyro"><span class="k">gyro z</span><div class="track"><div class="fill" data-k="gz"></div></div><span class="v" data-v="gz">–</span></div>
+          </div>
+          <div class="tilt">
+            <canvas id="tiltBubble" width="76" height="76" title="Head tilt from gravity: dot = where the head leans (forward = up), ring = 30°"></canvas>
+            <div class="tiltval" id="imuTilt">–</div>
+          </div>
+        </div>
+        <div class="imumeta">
+          <span id="imuMeta" class="muted">IMU: no board</span>
+          <span class="hint">acc in mg · gyro in °/s</span>
+        </div>
+        <div class="chips" id="eyeChips" title="Expressions of the eye on the display board (needs the src/head_display firmware)">
+          <button data-cmd="mood neutral">neutral</button>
+          <button data-cmd="mood happy">happy</button>
+          <button data-cmd="mood sleepy">sleepy</button>
+          <button data-cmd="mood surprised">surprised</button>
+          <button data-cmd="blink">blink</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="batteryBanner" class="hidden" role="alertdialog" aria-live="assertive">
+  <div class="box">
+    <h2>⚠ BATTERY EMPTY</h2>
+    <p><b>The Pi shut itself down</b> — the pack fell below the shutdown voltage for 10 s
+      and the service halted the OS to protect the SD card. The servos are still powered.</p>
+    <p id="batteryBannerState" class="state">Pi is halting …</p>
+    <ol>
+      <li>Wait until the green ACT LED on the Pi stops blinking.</li>
+      <li><b>Cut the main switch</b> — before the hardware cutoff does.</li>
+      <li>Charge the pack. The Pi boots again with the switch.</li>
+    </ol>
+    <button id="batteryBannerOk" class="danger">Understood</button>
+  </div>
+</div>
+<div id="shutdownBanner" class="hidden">
+  <div class="box">
+    <h2>✅ Pi ist heruntergefahren</h2>
+    <p>Der Pi antwortet nicht mehr. Wenn die grüne <strong>ACT-LED aus</strong> ist,
+      kann der Hauptschalter jetzt <strong>sicher ausgeschaltet</strong> werden.</p>
+    <p class="hint">Die Servos halten ihre letzte Pose, bis die Versorgung
+      getrennt wird.</p>
+    <button id="shutdownBannerOk" class="primary">OK</button>
+  </div>
+</div>
+<script type="module" src="app.js?v=43"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "full_name": "kscalelabs/linguaphoto",
+  "upstream_url": "https://github.com/kscalelabs/linguaphoto",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 2487,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [
+    "The published bundle omits private_key.pem and linguaphoto/private_key.pem. Those files were committed on the public upstream and are not redistributed here. default_branch_sha is the upstream commit from before that removal, so it does not match this bundle's HEAD."
+  ],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "Linguaphoto website code",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-12-15T12:18:33Z",
+  "branches": {
+    "dependabot/npm_and_yarn/frontend/cross-spawn-7.0.6": "7f6d06e403b0a16ac4639a4505696226605f0bbd",
+    "dependabot/npm_and_yarn/frontend/multi-6bc014718a": "bc06235cc8955954181cc8ead9b15c60fd3541f0",
+    "dependabot/npm_and_yarn/frontend/nanoid-3.3.8": "17fb42c2aaeac2a476e4512a124e44c902485fef",
+    "master": "efb02105d0a9eaa5fb05f506074e05589044e985",
+    "serhii-10-21": "abe1a01c226bd09a06c4ea43e7c71a1576fc067f"
+  },
+  "tags": {},
+  "default_branch_sha": "efb02105d0a9eaa5fb05f506074e05589044e985",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 1790724,
+  "bundle_sha256": "33457b79e17ec0f592c2c78be33a64cf87ce6e16ca2f3830b9e6a86f5bb01c71",
+  "snapshot_bytes": 2123983,
+  "snapshot_files": 134
+}

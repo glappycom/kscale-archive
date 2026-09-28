@@ -1,0 +1,17 @@
+# requirements-dev.txt
+
+# Formatting
+black
+clang-format
+cmake-format
+darglint
+mypy
+pytest
+ruff
+
+# Extensions
+cmake
+pybind11
+
+# Types
+typing_extensions

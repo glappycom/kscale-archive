@@ -1,0 +1,7 @@
+numpy
+onnxruntime
+python-periphery
+pyserial
+kmotions>=0.3.8
+simple-websocket-server
+

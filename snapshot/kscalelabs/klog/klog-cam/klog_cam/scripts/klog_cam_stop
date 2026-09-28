@@ -1,0 +1,78 @@
+#!/bin/bash
+
+USAGE="usage: klog-cam stop <UUID>"
+
+if ! [ -f ~/.config/klog-cam.yaml ]; then
+    echo "Camera configuration file not found. Please run 'klog-cam setup' or manually configure first."
+    exit 1
+fi
+
+cams=($(cat ~/.config/klog-cam.yaml | yq -r '.cameras[]'))
+log_path=$(cat ~/.config/klog-cam.yaml | yq -r '.log_path')
+
+if [ -z "$cams" ]; then
+    echo "No cameras configured. Please add cameras using 'klog-cam setup'."
+    exit 1
+fi
+
+if [ -z "$log_path" ]; then
+    echo "No log path configured. Please set 'log_path' in ~/.config/klog-cam.conf."
+    exit 1
+fi
+
+# Get id from named processes
+name=$(ps -o args= $(lsof -t ${cams[0]}))
+if [[ $name =~ rec-.+_.+ ]]; then
+    id=$(printf "$name" | awk '{print $1}' | awk -F'_' '{print $NF}')
+    echo "stopping video from run: $id"
+else
+    echo "Failed to find run uuid from process name. Was recording started with \`start_video\`?"
+fi
+
+# Kill processes
+for cam in "${cams[@]}"; do
+    kill -s SIGTERM $(lsof -t "$cam") 2>/dev/null
+done
+
+# Only proceed if an id was found
+if [ -z "$id" ]; then
+    exit 2
+fi
+
+sleep 1
+
+# Convert videos
+shopt -s nullglob # so it doesn't run if no mkv files
+
+pids=()
+vids=()
+for vid in "$log_path/$id/"*.mkv; do
+    new_vid="${vid%.mkv}.mp4"
+    vids+=("$vid")
+    echo "$vid"
+    ffmpeg -i "$vid" \
+        -loglevel error \
+        -c:v copy \
+        -c:a copy \
+        "$new_vid" &
+    pids+=($!)
+done
+
+all_success=true
+for i in "${!pids[@]}"; do
+    if ! wait "${pids[i]}"; then
+        echo "Failed to convert ${vids[i]}."
+        all_success=false
+    fi
+done
+
+if $all_success; then
+    echo "All videos converted successfully."
+    rm "$log_path/$id/"*.mkv
+    exit_code=0
+else
+    echo "Some videos failed to convert."
+    exit_code=1
+fi
+
+exit $exit_code

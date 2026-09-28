@@ -1,0 +1,18 @@
+[package]
+name = "kbot-pwrbrd"
+version = "0.2.2"
+edition = "2021"
+description = "A Rust library for interfacing with the K-Bot power board over CAN"
+license = "MIT"
+authors = ["Wesley Maa <wesley@kscale.dev>, Aaron Xie <aaron@kscale.dev>"]
+repository = "https://github.com/kscalelabs/kbot-pwrbrd"
+documentation = "https://docs.rs/kbot-pwrbrd"
+readme = "README.md"
+
+[dependencies]
+socketcan = "3.5.0"
+chrono = "0.4"
+csv = "1.2"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tracing = "0.1"

@@ -1,0 +1,55 @@
+{
+  "full_name": "kscalelabs/pipify",
+  "upstream_url": "https://github.com/kscalelabs/pipify",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 47,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "Utility to make a python package",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-07-17T06:38:09Z",
+  "branches": {
+    "master": "a2a50c148b3c7cc2738f1f45a241694d6f460cb5"
+  },
+  "tags": {
+    "0.0.11": "a548054b1ba857401d8567ad9e80b85f64e58f68",
+    "0.0.12": "d258a5417ba3c61e243bdc0886bd2b97b9abb309",
+    "0.0.13": "71f769310772615a3ed0ef2f5653d0c16e80efdb",
+    "0.0.14": "c92b66f7936a432fb66f774e1786da5aa0a6c8a7",
+    "0.0.17": "93e679b86575750c9f471360fc11307e0f3870d4",
+    "0.0.18": "67550a178192554997ceac3be87d8ed3f3b9e85b",
+    "0.0.19": "c69eedea5301a067cbf05b8bf9d3fcc68af42758",
+    "0.0.20": "3ce76f69748716d029ba4c4ad148d0bf1918e95b"
+  },
+  "default_branch_sha": "a2a50c148b3c7cc2738f1f45a241694d6f460cb5",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2023 alik-git\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    },
+    {
+      "path": "pipify/template/LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2023 [[PROJECT AUTHOR]]\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 24016,
+  "bundle_sha256": "a85e12a1cd8d9361e51dee9d0ca0b6f440188ab1bb858b9e5df861529900bff2",
+  "snapshot_bytes": 32514,
+  "snapshot_files": 36
+}

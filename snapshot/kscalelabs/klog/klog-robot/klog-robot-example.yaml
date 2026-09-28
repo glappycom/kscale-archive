@@ -1,0 +1,3 @@
+log_dir: "~/kinfer-logs"
+mqtt_host: klog
+mqtt_port: 1883

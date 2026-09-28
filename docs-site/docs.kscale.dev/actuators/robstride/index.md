@@ -1,0 +1,114 @@
+<!-- preserved from https://docs.kscale.dev/actuators/robstride via https://web.archive.org/web/20241111170309id_/https://docs.kscale.dev/actuators/robstride -->
+
+# Robstride Actuator - K-Scale Docs
+
+[Actuators](/actuators/intro "Actuators")Robstride
+
+# Robstride Actuator
+
+This package lets you interact with the Robstride series of actuators using their custom CAN controller.
+
+```
+pip install actuator  # Install the entire Python package
+cargo install robstride  # Install the Rust package
+```
+
+The `actuator` package is designed to work with the Robstride USB to CAN controller, which is built on the CH341 USB controller. This requires some additional setup to get started.
+
+[Code](https://github.com/kscalelabs/actuator)[Rust](https://crates.io/crates/robstride)
+
+You can install the pure-Rust implementation of this package from [here](https://crates.io/crates/robstride).
+
+## Getting Started
+
+### Pre-requisites
+
+Make sure you have satisfied the following requirements:
+
+* **Operating System**: We have tested this package on Linux. Note that it will not work on Mac with the default USB to CAN drivers, since Mac does not support the required TTY baudrate of 921600. It may work with Windows as well, but we have not yet tested this.
+* **Python Version**: This package works with Python 3.11 and above.
+* **Rust**: You should ensure that Rust is installed on your system.
+
+### CH341 Driver
+
+Note that there are some additional steps needed before the Robstride USB controller will work on Linux:
+
+1. Install [this driver](https://github.com/WCHSoftGroup/ch341ser_linux) for the CH341 USB controller.
+2. This should create a `/dev/ttyUSB0` or `/dev/ttyCH341USB0` device - you should check which one by doing `ls /dev/tty*`. You might need to the change the permissions:
+
+Note that if you successfully installed the CH341 driver but the USB device wasn’t created, another service may be interfering with the CH341 driver. Try running `dmesg | grep ch341` see if other services are claiming the interface. In some cases, `brltty` may be interrupting the CH341 setup in which case you should unload it or remove it entirely.
+
+```
+sudo chmod 666 /dev/ttyCH341USB0
+```
+
+3. Run the following command to configure the baud rate of the controller:
+
+```
+sudo stty -F /dev/ttyUSB0 921600
+```
+
+4. Alternatively, you can add the following line to your `/etc/udev/rules.d/51-ch340.rules` file to automatically configure the baud rate:
+
+```
+KERNEL=="ttyCH341USB[0-9]", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyUSB%n", RUN+="/bin/stty -F /dev/ttyCH341USB0 921600"
+KERNEL=="ttyUSB[0-9]", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", RUN+="/bin/stty -F /dev/ttyUSB0 921600"
+```
+
+5. After adding the above rule, you should run `sudo udevadm control --reload-rules` to reload the rules.
+
+## Test Program
+
+Here is a simple test program you can use to try using the Robstride motor controllers:
+
+```
+import argparse
+import math
+import time
+ 
+from actuator import RobstrideMotorsSupervisor
+ 
+# Parse command line arguments.
+parser = argparse.ArgumentParser()
+parser.add_argument("--port-name", type=str, default="/dev/ttyUSB0")
+parser.add_argument("--motor-id", type=int, default=1)
+parser.add_argument("--motor-type", type=str, default="01")
+parser.add_argument("--sleep", type=float, default=0.0)
+parser.add_argument("--period", type=float, default=10.0)
+parser.add_argument("--amplitude", type=float, default=1.0)
+parser.add_argument("--verbose", action="store_true")
+args = parser.parse_args()
+ 
+amplitude = args.amplitude
+period = args.period
+ 
+# This creates a motor supervisor, which sends commands to all the actuators on
+# the same CAN bus at a regular interval.
+supervisor = RobstrideMotorsSupervisor(args.port_name, {args.motor_id: args.motor_type})
+ 
+# This is used to set the KP and KD parameters for the MIT Cheetah-style
+# PD controller.
+supervisor.set_kp(args.motor_id, 10.0)
+supervisor.set_kd(args.motor_id, 1.0)
+ 
+start_time = time.time()
+ 
+try:
+    while True:
+        elapsed_time = time.time() - start_time
+        target_position = amplitude * math.sin(elapsed_time * 2 * math.pi / period)
+        target_velocity = amplitude * 2 * math.pi / period * math.cos(elapsed_time * 2 * math.pi / period)
+        supervisor.set_position(args.motor_id, target_position)
+        supervisor.set_velocity(args.motor_id, target_velocity)
+        time.sleep(args.sleep)
+        if args.verbose:
+            feedback = supervisor.get_latest_feedback()
+            print(feedback)
+ 
+except KeyboardInterrupt:
+    supervisor.stop()
+    time.sleep(0.1)
+    raise
+```
+
+[Introduction](/actuators/intro "Introduction")[E-VLA](/models/evla "E-VLA")

@@ -1,0 +1,42 @@
+{
+  "full_name": "zeroth-robotics/zeroth-frontend",
+  "upstream_url": "https://github.com/zeroth-robotics/zeroth-frontend",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 665153,
+  "inventory_default_branch": "main",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "no",
+  "notes": [],
+  "default_branch": "main",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-01-15T08:10:41Z",
+  "branches": {
+    "main": "9964622a32911769bc3758de8e0c6f512a2fda3a",
+    "photos": "9964622a32911769bc3758de8e0c6f512a2fda3a",
+    "staging": "2283cf82eb1557c8f2741b38ff6d6c7be3fbcaa2"
+  },
+  "tags": {},
+  "default_branch_sha": "9964622a32911769bc3758de8e0c6f512a2fda3a",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle.part-001",
+    "repo.bundle.part-002",
+    "repo.bundle.part-003",
+    "repo.bundle.part-004",
+    "repo.bundle.part-005",
+    "repo.bundle.part-006",
+    "repo.bundle.part-007",
+    "repo.bundle.part-008"
+  ],
+  "bundle_bytes": 680680111,
+  "bundle_sha256": "1b18d83349f2ce0abb84018c81d30311e6317e7425b447760c6d48864d1bd518"
+}

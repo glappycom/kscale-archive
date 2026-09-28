@@ -1,0 +1,9 @@
+# Required settings
+source_dir: "~/kinfer-logs"
+remote_user: "data"
+remote_host: "klog"
+rsync_module: "klog"
+
+# Optional settings
+max_dir_size: 10 # GB
+min_remaining_disk_space: 10 # GB

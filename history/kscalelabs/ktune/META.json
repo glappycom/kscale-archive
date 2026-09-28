@@ -1,0 +1,46 @@
+{
+  "full_name": "kscalelabs/ktune",
+  "upstream_url": "https://github.com/kscalelabs/ktune",
+  "captured_at": "2026-09-28T17:50:29Z",
+  "inventory_size_kb": 9015,
+  "inventory_default_branch": "main",
+  "inventory_fork": true,
+  "priority_tier": "3-fork",
+  "history_status": "partial",
+  "history_method": "upstream-pointer-no-unique-commits",
+  "lfs_status": "n.a.",
+  "snapshot_status": "no",
+  "notes": [
+    "Fork has no commits that are absent from nfreq/ktune (compare status identical, behind 0). Upstream still hosted this history on the capture date. Restore with: git clone https://github.com/nfreq/ktune.git && git checkout bcf6694512bdfacebeed0dc3108cecaa2a2449bb"
+  ],
+  "default_branch": "main",
+  "fork": true,
+  "parent": "nfreq/ktune",
+  "parent_default_branch": "main",
+  "github_license_spdx": "MIT",
+  "description": "ktune is a servo control tuning utility for matching real2sim. It utilizes Kscales kos and kos-sim.",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-05-27T21:22:32Z",
+  "branches": {
+    "bim": "2ff8fabf279e081f4601fb7c7d55f92a003ce63a",
+    "ktune_imu": "f5c529e55574456cfd4414769ee2d6c9b0c4da29",
+    "main": "bcf6694512bdfacebeed0dc3108cecaa2a2449bb",
+    "rs_tune": "a546e3d7063b2b96d4b223688dcb1b89ae337863"
+  },
+  "tags": {},
+  "default_branch_sha": "bcf6694512bdfacebeed0dc3108cecaa2a2449bb",
+  "fork_compare": {
+    "ahead_by": 0,
+    "behind_by": 0,
+    "merge_base": "bcf6694512bdfacebeed0dc3108cecaa2a2449bb",
+    "status": "identical"
+  },
+  "refs_missing_from_parent": [],
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2025 scott\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ]
+}

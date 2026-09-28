@@ -1,0 +1,49 @@
+{
+  "full_name": "kscalelabs/kos-zbot",
+  "upstream_url": "https://github.com/kscalelabs/kos-zbot",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 421,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [
+    "Repo has .gitmodules. Submodule commits were not vendored; submodule URLs remain in the tree."
+  ],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2026-02-05T21:19:53Z",
+  "branches": {
+    "cleanup_actuators": "901045c33a77b2adfbee305145e89853b2584e41",
+    "cli": "3e69711fc5898c678c127fd60162abfb5573259d",
+    "dependabot/pip/kos_zbot/protobuf-5.29.6": "be80d130e7f0487196071e81b4102eeba5b9eef8",
+    "holdPos": "e80dd75831fd4b49bd9cfd06e56b1b0d4260ba9d",
+    "inference-update": "ad52efd9ebf0c4cdb4a93a944e51c77446499add",
+    "kevin/fixes": "57ccacd00f6c9f8cf9a28220fd924c65e2b963f1",
+    "keyframes": "956d2e0222969de3c93c7babc98d3b0ed9aa325b",
+    "master": "fce28827aad2abfa308576e24a95621b41302a6a",
+    "nfreq-patch-1": "5ead9c7429470a4d18e07774d0acdd0a1547c7ca",
+    "nfreq-patch-2": "b3632cec3dd9776c02bb88712fc1d384b52590d6",
+    "salute": "4593e939dc856a513dc3d364cf9299b78b910d93",
+    "system-image": "6f7284bc67ffc465c38ade4cc202f11d5059e64b",
+    "use_4o": "0a29825c244796442ca504047aca577233e5f699"
+  },
+  "tags": {},
+  "default_branch_sha": "fce28827aad2abfa308576e24a95621b41302a6a",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 481780,
+  "bundle_sha256": "ae5ea5fe5f247626051b51b1ee47d1e57e5f52d436599677e98289578e741adc",
+  "snapshot_bytes": 335498,
+  "snapshot_files": 79
+}

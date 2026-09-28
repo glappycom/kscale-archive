@@ -1,0 +1,147 @@
+rank,priority_tier,full_name,url,size_kb,default_branch,last_push_utc,created_utc,fork,archived,stars,forks,language,license_spdx,description
+1,1-core,kscalelabs/kbot,https://github.com/kscalelabs/kbot,2189,master,2025-11-07T18:49:54Z,2025-04-05T22:25:02Z,False,False,393,69,,MIT,The K-Scale Robot
+2,1-core,kscalelabs/docs,https://github.com/kscalelabs/docs,45269,master,2026-02-14T09:27:05Z,2025-09-23T21:47:52Z,False,False,4,12,TypeScript,none-detected,K-Scale documentation
+3,1-core,zeroth-robotics/zeroth-bot,https://github.com/zeroth-robotics/zeroth-bot,71791,main,2025-05-24T02:12:38Z,2024-09-03T06:48:40Z,False,False,832,131,,MIT,3D-printed open-source humanoid robot platform for sim-to-real and RL
+4,1-core,zeroth-robotics/docs,https://github.com/zeroth-robotics/docs,145580,main,2025-01-17T21:39:28Z,2024-10-16T07:59:56Z,False,False,5,6,MDX,MIT,
+5,1-core,kscalelabs/ksim,https://github.com/kscalelabs/ksim,28376,master,2025-10-29T07:48:59Z,2025-01-26T04:37:31Z,False,False,228,41,Python,MIT,RL training library for humanoid locomotion and manipulation. Built on top of MuJoCo and JAX.
+6,1-core,kscalelabs/ksim-gym,https://github.com/kscalelabs/ksim-gym,90,master,2025-08-19T20:25:44Z,2025-04-25T22:23:29Z,False,False,314,56,Jupyter Notebook,MIT,K-Sim Gym: Making robots useful with RL. Built on top of K-Sim.
+7,1-core,kscalelabs/kbot-models,https://github.com/kscalelabs/kbot-models,59143,master,2025-10-02T19:38:08Z,2025-09-30T23:12:11Z,False,False,2,4,,MIT,
+8,1-core,kscalelabs/kos,https://github.com/kscalelabs/kos,455,master,2025-05-26T06:42:40Z,2024-10-26T00:09:32Z,False,False,75,16,Rust,MIT,"A general-purpose, configurable framework for robot firmware"
+9,1-core,kscalelabs/firmware,https://github.com/kscalelabs/firmware,367,master,2026-04-23T00:38:40Z,2025-06-01T20:45:01Z,False,False,9,4,Rust,MIT,Actuator and IMU firmware stack
+10,1-core,zeroth-robotics/hardware,https://github.com/zeroth-robotics/hardware,20655,main,2024-12-04T07:49:24Z,2024-11-11T01:38:29Z,False,False,12,1,,none-detected,
+11,1-core,kscalelabs/zeroth-bot,https://github.com/kscalelabs/zeroth-bot,55914,main,2026-04-01T21:48:56Z,2025-04-05T18:41:03Z,True,False,46,17,,MIT,3D-printed open-source humanoid robot platform for sim-to-real and RL
+12,1-core,Justin-Riekehof/zeroth-01-build,https://github.com/Justin-Riekehof/zeroth-01-build,80837,main,2026-09-26T22:06:17Z,2026-07-04T06:56:38Z,False,False,3,1,Python,MIT,"Build log & software for the K-Scale Zeroth-01, a 3D-printed open-source humanoid"
+13,1-core,kscalelabs/onshape,https://github.com/kscalelabs/onshape,715,master,2025-09-16T00:28:59Z,2024-03-26T18:27:50Z,False,False,51,18,Python,MIT,K-Scale's library for programmatically interacting with OnShape
+14,1-core,kscalelabs/urdf2mjcf,https://github.com/kscalelabs/urdf2mjcf,2042,master,2025-09-26T20:41:24Z,2024-10-16T00:50:49Z,False,False,144,21,Python,MIT,Convert from URDF file format to MJCF file format
+15,1-core,kscalelabs/actuator,https://github.com/kscalelabs/actuator,336,master,2025-09-15T17:06:59Z,2024-09-20T09:19:17Z,False,False,26,12,Rust,MIT,A repository for controlling actuators
+16,1-core,kscalelabs/kinfer,https://github.com/kscalelabs/kinfer,221,master,2025-10-17T18:23:57Z,2024-11-17T12:55:51Z,False,False,20,14,Rust,MIT,The K-Scale model export and inference tool
+17,1-core,kscalelabs/kos-kbot,https://github.com/kscalelabs/kos-kbot,17678,master,2025-06-18T00:14:29Z,2025-01-13T20:22:54Z,False,False,8,8,Python,MIT,KOS implementation for K-Bot
+18,1-core,kscalelabs/kos-zbot,https://github.com/kscalelabs/kos-zbot,421,master,2026-02-05T21:19:53Z,2025-04-10T19:12:08Z,False,False,14,7,Python,none-detected,
+19,1-core,kscalelabs/pyfirmware,https://github.com/kscalelabs/pyfirmware,505,master,2025-10-28T18:30:19Z,2025-09-12T01:03:42Z,False,False,5,5,Python,MIT,Python firmware
+20,1-core,kscalelabs/robstride,https://github.com/kscalelabs/robstride,28035,master,2025-09-10T22:53:27Z,2025-07-23T21:04:09Z,False,False,3,4,Rust,MIT,Robstride Servo Driver
+21,1-core,kscalelabs/kscale,https://github.com/kscalelabs/kscale,275,master,2025-09-04T00:00:33Z,2024-08-18T21:53:14Z,False,False,8,6,Python,MIT,"K-Scale master repository, for interacting with various K-Scale services"
+22,1-core,kscalelabs/kscale-assets,https://github.com/kscalelabs/kscale-assets,346,master,2025-05-03T08:23:29Z,2025-03-13T05:25:44Z,False,True,3,2,,none-detected,K-Scale Labs assets
+23,1-core,kscalelabs/firmware-legacy,https://github.com/kscalelabs/firmware-legacy,7350,master,2024-09-30T20:09:03Z,2024-01-27T00:38:10Z,False,False,1,0,Python,MIT,The robot firmware
+24,1-core,kscalelabs/ksim-gym-zbot,https://github.com/kscalelabs/ksim-gym-zbot,2381,master,2025-06-28T22:35:47Z,2025-05-02T20:28:33Z,False,False,4,11,Python,MIT,RL Policy benchmark for K-Scale's ZBot robot
+25,1-core,kscalelabs/kbot-joystick,https://github.com/kscalelabs/kbot-joystick,56531,master,2025-10-23T22:21:47Z,2025-05-15T18:52:14Z,False,False,8,12,Python,MIT,K-Bot full body RL control policy. Check out K-Sim Gym and K-Sim For More
+26,1-core,kscalelabs/kinfer-sim,https://github.com/kscalelabs/kinfer-sim,12437,master,2025-10-24T22:31:49Z,2025-05-11T17:26:23Z,False,False,4,6,Python,MIT,Simulation backend for visualizing K-Infer models
+27,1-core,kscalelabs/kos-sim,https://github.com/kscalelabs/kos-sim,24342,master,2025-05-06T20:20:34Z,2025-01-13T20:45:19Z,False,False,15,9,Python,MIT,Simulation backend for KOS
+28,1-core,kscalelabs/sim,https://github.com/kscalelabs/sim,256392,master,2025-03-26T12:28:22Z,2024-03-31T07:56:05Z,False,True,55,25,Python,MIT,Training in simulation
+29,1-core,kscalelabs/ksim-kbot,https://github.com/kscalelabs/ksim-kbot,293192,master,2025-05-01T01:07:01Z,2025-03-24T17:11:42Z,False,False,9,5,Python,MIT,Training and deploying policies for K-Bot
+30,1-core,kscalelabs/power-board,https://github.com/kscalelabs/power-board,139,master,2024-07-15T00:03:22Z,2024-07-14T21:59:28Z,False,False,2,2,,none-detected,
+31,1-core,kscalelabs/kbot-pwrbrd,https://github.com/kscalelabs/kbot-pwrbrd,29,master,2025-01-30T11:02:53Z,2025-01-18T01:11:47Z,False,False,0,0,Rust,none-detected,
+32,1-core,kscalelabs/motor-controller,https://github.com/kscalelabs/motor-controller,69061,main,2024-08-30T22:33:58Z,2024-06-18T22:50:47Z,False,False,5,2,HTML,none-detected,K-Scale Motor Controller
+33,1-core,kscalelabs/robot-reference-diagrams,https://github.com/kscalelabs/robot-reference-diagrams,4133,master,2025-01-22T03:03:07Z,2025-01-21T00:32:58Z,False,False,0,0,,none-detected,Robot reference diagrams
+34,1-core,kscalelabs/imu,https://github.com/kscalelabs/imu,3702,master,2025-09-12T19:49:53Z,2024-10-29T10:40:00Z,False,False,1,8,Rust,MIT,Package to read IMUs
+35,1-core,kscalelabs/mujoco-scenes,https://github.com/kscalelabs/mujoco-scenes,6675,master,2025-10-28T07:38:57Z,2025-02-15T17:58:11Z,False,False,11,6,Python,MIT,Package for creating different scenes in Mujoco
+36,1-core,kscalelabs/kbot_deployment,https://github.com/kscalelabs/kbot_deployment,49,master,2025-09-29T21:53:46Z,2025-07-29T03:42:31Z,False,False,3,6,Python,none-detected,"all the kbot deployment garbage: scripts, misc pieces, etc"
+37,1-core,kscalelabs/kbot_vr_teleop,https://github.com/kscalelabs/kbot_vr_teleop,129687,main,2026-02-14T09:16:48Z,2025-08-22T19:14:01Z,False,False,11,7,Python,MIT,
+38,1-core,kscalelabs/kteleop,https://github.com/kscalelabs/kteleop,108098,master,2026-02-11T17:48:30Z,2025-08-07T00:37:44Z,False,False,3,8,Python,Apache-2.0,Tele-operation code for K-Scale robots.
+39,1-core,kscalelabs/kbot-inference,https://github.com/kscalelabs/kbot-inference,2900,master,2025-05-10T00:51:34Z,2025-01-23T11:13:02Z,False,False,10,4,Rust,none-detected,K-Bot model inference
+40,1-core,zeroth-robotics/client-py,https://github.com/zeroth-robotics/client-py,39,main,2024-11-03T01:20:27Z,2024-10-16T17:39:07Z,False,False,3,3,Python,MIT,OpenLCH Python client
+41,1-core,zeroth-robotics/quickstart,https://github.com/zeroth-robotics/quickstart,8,main,2025-01-16T02:02:23Z,2025-01-12T23:51:43Z,False,False,0,0,Python,none-detected,The starting place for all example code to get up and running using a Zeroth Bot.
+42,1-core,kscalelabs/api-docs,https://github.com/kscalelabs/api-docs,287,master,2025-03-28T23:03:54Z,2025-03-27T16:06:43Z,False,False,0,0,HTML,none-detected,
+43,1-core,kscalelabs/rdme-docs,https://github.com/kscalelabs/rdme-docs,754,v1.0,2025-07-09T17:37:22Z,2025-01-30T03:19:51Z,False,False,0,0,,none-detected,
+44,2-original,kscalelabs/ksim-legacy,https://github.com/kscalelabs/ksim-legacy,46368,master,2025-01-02T21:43:47Z,2024-05-23T20:35:26Z,False,False,61,6,Python,MIT,MuJoCo simulation code
+45,2-original,kscalelabs/minppo,https://github.com/kscalelabs/minppo,5881,master,2025-02-13T23:41:02Z,2024-07-24T06:35:36Z,False,False,20,1,Python,MIT,Repository for learning a policy to get a humanoid robot to stand up
+46,2-original,kscalelabs/gym-kmanip,https://github.com/kscalelabs/gym-kmanip,47192,main,2024-06-21T17:33:09Z,2024-05-16T13:21:03Z,False,False,14,4,Python,MIT,K-Scale Sim Manipulation Suite
+47,2-original,kscalelabs/teleop-old,https://github.com/kscalelabs/teleop-old,45560,master,2024-11-21T00:38:15Z,2024-05-01T16:12:52Z,False,False,10,1,Python,MIT,teleoperate stompy
+48,2-original,kscalelabs/ksim_wasm,https://github.com/kscalelabs/ksim_wasm,70502,master,2024-06-05T11:19:42Z,2024-05-23T23:34:29Z,False,False,9,2,C++,MIT,View mujoco in the brower with stompy model
+49,2-original,kscalelabs/mujoco_playground,https://github.com/kscalelabs/mujoco_playground,12648,master,2025-02-18T07:18:35Z,2025-01-18T06:54:27Z,False,False,9,8,Python,MIT,
+50,2-original,kscalelabs/kscale-mujoco-viewer,https://github.com/kscalelabs/kscale-mujoco-viewer,103,master,2025-10-14T17:28:06Z,2025-03-19T23:06:11Z,False,False,9,5,Python,MIT,
+51,2-original,kscalelabs/meshsimplify,https://github.com/kscalelabs/meshsimplify,9,master,2024-05-09T13:44:08Z,2024-05-09T13:24:26Z,False,False,8,1,Python,MIT,Mesh simplification
+52,2-original,kscalelabs/genesis_playground,https://github.com/kscalelabs/genesis_playground,39792,master,2025-02-03T06:02:05Z,2025-01-17T09:37:54Z,False,False,7,4,Python,MIT,
+53,2-original,kscalelabs/full-autonomy,https://github.com/kscalelabs/full-autonomy,691,master,2025-07-01T14:40:38Z,2025-06-29T03:51:59Z,False,False,7,2,,none-detected,Full Autonomy whitepaper
+54,2-original,kscalelabs/krecviz,https://github.com/kscalelabs/krecviz,24431,master,2025-05-28T20:02:11Z,2024-12-19T06:23:06Z,False,False,5,1,Rust,MIT,Visualisation utilities for krec files 
+55,2-original,kscalelabs/dpshdl,https://github.com/kscalelabs/dpshdl,86,master,2024-03-15T02:55:53Z,2024-02-02T07:20:12Z,False,False,5,1,Python,MIT,Framework-agnostic library for loading data
+56,2-original,kscalelabs/klang,https://github.com/kscalelabs/klang,71,master,2024-11-01T19:28:10Z,2024-08-13T15:43:00Z,False,False,5,1,Rust,none-detected,Robot programming language
+57,2-original,kscalelabs/nanoppo,https://github.com/kscalelabs/nanoppo,1361,master,2024-07-26T23:30:06Z,2024-07-22T04:37:55Z,False,False,4,0,Python,MIT,Minimalist implementation of training and inferencing a PPO walking policy
+58,2-original,kscalelabs/min-consistency-models,https://github.com/kscalelabs/min-consistency-models,621,master,2024-07-29T01:47:16Z,2024-07-24T03:53:12Z,False,False,4,0,Python,MIT,Minimum implementation of consistency models
+59,2-original,kscalelabs/gstreamer,https://github.com/kscalelabs/gstreamer,134,master,2025-09-24T04:28:52Z,2025-09-24T02:34:52Z,False,False,4,2,Python,none-detected,Various GStreamer examples using Python and C.
+60,2-original,kscalelabs/skillit,https://github.com/kscalelabs/skillit,521,master,2025-04-22T22:09:52Z,2025-01-13T03:22:45Z,False,False,3,1,Python,MIT,A package that lets you chef up new skills for KOS-compatible robots
+61,2-original,kscalelabs/ksim-zbot,https://github.com/kscalelabs/ksim-zbot,439,master,2025-05-04T05:44:04Z,2025-03-24T20:35:31Z,False,False,3,1,Python,MIT,Policies for Z-Bot
+62,2-original,kscalelabs/ksim-mimic,https://github.com/kscalelabs/ksim-mimic,130,master,2025-07-14T20:41:46Z,2025-07-04T20:51:36Z,False,False,3,0,Python,MIT,deep mimic implementation in ksim
+63,2-original,kscalelabs/kplot,https://github.com/kscalelabs/kplot,58,master,2025-10-24T02:09:36Z,2025-10-13T21:57:25Z,False,False,3,4,HTML,MIT,visualize robot telemetry
+64,2-original,kscalelabs/motor-flasher,https://github.com/kscalelabs/motor-flasher,19331,master,2024-08-06T20:29:44Z,2024-05-15T05:19:18Z,False,False,2,1,,none-detected,Motor flasher repository
+65,2-original,kscalelabs/lekbot_vla_data,https://github.com/kscalelabs/lekbot_vla_data,10346,master,2025-10-28T23:37:26Z,2025-10-20T23:41:06Z,False,False,2,2,Python,none-detected,
+66,2-original,kscalelabs/digital-twin,https://github.com/kscalelabs/digital-twin,85,master,2025-02-06T14:32:29Z,2025-01-19T07:25:31Z,False,False,2,0,Python,MIT,Library for creating digital twin of robot
+67,2-original,kscalelabs/colorlogging,https://github.com/kscalelabs/colorlogging,44,master,2024-10-16T20:13:33Z,2024-10-16T19:48:15Z,False,False,2,0,Python,MIT,Provides a simple utility package for logging with colors
+68,2-original,kscalelabs/pro-walking-hack,https://github.com/kscalelabs/pro-walking-hack,53756,master,2024-12-31T02:13:27Z,2024-09-26T01:03:48Z,False,False,1,0,Python,none-detected,
+69,2-original,kscalelabs/klab,https://github.com/kscalelabs/klab,22756,master,2025-07-19T01:49:52Z,2024-12-23T06:56:30Z,False,False,1,2,Python,none-detected,
+70,2-original,kscalelabs/kinfer-kbot,https://github.com/kscalelabs/kinfer-kbot,123,master,2025-07-27T02:51:38Z,2025-05-11T19:26:21Z,False,False,1,2,Rust,MIT,K-Infer runtime for the K-Bot
+71,2-original,kscalelabs/krec,https://github.com/kscalelabs/krec,99,master,2025-03-19T23:49:25Z,2024-11-17T12:30:03Z,False,False,1,0,Rust,MIT,Defines tools for serializing and deserializing K-Scale clips.
+72,2-original,kscalelabs/kodachrome,https://github.com/kscalelabs/kodachrome,55,master,2025-10-24T21:39:47Z,2025-08-08T21:32:12Z,False,False,1,3,Python,MIT,"K-Scale Open Deployment Automation and Control Hub for Ranking, Organization, Management and Evaluation. Or kodachrome for short"
+73,2-original,kscalelabs/kmotions,https://github.com/kscalelabs/kmotions,51,master,2025-10-24T00:42:19Z,2025-10-06T19:25:45Z,False,False,1,3,Python,MIT,keyframe motions for kbot
+74,2-original,kscalelabs/mujoco-animator,https://github.com/kscalelabs/mujoco-animator,45,master,2025-06-12T20:02:17Z,2025-06-05T00:02:31Z,False,False,1,1,Python,MIT,Record animations in Mujoco
+75,2-original,kscalelabs/arm-teleop,https://github.com/kscalelabs/arm-teleop,44,master,2024-06-17T21:02:04Z,2024-06-17T16:33:46Z,False,False,1,0,Python,MIT,teleop for data recording on kscale arm
+76,2-original,kscalelabs/ksim-zbot-motion,https://github.com/kscalelabs/ksim-zbot-motion,43,master,2025-06-11T18:59:31Z,2025-06-10T05:09:22Z,False,False,1,0,Python,MIT,Ksim RL motions for zbot 
+77,2-original,kscalelabs/zbot-policy-walking,https://github.com/kscalelabs/zbot-policy-walking,38,master,2025-07-06T04:29:25Z,2025-07-03T01:50:17Z,False,False,1,5,Python,MIT,
+78,2-original,kscalelabs/ksim-dancing,https://github.com/kscalelabs/ksim-dancing,19,master,2025-06-06T04:06:35Z,2025-06-05T23:58:15Z,False,False,1,0,Jupyter Notebook,MIT,Train a dancing policy for K-Scale robots 
+79,2-original,kscalelabs/wiki-bot,https://github.com/kscalelabs/wiki-bot,18,master,2024-05-15T03:04:56Z,2024-04-27T17:34:42Z,False,False,1,0,Python,MIT,Bot to automatically populate wiki with information
+80,2-original,kscalelabs/motor-commands,https://github.com/kscalelabs/motor-commands,4,main,2024-08-06T23:21:12Z,2024-07-27T01:12:47Z,False,False,1,0,Python,none-detected,Python CAN message translator for MyActuator RMD-X Bionic Actuators
+81,2-original,kscalelabs/arduino-eyes,https://github.com/kscalelabs/arduino-eyes,3,master,2024-04-12T22:03:04Z,2024-02-17T03:47:55Z,False,False,1,1,C,none-detected,Display an eye using the Arduino
+82,2-original,kscalelabs/driver-imu-hiwonder,https://github.com/kscalelabs/driver-imu-hiwonder,1,master,2025-07-05T02:07:03Z,2025-07-05T02:07:02Z,False,False,1,0,,MIT,HiWonder IMU Driver
+83,2-original,kscalelabs/driver-servo-robstride,https://github.com/kscalelabs/driver-servo-robstride,1,master,2025-07-05T02:05:49Z,2025-07-05T02:05:48Z,False,False,1,0,,MIT,Robstride Servo Driver
+84,2-original,zeroth-robotics/zeroth-frontend,https://github.com/zeroth-robotics/zeroth-frontend,665153,main,2025-01-15T08:10:41Z,2025-01-13T05:49:34Z,False,False,0,10,TypeScript,none-detected,
+85,2-original,kscalelabs/sysid,https://github.com/kscalelabs/sysid,394916,master,2025-04-05T04:39:56Z,2025-03-17T21:50:29Z,False,False,0,0,Python,none-detected,Actuator System Identification (SysID) results.
+86,2-original,zeroth-robotics/cvi-camera,https://github.com/zeroth-robotics/cvi-camera,36953,main,2024-10-23T01:29:54Z,2024-10-23T01:29:05Z,False,False,0,0,C,none-detected,
+87,2-original,kscalelabs/logo,https://github.com/kscalelabs/logo,8969,master,2024-11-07T10:46:22Z,2024-09-30T08:29:53Z,False,False,0,0,Python,MIT,Experiments with logo
+88,2-original,kscalelabs/zbot-unit-tests,https://github.com/kscalelabs/zbot-unit-tests,8017,master,2025-02-28T01:59:52Z,2025-02-06T02:00:36Z,False,False,0,3,Python,MIT,Set of unit tests to run for Z-Bot
+89,2-original,kscalelabs/kbotv2_teleop,https://github.com/kscalelabs/kbotv2_teleop,6088,master,2025-04-06T01:20:12Z,2025-02-22T19:58:53Z,False,False,0,0,Python,none-detected,
+90,2-original,kscalelabs/klog,https://github.com/kscalelabs/klog,3901,master,2025-09-03T22:46:40Z,2025-06-18T17:47:25Z,False,False,0,3,Python,none-detected,
+91,2-original,kscalelabs/linguaphoto,https://github.com/kscalelabs/linguaphoto,2487,master,2024-12-15T12:18:33Z,2024-06-10T00:24:51Z,False,False,0,0,TypeScript,none-detected,Linguaphoto website code
+92,2-original,kscalelabs/kmotion,https://github.com/kscalelabs/kmotion,2186,master,2025-03-27T07:37:26Z,2025-03-26T22:47:53Z,False,False,0,0,Python,MIT,
+93,2-original,kscalelabs/store-deps,https://github.com/kscalelabs/store-deps,1116,master,2024-09-27T19:23:27Z,2024-09-27T18:45:11Z,False,False,0,0,,none-detected,
+94,2-original,kscalelabs/kinfer-evals,https://github.com/kscalelabs/kinfer-evals,1037,master,2025-10-27T18:40:07Z,2025-07-17T07:02:37Z,False,False,0,4,Python,none-detected,Evals for kinfer policies 
+95,2-original,kscalelabs/.github,https://github.com/kscalelabs/.github,396,master,2025-04-06T01:02:19Z,2024-06-10T20:11:18Z,False,False,0,0,,none-detected,
+96,2-original,kscalelabs/kinfer-unit-tests,https://github.com/kscalelabs/kinfer-unit-tests,228,master,2025-08-10T02:05:48Z,2025-07-10T06:12:00Z,False,False,0,3,Python,MIT,Create kinfer files to test kscale robot functionality 
+97,2-original,kscalelabs/ksim-gym-saw,https://github.com/kscalelabs/ksim-gym-saw,104,master,2025-05-29T07:18:01Z,2025-05-25T02:14:14Z,False,False,0,0,Jupyter Notebook,MIT,A standing and walking (SaW) controller for K-Scale robots 
+98,2-original,kscalelabs/pipify,https://github.com/kscalelabs/pipify,47,master,2025-07-17T06:38:09Z,2025-03-28T06:08:11Z,False,False,0,0,Python,MIT,Utility to make a python package
+99,2-original,kscalelabs/kbot-dance,https://github.com/kscalelabs/kbot-dance,41,master,2025-06-08T07:27:06Z,2025-06-05T20:28:53Z,False,False,0,1,Jupyter Notebook,MIT,
+100,2-original,kscalelabs/kos-embassy,https://github.com/kscalelabs/kos-embassy,29,master,2025-07-07T02:55:06Z,2025-07-02T19:59:35Z,False,False,0,1,Rust,MIT,Control-Hat I/O Co-Processor Firmware (Embassy-STM32)
+101,2-original,kscalelabs/hiwonderimu,https://github.com/kscalelabs/hiwonderimu,29,master,2025-04-22T05:32:01Z,2025-04-22T01:54:51Z,False,False,0,0,Python,none-detected,
+102,2-original,kscalelabs/discord-bot,https://github.com/kscalelabs/discord-bot,28,master,2024-05-24T01:42:07Z,2024-05-21T00:18:11Z,False,False,0,0,Python,MIT,Discord bot
+103,2-original,kscalelabs/berryimu,https://github.com/kscalelabs/berryimu,27,master,2024-10-11T19:45:33Z,2024-10-10T05:12:37Z,False,False,0,0,C++,MIT,Python bindings for BerryIMU
+104,2-original,kscalelabs/zbot-policy-1foot,https://github.com/kscalelabs/zbot-policy-1foot,27,master,2025-07-03T01:54:16Z,2025-07-03T01:43:41Z,False,False,0,0,Python,MIT,
+105,2-original,kscalelabs/sim-game,https://github.com/kscalelabs/sim-game,23,master,2024-06-03T05:24:59Z,2024-06-01T05:08:37Z,False,False,0,1,Python,MIT,Play with robots in simulation
+106,2-original,kscalelabs/puppet_teleop,https://github.com/kscalelabs/puppet_teleop,18,master,2025-10-01T02:54:57Z,2025-10-01T02:52:59Z,False,False,0,2,Python,none-detected,K-Bot KD Puppet Teleop through UDP
+107,2-original,kscalelabs/python_package_template,https://github.com/kscalelabs/python_package_template,17,master,2025-08-08T22:28:53Z,2025-08-08T20:46:16Z,False,False,0,1,Python,MIT,Make a python package using this template!
+108,2-original,kscalelabs/motostandup,https://github.com/kscalelabs/motostandup,16,master,2024-09-28T08:29:45Z,2024-09-25T19:37:18Z,False,False,0,1,Python,MIT,
+109,2-original,zeroth-robotics/dashboard,https://github.com/zeroth-robotics/dashboard,7,main,2024-11-01T17:31:38Z,2024-10-31T22:58:10Z,False,False,0,0,Python,none-detected,
+110,2-original,kscalelabs/gstreamer-webrtc,https://github.com/kscalelabs/gstreamer-webrtc,6,master,2025-03-04T09:54:57Z,2025-03-03T17:09:09Z,False,False,0,0,Dockerfile,none-detected,GStreamer with WebRTC plugins
+111,2-original,kscalelabs/getting-started,https://github.com/kscalelabs/getting-started,5,master,2024-05-20T01:21:31Z,2024-05-20T01:19:09Z,False,False,0,0,Python,MIT,Guide to getting started with machine learning
+112,2-original,kscalelabs/mokap,https://github.com/kscalelabs/mokap,5,master,2025-06-19T04:00:27Z,2025-06-19T03:59:14Z,False,False,0,0,Python,MIT,
+113,2-original,kscalelabs/feetech-sniffer,https://github.com/kscalelabs/feetech-sniffer,4,master,2025-04-16T06:12:31Z,2025-04-15T04:41:52Z,False,False,0,0,Rust,none-detected,
+114,2-original,kscalelabs/zbot-policy-classical,https://github.com/kscalelabs/zbot-policy-classical,3,master,2025-07-03T05:10:27Z,2025-07-03T05:10:27Z,False,False,0,0,,MIT,Collection of Kinfer Contraptions
+115,2-original,kscalelabs/bounties,https://github.com/kscalelabs/bounties,2,master,2025-04-06T20:56:53Z,2025-01-04T01:15:54Z,False,False,0,0,HTML,none-detected,Bounties repository
+116,2-original,zeroth-robotics/.github,https://github.com/zeroth-robotics/.github,2,main,2024-11-10T23:56:48Z,2024-09-26T19:05:23Z,False,False,0,0,,none-detected,
+117,2-original,kscalelabs/ksim-zbot-motions,https://github.com/kscalelabs/ksim-zbot-motions,0,master,2025-06-10T05:05:49Z,2025-06-10T05:05:48Z,False,False,0,0,,none-detected,zbot motion RL repo
+118,2-original,kscalelabs/kos-rpi-firmware,https://github.com/kscalelabs/kos-rpi-firmware,0,master,2025-04-15T04:44:30Z,2025-04-15T04:44:30Z,False,False,0,0,,none-detected,
+119,2-original,kscalelabs/webrtc-with-auth,https://github.com/kscalelabs/webrtc-with-auth,0,master,2024-11-28T18:43:03Z,2024-11-28T18:43:02Z,False,False,0,0,,none-detected,GStreamer-based WebRTC server with authentication
+120,2-original,kscalelabs/k-voice,https://github.com/kscalelabs/k-voice,0,master,2025-01-10T01:59:35Z,2025-01-10T01:59:35Z,False,False,0,0,,none-detected,
+121,3-fork,kscalelabs/evla,https://github.com/kscalelabs/evla,265,main,2025-04-29T16:17:28Z,2024-09-08T19:10:16Z,True,False,109,8,Python,MIT,EdgeVLA: An open-source edge vision-language-action model for robotics.
+122,3-fork,kscalelabs/ktune,https://github.com/kscalelabs/ktune,9015,main,2025-05-27T21:22:32Z,2025-03-04T03:04:58Z,True,False,12,1,Python,MIT,ktune is a servo control tuning utility for matching real2sim. It utilizes Kscales kos and kos-sim.
+123,3-fork,kscalelabs/humanoid-gym,https://github.com/kscalelabs/humanoid-gym,35953,main,2024-08-14T19:56:13Z,2024-04-01T04:05:11Z,True,False,10,1,Python,none-detected,Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer
+124,3-fork,zeroth-robotics/sim,https://github.com/zeroth-robotics/sim,117195,master,2024-12-16T05:39:48Z,2024-09-17T05:06:34Z,True,False,9,9,Python,MIT,Training in simulation
+125,3-fork,kscalelabs/IsaacLab,https://github.com/kscalelabs/IsaacLab,150192,main,2025-09-16T18:07:26Z,2024-08-01T21:22:35Z,True,False,8,4,Python,BSD-3-Clause,Unified framework for robot learning built on NVIDIA Isaac Sim
+126,3-fork,zeroth-robotics/bam-feetech,https://github.com/zeroth-robotics/bam-feetech,5317,main,2025-02-06T04:53:39Z,2024-10-23T19:13:11Z,True,False,6,0,Python,none-detected,Motor identification for Feetech servos
+127,3-fork,zeroth-robotics/buildroot,https://github.com/zeroth-robotics/buildroot,1120713,develop,2025-02-18T05:42:25Z,2024-10-04T00:57:06Z,True,False,5,1,C,none-detected,Image for OpenLCH platform based on Milk-V Duo Official buildroot SDK
+128,3-fork,kscalelabs/gym-stompy,https://github.com/kscalelabs/gym-stompy,815,main,2024-07-15T19:40:17Z,2024-05-08T17:15:56Z,True,False,4,1,Python,MIT,A gym environment for Stompy
+129,3-fork,kscalelabs/ManiSkill,https://github.com/kscalelabs/ManiSkill,300035,main,2024-06-14T13:35:03Z,2024-06-04T19:03:07Z,True,False,3,0,Python,Apache-2.0,"SAPIEN Manipulation Skill Framework, a GPU parallelized robotics simulator and benchmark"
+130,3-fork,kscalelabs/lerobot,https://github.com/kscalelabs/lerobot,100351,main,2024-12-22T17:13:38Z,2024-05-08T17:06:41Z,True,False,3,0,Python,Apache-2.0,🤗 LeRobot: State-of-the-art Machine Learning for Real-World Robotics in Pytorch
+131,3-fork,kscalelabs/loco-mujoco,https://github.com/kscalelabs/loco-mujoco,173880,master,2025-07-02T19:35:14Z,2025-04-19T22:27:02Z,True,False,2,0,Python,MIT,Imitation learning benchmark focusing on complex locomotion tasks using MuJoCo.
+132,3-fork,kscalelabs/toddlerbot,https://github.com/kscalelabs/toddlerbot,92898,main,2026-07-24T15:47:36Z,2025-02-04T04:48:06Z,True,False,1,0,,MIT,
+133,3-fork,kscalelabs/robot-web-viewer,https://github.com/kscalelabs/robot-web-viewer,51313,main,2024-05-30T17:30:15Z,2024-06-07T16:09:32Z,True,False,1,0,,Apache-2.0,"Robot Web Viewer is a web-based application designed to visualize and interact with URDF (Unified Robot Description Format) models. Leveraging the power of Three.js and React Three Fiber, this tool allows users to load, view, and manipulate 3D models of robots directly within a web browser."
+134,3-fork,kscalelabs/skrl,https://github.com/kscalelabs/skrl,8100,main,2025-07-29T22:14:49Z,2025-07-30T04:50:12Z,True,False,1,0,,MIT,"Modular reinforcement learning library (on PyTorch and JAX) with support for NVIDIA Isaac Gym, Omniverse Isaac Gym and Isaac Lab"
+135,3-fork,kscalelabs/zbot-joystick,https://github.com/kscalelabs/zbot-joystick,0,master,2025-07-03T01:54:12Z,2025-07-03T02:06:34Z,True,False,1,0,,MIT,
+136,3-fork,kscalelabs/zbot-web-frontend,https://github.com/kscalelabs/zbot-web-frontend,772361,master,2026-01-28T20:16:35Z,2025-01-24T23:38:15Z,True,False,0,5,TypeScript,MIT,Zeroth Bot web frontend.
+137,3-fork,kscalelabs/mujoco_menagerie,https://github.com/kscalelabs/mujoco_menagerie,423224,main,2025-07-02T13:53:46Z,2025-07-19T00:36:22Z,True,False,0,0,,NOASSERTION,"A collection of high-quality models for the MuJoCo physics engine, curated by Google DeepMind."
+138,3-fork,kscalelabs/HoST,https://github.com/kscalelabs/HoST,235851,main,2025-07-31T19:25:39Z,2025-07-31T19:14:51Z,True,False,0,0,Python,MIT,"[RSS 2025 Best Systems Paper Finalist] 💐Official implementation of ""Learning Humanoid Standing-up Control across Diverse Postures"""
+139,3-fork,kscalelabs/buildroot,https://github.com/kscalelabs/buildroot,142141,master,2024-06-07T14:17:50Z,2024-06-07T14:13:06Z,True,False,0,0,,NOASSERTION,"Buildroot, making embedded Linux easy. Note that this is not the official repository, but only a mirror. The official Git repository is at https://gitlab.com/buildroot.org/buildroot/. Do not open issues or file pull requests here."
+140,3-fork,kscalelabs/Genesis,https://github.com/kscalelabs/Genesis,92457,main,2025-01-17T07:25:39Z,2024-12-23T09:23:55Z,True,False,0,0,Python,Apache-2.0,A generative world for general-purpose robotics & embodied AI learning.
+141,3-fork,kscalelabs/tonic-milkv,https://github.com/kscalelabs/tonic-milkv,82100,master,2024-10-15T16:02:15Z,2025-01-10T16:42:20Z,True,False,0,0,,MIT,A native gRPC client & server implementation with async/await support (milkv riscv-musl buildable)
+142,3-fork,kscalelabs/kbot-unit-tests,https://github.com/kscalelabs/kbot-unit-tests,40663,master,2025-03-01T00:07:24Z,2025-02-13T01:06:12Z,True,False,0,2,Python,MIT,Set of unit tests to run for K-Bot
+143,3-fork,kscalelabs/mujoco_playground_fork,https://github.com/kscalelabs/mujoco_playground_fork,27125,main,2025-07-22T21:52:22Z,2025-03-09T22:28:10Z,True,False,0,0,Jupyter Notebook,Apache-2.0,An open-source library for GPU-accelerated robot learning and sim-to-real transfer.
+144,3-fork,kscalelabs/HOVER,https://github.com/kscalelabs/HOVER,5597,main,2025-07-30T01:21:51Z,2025-07-30T19:56:05Z,True,False,0,0,,Apache-2.0,HOVER
+145,3-fork,kscalelabs/meta-meson,https://github.com/kscalelabs/meta-meson,3018,master,2025-06-30T09:45:07Z,2025-09-14T21:45:22Z,True,False,0,0,,MIT,Upstream Linux Amlogic Meson Yocto/OpenEmbedded Layer
+146,3-fork,kscalelabs/rsl_rl,https://github.com/kscalelabs/rsl_rl,116,master,2024-12-20T21:45:00Z,2025-01-23T05:46:39Z,True,False,0,0,,NOASSERTION,"Fast and simple implementation of RL algorithms, designed to run fully on GPU."

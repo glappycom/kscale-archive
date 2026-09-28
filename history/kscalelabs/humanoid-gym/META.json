@@ -1,0 +1,54 @@
+{
+  "full_name": "kscalelabs/humanoid-gym",
+  "upstream_url": "https://github.com/kscalelabs/humanoid-gym",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 35953,
+  "inventory_default_branch": "main",
+  "inventory_fork": true,
+  "priority_tier": "3-fork",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "yes",
+  "snapshot_status": "no",
+  "notes": [
+    "gitattributes tracks LFS, but no LFS objects were referenced."
+  ],
+  "default_branch": "main",
+  "fork": true,
+  "parent": "roboterax/humanoid-gym",
+  "parent_default_branch": "main",
+  "github_license_spdx": null,
+  "description": "Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-08-14T19:56:13Z",
+  "branches": {
+    "h5_flag": "0b9b4079fe9b5852ade13a7418c1253424eada2d",
+    "isaac/fix_mass": "b26fdf4cc9eca224fcf5778c4386628390a4840e",
+    "isaac/revert_temporary_fix": "4b54818b1302e86f0c289863126b4854b1749578",
+    "main": "7257b1cdd971e46a262d111780a687b0e288da8f",
+    "master": "aae314a32f62ccda46a4fd8408c2fe5247b0deeb",
+    "save_policy_only": "7945633dec64d291e7c394cd94f4ad3532b73717"
+  },
+  "tags": {},
+  "default_branch_sha": "7257b1cdd971e46a262d111780a687b0e288da8f",
+  "fork_compare": {
+    "ahead_by": 13,
+    "behind_by": 30,
+    "merge_base": "c28486e6a7ef90e6da6d5f1e5eb455179bc74a52",
+    "status": "diverged"
+  },
+  "license_files": [
+    {
+      "path": "humanoid/envs/base/LICENSE",
+      "detected_from_text": "unrecognized",
+      "excerpt": "SPDX-FileCopyrightText: Copyright (c) 2021 NVIDIA CORPORATION & AFFILIATES. All rights reserved.\nSPDX-FileCopyrightText: Copyright (c) 2021 ETH Zurich, Nikita Rudin\nSPDX-License-Identifier: BSD-3-Clause\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this\nlist of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice,\nthis list of conditions and the following disclaimer in the documentation\nand/or other materials provided with the distribution.\n\n3. Neither the name of the copyright holder nor the names of its\ncontributors may be used to endorse or promote products derived from\nthis software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\nAND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\nSERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER"
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 36902419,
+  "bundle_sha256": "1a6877d2e0622b8369cfc42e0e7dab793742d83649ca5c1d19ced77ff362b172",
+  "lfs_pointer_bytes": 0,
+  "lfs_object_count": 0
+}

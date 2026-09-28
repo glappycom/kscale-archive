@@ -1,0 +1,35 @@
+{
+  "full_name": "kscalelabs/klang",
+  "upstream_url": "https://github.com/kscalelabs/klang",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 71,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "Robot programming language",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-11-01T19:28:10Z",
+  "branches": {
+    "master": "590d98e7d492f068e3e3eff4d74202d36df5bb96"
+  },
+  "tags": {},
+  "default_branch_sha": "590d98e7d492f068e3e3eff4d74202d36df5bb96",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 87659,
+  "bundle_sha256": "88554d05d43e06feeda1bb5de9c8e05b60e185d8406dd201f60039e936400ece",
+  "snapshot_bytes": 39858,
+  "snapshot_files": 36
+}

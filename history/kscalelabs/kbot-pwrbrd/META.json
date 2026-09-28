@@ -1,0 +1,35 @@
+{
+  "full_name": "kscalelabs/kbot-pwrbrd",
+  "upstream_url": "https://github.com/kscalelabs/kbot-pwrbrd",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 29,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-01-30T11:02:53Z",
+  "branches": {
+    "master": "33c481f4c56d7e8fc804134c274896e08ca87f24"
+  },
+  "tags": {},
+  "default_branch_sha": "33c481f4c56d7e8fc804134c274896e08ca87f24",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 17273,
+  "bundle_sha256": "8d6bc19e8c3f0eeec0349b30a45463199884726fd7b10335dca4698a1e0b22a3",
+  "snapshot_bytes": 28389,
+  "snapshot_files": 6
+}

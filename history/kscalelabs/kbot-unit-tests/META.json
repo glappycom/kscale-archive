@@ -1,0 +1,59 @@
+{
+  "full_name": "kscalelabs/kbot-unit-tests",
+  "upstream_url": "https://github.com/kscalelabs/kbot-unit-tests",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 40663,
+  "inventory_default_branch": "master",
+  "inventory_fork": true,
+  "priority_tier": "3-fork",
+  "history_status": "yes",
+  "history_method": "contained-in-archived-parent",
+  "lfs_status": "yes",
+  "snapshot_status": "no",
+  "notes": [
+    "Every branch and tag commit is already in kscalelabs/zbot-unit-tests, which is fully bundled in this archive. Fork tip aa1ecdcf57ae0de823718bce5135322578ecab1b is recorded here; clone the parent bundle and check it out.",
+    "LFS objects are archived with kscalelabs/zbot-unit-tests, which has the same commits as this fork."
+  ],
+  "default_branch": "master",
+  "fork": true,
+  "parent": "kscalelabs/zbot-unit-tests",
+  "parent_default_branch": "master",
+  "github_license_spdx": "MIT",
+  "description": "Set of unit tests to run for K-Bot",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-03-01T00:07:24Z",
+  "branches": {
+    "add-test-05": "e1c63ec8c56b1228b34afcda7b73cccffc8178a5",
+    "add-walk-csv-test": "5161cad335ff2ee629fec7cc107c4da3a7608957",
+    "bilateral-movement-test": "327fce3f34c96ae5494e3886625e96c5e019b278",
+    "cycle-test": "a84a6b682a9159e66090b49332c024166c480473",
+    "deploy_policy": "4211b5cc9038be05da491777bad486a75a9e7dfa",
+    "gain-testing": "d242f19587cca6a2dcee0bc8bdc924b6998fa543",
+    "master": "aa1ecdcf57ae0de823718bce5135322578ecab1b",
+    "pawel/add_standing_test": "08e03e45570ef6ca201e8e27fd82e1646fa79190",
+    "test_11": "64fe587d7f397e71a62e0eb9f843b63d5b24848b",
+    "test-02": "21ff0a69b566f7e25008c8fcc5b49d6693d91a0b",
+    "test-04": "d5a21e1a9991cf97ce83d552fa9ca72d30a5bf30",
+    "test-06": "5ee635549f8c1cb07451311998abb76974dcbf2f",
+    "test-07": "2a2aabfbb3a1319d2f4b5aaf92c7e9b406a7d1d7",
+    "test-12": "2bb4e893d10f3d5d1e369bf357d39f8d28ad87d2",
+    "test-13": "aa1ecdcf57ae0de823718bce5135322578ecab1b",
+    "test-14": "98cd9a7aae1f4ec02e802269feacd0800f9bcaf3"
+  },
+  "tags": {},
+  "default_branch_sha": "aa1ecdcf57ae0de823718bce5135322578ecab1b",
+  "fork_compare": {
+    "ahead_by": 0,
+    "behind_by": 0,
+    "merge_base": "fad9dcf65c0503a7a48b082111d025a9ee0c9bfb",
+    "status": "identical"
+  },
+  "refs_missing_from_parent": [],
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2023 K-Scale Labs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ]
+}

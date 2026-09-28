@@ -1,0 +1,36 @@
+{
+  "full_name": "kscalelabs/api-docs",
+  "upstream_url": "https://github.com/kscalelabs/api-docs",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 287,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-03-28T23:03:54Z",
+  "branches": {
+    "master": "f9cd24f37d02acc8ef9fefa0ea338396ee586cf1",
+    "update-docs-04a976962763f768258336bccb8770e07f04ce0e": "71a3884e5cf679b44238ecce4da7197432b14694"
+  },
+  "tags": {},
+  "default_branch_sha": "f9cd24f37d02acc8ef9fefa0ea338396ee586cf1",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 241845,
+  "bundle_sha256": "1ce9c1af2793df93288580f1f5d6ac344a4676f50b0211adf0ac9d41f69ababd",
+  "snapshot_bytes": 2590907,
+  "snapshot_files": 30
+}

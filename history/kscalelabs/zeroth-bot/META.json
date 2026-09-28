@@ -1,0 +1,49 @@
+{
+  "full_name": "kscalelabs/zeroth-bot",
+  "upstream_url": "https://github.com/kscalelabs/zeroth-bot",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 55914,
+  "inventory_default_branch": "main",
+  "inventory_fork": true,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "contained-in-archived-parent",
+  "lfs_status": "n.a.",
+  "snapshot_status": "no",
+  "notes": [
+    "Every branch and tag commit is already in zeroth-robotics/zeroth-bot, which is fully bundled in this archive. Fork tip 6b23c102127e813eddd22f6f1a464bd0b043dd68 is recorded here; clone the parent bundle and check it out."
+  ],
+  "default_branch": "main",
+  "fork": true,
+  "parent": "zeroth-robotics/zeroth-bot",
+  "parent_default_branch": "main",
+  "github_license_spdx": "MIT",
+  "description": "3D-printed open-source humanoid robot platform for sim-to-real and RL",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2026-04-01T21:48:56Z",
+  "branches": {
+    "dependabot/cargo/kos-zbot/bytes-1.11.1": "ac0bdd615ee63c06e3a5a0fa5f20888b7222cd5f",
+    "dependabot/cargo/kos-zbot/crossbeam-channel-0.5.15": "cf67f101e4b83c16a1277eef130b87fe77f7d18d",
+    "dependabot/cargo/kos-zbot/time-0.3.47": "c95d13fd1613c15c3e6f0e5636cd4442f2d57230",
+    "dependabot/cargo/kos-zbot/tokio-1.43.1": "11d9340fb48dc1c17140790c38706e335a5c752f",
+    "dependabot/cargo/kos-zbot/tracing-subscriber-0.3.20": "79f87683cd3ec4f5ce705c9690459f7c83c8e270",
+    "dependabot/pip/experiments/onnx-1.21.0": "8881058d8b005b45ff914c3d5dbf976ec11bacf9",
+    "main": "6b23c102127e813eddd22f6f1a464bd0b043dd68"
+  },
+  "tags": {},
+  "default_branch_sha": "6b23c102127e813eddd22f6f1a464bd0b043dd68",
+  "fork_compare": {
+    "ahead_by": 0,
+    "behind_by": 3,
+    "merge_base": "6b23c102127e813eddd22f6f1a464bd0b043dd68",
+    "status": "behind"
+  },
+  "refs_missing_from_parent": [],
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2024 Jingxiang Mo\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ]
+}

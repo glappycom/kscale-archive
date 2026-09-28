@@ -1,0 +1,87 @@
+{
+  "full_name": "kscalelabs/IsaacLab",
+  "upstream_url": "https://github.com/kscalelabs/IsaacLab",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 150192,
+  "inventory_default_branch": "main",
+  "inventory_fork": true,
+  "priority_tier": "3-fork",
+  "history_status": "partial",
+  "history_method": "delta-bundle-of-diverging-refs",
+  "lfs_status": "yes",
+  "snapshot_status": "no",
+  "notes": [
+    "Delta bundle contains this fork's diverging commits and tags. Prerequisite 2f12bb9819b65e093dd8bfda315dede4150b2110 must come from https://github.com/isaac-sim/IsaacLab (still public on the capture date; compare ahead 13). A full standalone bundle was not stored because the fork is a 150192 KB copy of that upstream."
+  ],
+  "default_branch": "main",
+  "fork": true,
+  "parent": "isaac-sim/IsaacLab",
+  "parent_default_branch": "develop",
+  "github_license_spdx": "BSD-3-Clause",
+  "description": "Unified framework for robot learning built on NVIDIA Isaac Sim",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-09-16T18:07:26Z",
+  "branches": {
+    "det_hellman": "a81b2f1c728a25e30d3a84d0f62c492a8a232563",
+    "dev-bart": "7ceb9b5fe7353c8914cbde85b6221a80b425f06e",
+    "eric/dummy_exporter": "b8e1553421a598dd09d0390a37b13905f22f8df0",
+    "eric/kscale_isaac_5_0": "d6ae44539cbbe96e019e909407af9b4adf0ef690",
+    "eric/locomanip": "cf754f21fdb62353c3dedbd335d709ae822f2e55",
+    "eric/manipulation": "708c91bfd0d7757a3ebb4fb3d3bdf64515b538ed",
+    "legacy_archive": "5b189971be469b1fca335a6ece7f112b82774108",
+    "main": "9b33b9969a278de92939c520d1bc1d4f6f3a785d",
+    "wesley/better-rnn": "a4e640ba8e5e449b5a597d08512c0c313c4f8fb8",
+    "wesley/joystick-tweaks": "84dc04f0cfaa3672dbbdbde7001b047f0e61eaf6"
+  },
+  "tags": {},
+  "default_branch_sha": "9b33b9969a278de92939c520d1bc1d4f6f3a785d",
+  "fork_compare": {
+    "ahead_by": 13,
+    "behind_by": 2426,
+    "merge_base": "2f12bb9819b65e093dd8bfda315dede4150b2110",
+    "status": "diverged"
+  },
+  "license_files": [
+    {
+      "path": ".github/LICENSE_HEADER.txt",
+      "detected_from_text": "unrecognized",
+      "excerpt": "Copyright (c) 2022-2025, The Isaac Lab Project Developers (https://github.com/isaac-sim/IsaacLab/blob/main/CONTRIBUTORS.md).\nAll rights reserved.\n\nSPDX-License-Identifier: BSD-3-Clause"
+    },
+    {
+      "path": ".github/LICENSE_HEADER_MIMIC.txt",
+      "detected_from_text": "unrecognized",
+      "excerpt": "Copyright (c) 2024-2025, The Isaac Lab Project Developers (https://github.com/isaac-sim/IsaacLab/blob/main/CONTRIBUTORS.md).\nAll rights reserved.\n\nSPDX-License-Identifier: Apache-2.0"
+    },
+    {
+      "path": "LICENSE",
+      "detected_from_text": "unrecognized",
+      "excerpt": "Copyright (c) 2022-2025, The Isaac Lab Project Developers (https://github.com/isaac-sim/IsaacLab/blob/main/CONTRIBUTORS.md).\n\nAll rights reserved.\n\nSPDX-License-Identifier: BSD-3-Clause\n\nRedistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice,\n   this list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice,\n   this list of conditions and the following disclaimer in the documentation\n   and/or other materials provided with the distribution.\n\n3. Neither the name of the copyright holder nor the names of its contributors\n   may be used to endorse or promote products derived from this software without\n   specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES"
+    },
+    {
+      "path": "LICENSE-mimic",
+      "detected_from_text": "Apache-2.0",
+      "excerpt": "\n                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License."
+    },
+    {
+      "path": "docs/source/refs/license.rst",
+      "detected_from_text": "unrecognized",
+      "excerpt": ".. _license:\n\nLicense\n========\n\nNVIDIA Isaac Sim is available freely under `individual license\n<https://www.nvidia.com/en-us/omniverse/download/>`_. For more information\nabout its license terms, please check `here <https://docs.omniverse.nvidia.com/app_isaacsim/common/NVIDIA_Omniverse_License_Agreement.html#software-support-supplement>`_.\nThe license files for all its dependencies and included assets are available in its\n`documentation <https://docs.isaacsim.omniverse.nvidia.com/latest/common/licenses.html>`_.\n\n\nThe Isaac Lab framework is open-sourced under the\n`BSD-3-Clause license <https://opensource.org/licenses/BSD-3-Clause>`_.\n\n\n.. code-block:: text\n\n   Copyright (c) 2022-2025, The Isaac Lab Project Developers.\n   All rights reserved.\n\n   SPDX-License-Identifier: BSD-3-Clause\n\n   Redistribution and use in source and binary forms, with or without modification,\n   are permitted provided that the following conditions are met:"
+    }
+  ],
+  "bundle_files": [
+    "delta.bundle.part-001",
+    "delta.bundle.part-002"
+  ],
+  "bundle_bytes": 110341830,
+  "bundle_sha256": "8afb92cbe623264705916d6e1972f253da33097580fc48dea699c7b781e9e562",
+  "delta_prerequisite_sha": "2f12bb9819b65e093dd8bfda315dede4150b2110",
+  "delta_prerequisite_repo": "isaac-sim/IsaacLab",
+  "lfs_pointer_bytes": 180825909,
+  "lfs_object_count": 28,
+  "lfs_files": [
+    "lfs-objects.tar.part-001",
+    "lfs-objects.tar.part-002"
+  ],
+  "lfs_archive_bytes": 180787200,
+  "lfs_archive_sha256": "f849ddbfb621375af6781b4a2afacc48f1e41d3c5f122be348d1f4371ebe4894"
+}

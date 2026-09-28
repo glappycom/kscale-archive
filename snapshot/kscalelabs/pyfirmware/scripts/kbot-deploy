@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Defaults
+gstreamer=false
+websocket=false
+
+# Parse command line arguments
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --gstreamer)
+            gstreamer=true
+            shift
+            ;;
+        --websocket)
+            websocket=true
+            shift
+            ;;
+        *)
+            echo "Unknown option $1"
+            echo "Usage: kbot-deploy [--gstreamer] [--websocket]"
+            exit 1
+            ;;
+    esac
+done
+
+# download kinfer models (rsync remote -> local cache)
+policy_dir="${HOME}/.policies_beta"
+remote_policies="mu:~/kodachrome/policies/"
+
+mkdir -p "$policy_dir"
+rsync -aLP --ignore-existing "$remote_policies" "$policy_dir/"
+
+
+# Bring up CAN and set torques
+_set_can_and_max_torques.sh
+
+PY="$(command -v python)"
+
+if [ "$gstreamer" = "true" ]; then
+    echo "Starting GStreamer with --flip"
+    sudo -E chrt 29 "$PY" "$(dirname "$(realpath "$0")")/../firmware/gstreamer.py" --flip > /dev/null 2>&1 &
+    gstreamer_pid=$!
+
+    echo "=============================================="
+    echo "               Running firmware               "
+    echo "=============================================="
+    if [ "$websocket" = "true" ]; then
+        sudo -E chrt 30 "$PY" -m firmware.main "$policy_dir" --websocket
+    else
+        sudo -E chrt 30 "$PY" -m firmware.main "$policy_dir"
+    fi
+
+    echo "Stopping GStreamer (PID: $gstreamer_pid)"
+    kill "$gstreamer_pid" 2>/dev/null || true
+else
+    echo "=============================================="
+    echo "               Running firmware               "
+    echo "=============================================="
+    if [ "$websocket" = "true" ]; then
+        sudo -E chrt 30 "$PY" -m firmware.main "$policy_dir" --websocket
+    else
+        sudo -E chrt 30 "$PY" -m firmware.main "$policy_dir"
+    fi
+fi
+
+

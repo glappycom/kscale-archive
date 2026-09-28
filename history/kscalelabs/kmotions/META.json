@@ -1,0 +1,54 @@
+{
+  "full_name": "kscalelabs/kmotions",
+  "upstream_url": "https://github.com/kscalelabs/kmotions",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 51,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "keyframe motions for kbot",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-10-24T00:42:19Z",
+  "branches": {
+    "master": "258b63c50eeb8cb30cc75fcdd07d24812d401c38"
+  },
+  "tags": {
+    "0.1.1": "fabf316c3ad6df61180ab435925fe01ce9138f44",
+    "0.2.0": "05c71b3a78a65db337f88f2df76813640380f760",
+    "0.2.1": "a6a2f9cab122c351105bd4bf9fc2c912dd8b21f3",
+    "0.2.2": "6408a4b98d5afb4014f2377b7e2d8cdc2d528ed2",
+    "0.3.0": "33f3e6058112c9156a5f913bf59d0eda50314ced",
+    "0.3.1": "5e82c70c19d5bc8805cf3e3261d131c6741ff2fe",
+    "0.3.3": "cdc51615cde256c8a22ff3c52d401ab91c006e7e",
+    "0.3.4": "a33bc349d703620e2209607e86adb0a561f6db68",
+    "0.3.5": "5878e4e71d32219eb7e27b64d75787ef3e0b1aca",
+    "0.3.6": "8574fc577c8b620f4a93aa5e08ac1b489e99c592",
+    "0.3.7": "ed2a10263b4889ae3d2f3368ec91e8212d4923ab",
+    "0.3.8": "299c0c570478dac16f299301351cd0b846609163"
+  },
+  "default_branch_sha": "258b63c50eeb8cb30cc75fcdd07d24812d401c38",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2025 Bart van Marum\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 30293,
+  "bundle_sha256": "d3e979efdb02c7f8461e9974a4ae6e3e7a0e7cd60c632202c04a5d96ff12e464",
+  "snapshot_bytes": 48252,
+  "snapshot_files": 15
+}

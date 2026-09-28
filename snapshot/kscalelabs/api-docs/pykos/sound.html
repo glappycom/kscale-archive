@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>services.sound API documentation</title>
+<meta name="description" content="Sound service client.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>services.sound</code></h1>
+</header>
+<section id="section-intro">
+<p>Sound service client.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="services.sound.AudioCapability"><code class="flex name class">
+<span>class <span class="ident">AudioCapability</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AudioCapability(TypedDict):
+    &#34;&#34;&#34;Information about audio capabilities.
+
+    Args:
+        sample_rates: List of supported sample rates (e.g., 44100, 48000)
+        bit_depths: List of supported bit depths (e.g., 16, 24, 32)
+        channels: List of supported channel counts (e.g., 1, 2)
+        available: Whether this capability is available
+    &#34;&#34;&#34;
+
+    sample_rates: list[int]
+    bit_depths: list[int]
+    channels: list[int]
+    available: bool</code></pre>
+</details>
+<div class="desc"><p>Information about audio capabilities.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>sample_rates</code></strong></dt>
+<dd>List of supported sample rates (e.g., 44100, 48000)</dd>
+<dt><strong><code>bit_depths</code></strong></dt>
+<dd>List of supported bit depths (e.g., 16, 24, 32)</dd>
+<dt><strong><code>channels</code></strong></dt>
+<dd>List of supported channel counts (e.g., 1, 2)</dd>
+<dt><strong><code>available</code></strong></dt>
+<dd>Whether this capability is available</dd>
+</dl></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.sound.AudioCapability.available"><code class="name">var <span class="ident">available</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.sound.AudioCapability.bit_depths"><code class="name">var <span class="ident">bit_depths</span> : list[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.sound.AudioCapability.channels"><code class="name">var <span class="ident">channels</span> : list[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.sound.AudioCapability.sample_rates"><code class="name">var <span class="ident">sample_rates</span> : list[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.sound.AudioConfig"><code class="flex name class">
+<span>class <span class="ident">AudioConfig</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AudioConfig(TypedDict):
+    &#34;&#34;&#34;Audio configuration parameters.
+
+    Args:
+        sample_rate: Sample rate in Hz (e.g., 44100)
+        bit_depth: Bit depth (e.g., 16)
+        channels: Number of channels (1 for mono, 2 for stereo)
+    &#34;&#34;&#34;
+
+    sample_rate: int
+    bit_depth: int
+    channels: int</code></pre>
+</details>
+<div class="desc"><p>Audio configuration parameters.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>sample_rate</code></strong></dt>
+<dd>Sample rate in Hz (e.g., 44100)</dd>
+<dt><strong><code>bit_depth</code></strong></dt>
+<dd>Bit depth (e.g., 16)</dd>
+<dt><strong><code>channels</code></strong></dt>
+<dd>Number of channels (1 for mono, 2 for stereo)</dd>
+</dl></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.sound.AudioConfig.bit_depth"><code class="name">var <span class="ident">bit_depth</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.sound.AudioConfig.channels"><code class="name">var <span class="ident">channels</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.sound.AudioConfig.sample_rate"><code class="name">var <span class="ident">sample_rate</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.sound.AudioInfo"><code class="flex name class">
+<span>class <span class="ident">AudioInfo</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AudioInfo(TypedDict):
+    &#34;&#34;&#34;Information about audio system capabilities.
+
+    Args:
+        playback: Playback capabilities
+        recording: Recording capabilities
+        error: Optional error information
+    &#34;&#34;&#34;
+
+    playback: AudioCapability
+    recording: AudioCapability
+    error: NotRequired[common_pb2.Error | None]</code></pre>
+</details>
+<div class="desc"><p>Information about audio system capabilities.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>playback</code></strong></dt>
+<dd>Playback capabilities</dd>
+<dt><strong><code>recording</code></strong></dt>
+<dd>Recording capabilities</dd>
+<dt><strong><code>error</code></strong></dt>
+<dd>Optional error information</dd>
+</dl></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.sound.AudioInfo.error"><code class="name">var <span class="ident">error</span> : kos.common_pb2.Error | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.sound.AudioInfo.playback"><code class="name">var <span class="ident">playback</span> : <a title="services.sound.AudioCapability" href="#services.sound.AudioCapability">AudioCapability</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.sound.AudioInfo.recording"><code class="name">var <span class="ident">recording</span> : <a title="services.sound.AudioCapability" href="#services.sound.AudioCapability">AudioCapability</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.sound.SoundServiceClient"><code class="flex name class">
+<span>class <span class="ident">SoundServiceClient</span></span>
+<span>(</span><span>channel: grpc.aio._base_channel.Channel)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SoundServiceClient(AsyncClientBase):
+    &#34;&#34;&#34;Client for the SoundService.
+
+    This service allows playing audio through speakers and recording from microphones.
+    &#34;&#34;&#34;
+
+    def __init__(self, channel: grpc.aio.Channel) -&gt; None:
+        &#34;&#34;&#34;Initialize the sound service client.
+
+        Args:
+            channel: gRPC channel to use for communication.
+        &#34;&#34;&#34;
+        super().__init__()
+
+        self.stub = sound_pb2_grpc.SoundServiceStub(channel)
+
+    async def get_audio_info(self) -&gt; AudioInfo:
+        &#34;&#34;&#34;Get information about audio capabilities.
+
+        Returns:
+            AudioInfo containing playback and recording capabilities.
+        &#34;&#34;&#34;
+        return await self.stub.GetAudioInfo(Empty())
+
+    async def play_audio(
+        self, audio_iterator: AsyncIterator[bytes], **kwargs: Unpack[AudioConfig]
+    ) -&gt; common_pb2.ActionResponse:
+        &#34;&#34;&#34;Stream PCM audio data to the speaker.
+
+        Args:
+            audio_iterator: Iterator yielding chunks of PCM audio data
+            **kwargs: Audio configuration parameters
+                sample_rate: Sample rate in Hz (e.g., 44100)
+                bit_depth: Bit depth (e.g., 16)
+                channels: Number of channels (1 for mono, 2 for stereo)
+
+        Returns:
+            ActionResponse indicating success/failure of the playback operation.
+
+        Example:
+            &gt;&gt;&gt; config = AudioConfig(sample_rate=44100, bit_depth=16, channels=2)
+            &gt;&gt;&gt; with open(&#39;audio.raw&#39;, &#39;rb&#39;) as f:
+            ...     def chunks():
+            ...         while chunk := f.read(4096):
+            ...             yield chunk
+            ...     response = client.play_audio(chunks(), config)
+        &#34;&#34;&#34;
+
+        async def request_iterator() -&gt; AsyncGenerator[sound_pb2.PlayAudioRequest, None]:
+            # First message includes config
+            yield sound_pb2.PlayAudioRequest(
+                config=sound_pb2.AudioConfig(**kwargs),
+            )
+            # Subsequent messages contain audio data
+            async for chunk in audio_iterator:
+                yield sound_pb2.PlayAudioRequest(audio_data=chunk)
+
+        return await self.stub.PlayAudio(request_iterator())
+
+    async def record_audio(self, duration_ms: int = 0, **kwargs: Unpack[AudioConfig]) -&gt; AsyncGenerator[bytes, None]:
+        &#34;&#34;&#34;Record PCM audio data from the microphone.
+
+        Args:
+            duration_ms: Recording duration in milliseconds (0 for continuous)
+            **kwargs: Audio configuration parameters
+                sample_rate: Sample rate in Hz (e.g., 44100)
+                bit_depth: Bit depth (e.g., 16)
+                channels: Number of channels (1 for mono, 2 for stereo)
+
+        Yields:
+            Chunks of PCM audio data.
+
+        Example:
+            &gt;&gt;&gt; config = AudioConfig(sample_rate=44100, bit_depth=16, channels=1)
+            &gt;&gt;&gt; with open(&#39;recording.raw&#39;, &#39;wb&#39;) as f:
+            ...     for chunk in client.record_audio(duration_ms=5000, **config):
+            ...         f.write(chunk)
+        &#34;&#34;&#34;
+        request = sound_pb2.RecordAudioRequest(
+            config=sound_pb2.AudioConfig(**kwargs),
+            duration_ms=duration_ms,
+        )
+
+        async for response in self.stub.RecordAudio(request):
+            if response.HasField(&#34;error&#34;):
+                raise RuntimeError(f&#34;Recording error: {response.error}&#34;)
+            yield response.audio_data
+
+    async def stop_recording(self) -&gt; common_pb2.ActionResponse:
+        &#34;&#34;&#34;Stop an ongoing recording session.
+
+        Returns:
+            ActionResponse indicating success/failure of the stop operation.
+        &#34;&#34;&#34;
+        return await self.stub.StopRecording(Empty())</code></pre>
+</details>
+<div class="desc"><p>Client for the SoundService.</p>
+<p>This service allows playing audio through speakers and recording from microphones.</p>
+<p>Initialize the sound service client.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>channel</code></strong></dt>
+<dd>gRPC channel to use for communication.</dd>
+</dl></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pykos.services.AsyncClientBase</li>
+<li>abc.ABC</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="services.sound.SoundServiceClient.get_audio_info"><code class="name flex">
+<span>async def <span class="ident">get_audio_info</span></span>(<span>self) ‑> <a title="services.sound.AudioInfo" href="#services.sound.AudioInfo">AudioInfo</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def get_audio_info(self) -&gt; AudioInfo:
+    &#34;&#34;&#34;Get information about audio capabilities.
+
+    Returns:
+        AudioInfo containing playback and recording capabilities.
+    &#34;&#34;&#34;
+    return await self.stub.GetAudioInfo(Empty())</code></pre>
+</details>
+<div class="desc"><p>Get information about audio capabilities.</p>
+<h2 id="returns">Returns</h2>
+<p>AudioInfo containing playback and recording capabilities.</p></div>
+</dd>
+<dt id="services.sound.SoundServiceClient.play_audio"><code class="name flex">
+<span>async def <span class="ident">play_audio</span></span>(<span>self,<br>audio_iterator: AsyncIterator[bytes],<br>**kwargs: Unpack[<a title="services.sound.AudioConfig" href="#services.sound.AudioConfig">AudioConfig</a>]) ‑> kos.common_pb2.ActionResponse</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def play_audio(
+    self, audio_iterator: AsyncIterator[bytes], **kwargs: Unpack[AudioConfig]
+) -&gt; common_pb2.ActionResponse:
+    &#34;&#34;&#34;Stream PCM audio data to the speaker.
+
+    Args:
+        audio_iterator: Iterator yielding chunks of PCM audio data
+        **kwargs: Audio configuration parameters
+            sample_rate: Sample rate in Hz (e.g., 44100)
+            bit_depth: Bit depth (e.g., 16)
+            channels: Number of channels (1 for mono, 2 for stereo)
+
+    Returns:
+        ActionResponse indicating success/failure of the playback operation.
+
+    Example:
+        &gt;&gt;&gt; config = AudioConfig(sample_rate=44100, bit_depth=16, channels=2)
+        &gt;&gt;&gt; with open(&#39;audio.raw&#39;, &#39;rb&#39;) as f:
+        ...     def chunks():
+        ...         while chunk := f.read(4096):
+        ...             yield chunk
+        ...     response = client.play_audio(chunks(), config)
+    &#34;&#34;&#34;
+
+    async def request_iterator() -&gt; AsyncGenerator[sound_pb2.PlayAudioRequest, None]:
+        # First message includes config
+        yield sound_pb2.PlayAudioRequest(
+            config=sound_pb2.AudioConfig(**kwargs),
+        )
+        # Subsequent messages contain audio data
+        async for chunk in audio_iterator:
+            yield sound_pb2.PlayAudioRequest(audio_data=chunk)
+
+    return await self.stub.PlayAudio(request_iterator())</code></pre>
+</details>
+<div class="desc"><p>Stream PCM audio data to the speaker.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>audio_iterator</code></strong></dt>
+<dd>Iterator yielding chunks of PCM audio data</dd>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Audio configuration parameters
+sample_rate: Sample rate in Hz (e.g., 44100)
+bit_depth: Bit depth (e.g., 16)
+channels: Number of channels (1 for mono, 2 for stereo)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>ActionResponse indicating success/failure of the playback operation.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; config = AudioConfig(sample_rate=44100, bit_depth=16, channels=2)
+&gt;&gt;&gt; with open('audio.raw', 'rb') as f:
+...     def chunks():
+...         while chunk := f.read(4096):
+...             yield chunk
+...     response = client.play_audio(chunks(), config)
+</code></pre></div>
+</dd>
+<dt id="services.sound.SoundServiceClient.record_audio"><code class="name flex">
+<span>async def <span class="ident">record_audio</span></span>(<span>self,<br>duration_ms: int = 0,<br>**kwargs: Unpack[<a title="services.sound.AudioConfig" href="#services.sound.AudioConfig">AudioConfig</a>]) ‑> AsyncGenerator[bytes, None]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def record_audio(self, duration_ms: int = 0, **kwargs: Unpack[AudioConfig]) -&gt; AsyncGenerator[bytes, None]:
+    &#34;&#34;&#34;Record PCM audio data from the microphone.
+
+    Args:
+        duration_ms: Recording duration in milliseconds (0 for continuous)
+        **kwargs: Audio configuration parameters
+            sample_rate: Sample rate in Hz (e.g., 44100)
+            bit_depth: Bit depth (e.g., 16)
+            channels: Number of channels (1 for mono, 2 for stereo)
+
+    Yields:
+        Chunks of PCM audio data.
+
+    Example:
+        &gt;&gt;&gt; config = AudioConfig(sample_rate=44100, bit_depth=16, channels=1)
+        &gt;&gt;&gt; with open(&#39;recording.raw&#39;, &#39;wb&#39;) as f:
+        ...     for chunk in client.record_audio(duration_ms=5000, **config):
+        ...         f.write(chunk)
+    &#34;&#34;&#34;
+    request = sound_pb2.RecordAudioRequest(
+        config=sound_pb2.AudioConfig(**kwargs),
+        duration_ms=duration_ms,
+    )
+
+    async for response in self.stub.RecordAudio(request):
+        if response.HasField(&#34;error&#34;):
+            raise RuntimeError(f&#34;Recording error: {response.error}&#34;)
+        yield response.audio_data</code></pre>
+</details>
+<div class="desc"><p>Record PCM audio data from the microphone.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>duration_ms</code></strong></dt>
+<dd>Recording duration in milliseconds (0 for continuous)</dd>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Audio configuration parameters
+sample_rate: Sample rate in Hz (e.g., 44100)
+bit_depth: Bit depth (e.g., 16)
+channels: Number of channels (1 for mono, 2 for stereo)</dd>
+</dl>
+<h2 id="yields">Yields</h2>
+<p>Chunks of PCM audio data.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; config = AudioConfig(sample_rate=44100, bit_depth=16, channels=1)
+&gt;&gt;&gt; with open('recording.raw', 'wb') as f:
+...     for chunk in client.record_audio(duration_ms=5000, **config):
+...         f.write(chunk)
+</code></pre></div>
+</dd>
+<dt id="services.sound.SoundServiceClient.stop_recording"><code class="name flex">
+<span>async def <span class="ident">stop_recording</span></span>(<span>self) ‑> kos.common_pb2.ActionResponse</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def stop_recording(self) -&gt; common_pb2.ActionResponse:
+    &#34;&#34;&#34;Stop an ongoing recording session.
+
+    Returns:
+        ActionResponse indicating success/failure of the stop operation.
+    &#34;&#34;&#34;
+    return await self.stub.StopRecording(Empty())</code></pre>
+</details>
+<div class="desc"><p>Stop an ongoing recording session.</p>
+<h2 id="returns">Returns</h2>
+<p>ActionResponse indicating success/failure of the stop operation.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="services" href="index.html">services</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="services.sound.AudioCapability" href="#services.sound.AudioCapability">AudioCapability</a></code></h4>
+<ul class="">
+<li><code><a title="services.sound.AudioCapability.available" href="#services.sound.AudioCapability.available">available</a></code></li>
+<li><code><a title="services.sound.AudioCapability.bit_depths" href="#services.sound.AudioCapability.bit_depths">bit_depths</a></code></li>
+<li><code><a title="services.sound.AudioCapability.channels" href="#services.sound.AudioCapability.channels">channels</a></code></li>
+<li><code><a title="services.sound.AudioCapability.sample_rates" href="#services.sound.AudioCapability.sample_rates">sample_rates</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.sound.AudioConfig" href="#services.sound.AudioConfig">AudioConfig</a></code></h4>
+<ul class="">
+<li><code><a title="services.sound.AudioConfig.bit_depth" href="#services.sound.AudioConfig.bit_depth">bit_depth</a></code></li>
+<li><code><a title="services.sound.AudioConfig.channels" href="#services.sound.AudioConfig.channels">channels</a></code></li>
+<li><code><a title="services.sound.AudioConfig.sample_rate" href="#services.sound.AudioConfig.sample_rate">sample_rate</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.sound.AudioInfo" href="#services.sound.AudioInfo">AudioInfo</a></code></h4>
+<ul class="">
+<li><code><a title="services.sound.AudioInfo.error" href="#services.sound.AudioInfo.error">error</a></code></li>
+<li><code><a title="services.sound.AudioInfo.playback" href="#services.sound.AudioInfo.playback">playback</a></code></li>
+<li><code><a title="services.sound.AudioInfo.recording" href="#services.sound.AudioInfo.recording">recording</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.sound.SoundServiceClient" href="#services.sound.SoundServiceClient">SoundServiceClient</a></code></h4>
+<ul class="">
+<li><code><a title="services.sound.SoundServiceClient.get_audio_info" href="#services.sound.SoundServiceClient.get_audio_info">get_audio_info</a></code></li>
+<li><code><a title="services.sound.SoundServiceClient.play_audio" href="#services.sound.SoundServiceClient.play_audio">play_audio</a></code></li>
+<li><code><a title="services.sound.SoundServiceClient.record_audio" href="#services.sound.SoundServiceClient.record_audio">record_audio</a></code></li>
+<li><code><a title="services.sound.SoundServiceClient.stop_recording" href="#services.sound.SoundServiceClient.stop_recording">stop_recording</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.5</a>.</p>
+</footer>
+</body>
+</html>

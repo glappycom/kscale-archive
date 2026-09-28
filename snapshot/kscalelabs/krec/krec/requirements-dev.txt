@@ -1,0 +1,10 @@
+# requirements-dev.txt
+
+# Linting
+black
+isort
+ruff
+mypy
+
+# Testing
+pytest

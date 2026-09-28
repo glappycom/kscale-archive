@@ -1,0 +1,28 @@
+[package]
+name = "kinfer-kbot"
+version = "0.1.1"
+authors = [
+    "Benjamin Bolte <ben@kscale.dev>",
+]
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/kscale-dev/kinfer-kbot"
+description = "K-Infer runtime for the K-Bot"
+
+[dependencies]
+
+async-trait = "0.1"
+clap = { version = "4.4", features = ["derive"] }
+kinfer = "0.5.5"
+ndarray = "0.16.1"
+tokio = { version = "1.0", features = ["full"] }
+robstride = { version = "0.3.6", features = ["instant_command"] }
+imu = "0.7.5"
+eyre = "0.6"
+tracing = "0.1"
+tracing-subscriber = {version = "0.3.19", features=["time"]}
+tracing-appender = "0.2.3"
+time = {version="0.3.41", features=["macros"]}
+crossterm = "0.27"
+nix = "0.26"
+uuid = { version = "1.6.1", features = ["v4"]}

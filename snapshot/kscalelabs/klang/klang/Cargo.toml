@@ -1,0 +1,38 @@
+[package]
+
+name = "klang"
+build = "build.rs"
+
+version.workspace = true
+edition.workspace = true
+description.workspace = true
+authors.workspace = true
+repository.workspace = true
+license.workspace = true
+readme.workspace = true
+
+[dependencies]
+
+pest = "^2.5"
+pest_derive = "^2.5"
+thiserror = "1.0"
+lazy_static = "^1.4.0"
+prost = "0.13"
+prost-types = "0.13"
+
+[build-dependencies]
+
+prost-build = "^0.13.3"
+
+[[bin]]
+
+name = "kompile"
+path = "src/bin/kompile.rs"
+
+[[test]]
+name = "integration_test"
+path = "src/test.rs"
+
+[lib]
+name = "klang"
+path = "src/lib.rs"

@@ -1,0 +1,64 @@
+<!-- preserved from https://docs.kscale.dev/khacks via https://web.archive.org/web/20241206104840id_/https://docs.kscale.dev/khacks -->
+
+# K-Hacks - K-Scale Docs
+
+K-Hacks
+
+# K-Hacks
+
+[Register](https://lu.ma/khacks.0.2)
+
+We are a humanoid company in Palo Alto, focused on creating powerful, useful, and open source humanoids. We love robots. Come build something cool and make tangible progress on your robotics project! It doesn’t necessarily have to be a humanoid robot, but humanoids are strongly encouraged.
+
+## Logistics
+
+* **Overnight Accommodations**
+  + Overnight accommodations provided on a case-by-case basis, with priority if you don’t live nearby
+  + If you intend to stay overnight, please let us know ahead of time
+  + You’re welcome to bring your own tent or mattress pad as well
+* **Parking**
+  + Parking is limited, so carpooling is strongly encouraged
+  + Please don’t block any neighbors’ driveway
+
+## Challenges
+
+K-Hacks is about building robots. The goal is to accelerate the transition to a world with useful general-purpose robots. You are free to build new any robotics related project you desire or improve your current existing work.
+
+Your project should be related to making a robot do something useful. It is usually easier to start with an existing robot, but you can also come up with your own robot design.
+
+## Equipments
+
+* 3D printers
+  + We use the Bambu Labs X1 Carbon printers
+  + Please contact Ben or JX for assistance setting up the printers
+* Electronics bench
+  + Two soldering stations
+  + Power supply, multimeter, and other relevant equipment
+  + Assorted resistors, capacitors, and other components
+* Actuators
+  + We have a limited number of actuators available so we suggest bringing your own
+  + We have CAN controllers available
+  + Some of what we have:
+    - [LX-16A](https://www.hiwonder.com/products/lx-16a)
+    - [Feetech](https://www.feetechrc.com/products)
+    - [Robstride](https://www.robstride.com/)
+    - [MyActuator](https://www.myactuator.com/)
+    - [Encos](https://www.encos.cn)
+* Jetsons
+* GPUs
+
+## Code of Conduct
+
+By attending this hackathon, you’re agreeing to the following hackathon [Code of Conduct linked here](/hackathon_code_of_conduct.pdf).
+
+## Judges
+
+* [Ben Bolte](https://ben.bolte.cc)
+* [Paweł Budzianowski](http://budzianowski.github.io)
+* [Jingxiang Mo](https://jingxiangmo.com)
+
+## Past Hackathons
+
+[K-Hacks 0.1](https://x.com/kscalelabs/status/1831050313056559431)
+
+[Residency](/residency "Residency")

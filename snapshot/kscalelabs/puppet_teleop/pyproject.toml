@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kbot-puppet"
+version = "0.0.1"
+description = "K-Bot Puppet Teleop"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [{name = "Aaron Xie"}]
+dependencies = []
+
+[project.scripts]
+# examples
+pup-sine-wave = "kbot_puppet.examples.sine_wave:cli_main"
+pup-multi-sine = "kbot_puppet.examples.multi_sine_wave:cli_main"
+pup-one-position = "kbot_puppet.examples.one_position:cli_main"
+pup-scan-and-move = "kbot_puppet.examples.scan_and_move:cli_main"
+pup-zero-actuators = "kbot_puppet.examples.zero_actuators:cli_main"
+pup-stream-positions = "kbot_puppet.examples.stream_positions:cli_main"
+pup-stream-positions-all = "kbot_puppet.examples.stream_positions_all:cli_main"
+pup-udp-send = "kbot_puppet.puppet.udp_send:cli_main"
+# utils
+pup-scan = "kbot_puppet.utils.feetech_scan:cli_main"
+pup-change-baud = "kbot_puppet.utils.feetech_change_baud:cli_main"
+pup-change-id = "kbot_puppet.utils.feetech_change_id:cli_main"
+
+[tool.setuptools]
+packages = {find = {}}
+include-package-data = true

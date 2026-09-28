@@ -1,0 +1,70 @@
+{
+  "full_name": "zeroth-robotics/sim",
+  "upstream_url": "https://github.com/zeroth-robotics/sim",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 117195,
+  "inventory_default_branch": "master",
+  "inventory_fork": true,
+  "priority_tier": "3-fork",
+  "history_status": "yes",
+  "history_method": "delta-bundle-of-diverging-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "no",
+  "notes": [
+    "Repo has .gitmodules. Submodule commits were not vendored; submodule URLs remain in the tree.",
+    "Delta bundle contains commits not reachable from 3097ded77e0e50efde25db9860e0e62dff232f44. That base is in kscalelabs/sim, which is fully bundled in this archive, so the fork history is recoverable here."
+  ],
+  "default_branch": "master",
+  "fork": true,
+  "parent": "kscalelabs/sim",
+  "parent_default_branch": "master",
+  "github_license_spdx": "MIT",
+  "description": "Training in simulation",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-12-16T05:39:48Z",
+  "branches": {
+    "V0.3.1": "a5019c1fadab67d2f1e6e2fd8a7f3f601f34df7f",
+    "cmd-arrow": "f50edf4103459dbde22b9d2ebe71a17ffe77c945",
+    "cmd-manager": "f50edf4103459dbde22b9d2ebe71a17ffe77c945",
+    "g1-investigation": "b28476f5c50ed9d6cbe1d8555ecd94985535d172",
+    "henri/experiments": "c62d9eaa9c008099c8ce59c5d4ed4ceb41438752",
+    "improved-get-load-path": "7d72e0df7779febeb97c319781afddb622fd6f5c",
+    "master": "3843e4cd25af9c160a33f86fb9a41ab17dd732b7",
+    "microstompy-joints": "6f92972e4bf82189b250217f091e620100fb0773",
+    "microstompy-tasks": "4a4d7331a01f7fccb49d1983ef6b790f254e5752",
+    "new_standing": "ba17a3f39539487279f1d0736f990dd3e2a712a2",
+    "pawel/macros": "915955ca092e624c325f218b939a3ac5e8ce20c7",
+    "save-config": "2ca234d772be41a3d15167adfe67a40d7ed7e375",
+    "sim2sim": "6bc0d65cb0392d725aa1385724c2a45ed04239ad",
+    "undo-standing_micro-policy": "8d4d5d7c085c93aa1d7732aaafd05bd75408f1e3",
+    "update-urdf": "d7d856faab06c08adc97910795c25e880a658dc4",
+    "z2-experiments": "2c323f2ac51ebbea6b16777edc3db45196b861b0"
+  },
+  "tags": {},
+  "default_branch_sha": "3843e4cd25af9c160a33f86fb9a41ab17dd732b7",
+  "fork_compare": {
+    "ahead_by": 71,
+    "behind_by": 26,
+    "merge_base": "3097ded77e0e50efde25db9860e0e62dff232f44",
+    "status": "diverged"
+  },
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2023 KScale Labs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    },
+    {
+      "path": "third_party/expressive_humanoid/LICENSE",
+      "detected_from_text": "unrecognized",
+      "excerpt": "# This file is kept for experimental purposes. All software contained within complies with their respective licenses.\n# The following software is included:\n# - Expressive Humanoid (https://github.com/chengxuxin/expressive-humanoid)\n# - Expressive Humanoid (https://github.com/Ke-Wang1017/expressive_humanoid)\n# - CMU Motion Capture Data\n# - ASE\n# - FBX SDK\n# - SIP"
+    }
+  ],
+  "bundle_files": [
+    "delta.bundle"
+  ],
+  "bundle_bytes": 89154226,
+  "bundle_sha256": "20efa1c18389dab800e898f5b381d2c0870b9aeaeb735440a03fea3d8ede5636",
+  "delta_prerequisite_sha": "3097ded77e0e50efde25db9860e0e62dff232f44",
+  "delta_prerequisite_repo": "kscalelabs/sim"
+}

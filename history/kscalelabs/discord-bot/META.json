@@ -1,0 +1,44 @@
+{
+  "full_name": "kscalelabs/discord-bot",
+  "upstream_url": "https://github.com/kscalelabs/discord-bot",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 28,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "Discord bot",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-05-24T01:42:07Z",
+  "branches": {
+    "humanoid-branch2": "d3fdc719edc37c2e964417095df80e37d033a5ae",
+    "humanoid_branch": "1a8a92265b070ce246213dc51397b9fb08a567b0",
+    "master": "297866150eeaf9f6f22a063c96f5de7f5ac96dd8",
+    "ro_branch": "59063eb36e6d5aa44911651d35409cb8b39e38a4"
+  },
+  "tags": {},
+  "default_branch_sha": "297866150eeaf9f6f22a063c96f5de7f5ac96dd8",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2023 Benjamin Bolte\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 22173,
+  "bundle_sha256": "0149be360292bd9296fc17762b416c9597e1e2cc645e831360abf10800705c96",
+  "snapshot_bytes": 10510,
+  "snapshot_files": 19
+}

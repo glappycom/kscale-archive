@@ -1,0 +1,37 @@
+{
+  "full_name": "kscalelabs/sysid",
+  "upstream_url": "https://github.com/kscalelabs/sysid",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 394916,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "no",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "Actuator System Identification (SysID) results.",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-04-05T04:39:56Z",
+  "branches": {
+    "master": "af29fe7e9bd9c54afbfda820033ca4780c82c5f3"
+  },
+  "tags": {},
+  "default_branch_sha": "af29fe7e9bd9c54afbfda820033ca4780c82c5f3",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle.part-001",
+    "repo.bundle.part-002",
+    "repo.bundle.part-003",
+    "repo.bundle.part-004",
+    "repo.bundle.part-005"
+  ],
+  "bundle_bytes": 404425107,
+  "bundle_sha256": "02f1d23fea28a2508b0b522cc4902df844e5dde6118126dd9a959f5f6570bb2c"
+}

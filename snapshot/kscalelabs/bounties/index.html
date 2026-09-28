@@ -1,0 +1,24 @@
+<html>
+
+<head></head>
+<meta http-equiv="refresh" content="0; url=https://url.kscale.dev/bounties">
+<script>
+  // Get current URL parameters
+  const urlParams = new URLSearchParams(window.location.search);
+  const redirectUrl = new URL("https://url.kscale.dev/bounties");
+
+  // Copy all parameters to the redirect URL
+  urlParams.forEach((value, key) => {
+    redirectUrl.searchParams.append(key, value);
+  });
+
+  // Redirect with preserved parameters
+  window.location.href = redirectUrl.toString();
+</script>
+</head>
+
+<body>
+  Redirecting to bounties...
+</body>
+
+</html>

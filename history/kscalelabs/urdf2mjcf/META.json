@@ -1,0 +1,64 @@
+{
+  "full_name": "kscalelabs/urdf2mjcf",
+  "upstream_url": "https://github.com/kscalelabs/urdf2mjcf",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 2042,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "Convert from URDF file format to MJCF file format",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-09-26T20:41:24Z",
+  "branches": {
+    "collisions": "a025178aa83df5867a3a6986d31b5db0ccd06022",
+    "master": "7954f8b2ba6591cd2666f3b485486819f5aed655"
+  },
+  "tags": {
+    "0.2.14": "b441cbef6a2ca43da2e27811df272bffb5240ecf",
+    "0.2.18": "20ece22e09f10e503ee1f12b800475e1a17c687d",
+    "0.2.20": "9a2f924adfcade5941d9134e736ce1b7ad5e5744",
+    "0.2.21": "65b73518e3792656d196e65eabc122aa8ab8223d",
+    "0.2.22": "072c65f845a781e449ced72874968866907c8411",
+    "0.2.24": "1c90bff0b3cd7ca8823e481ebfd23622c6eb87a7",
+    "0.2.25": "62119acf9421302c270dc65a664288cb168416fb",
+    "0.2.26": "d5a98a4b96217264f1866acab0baac40c3f54254",
+    "0.2.27": "813d4797b2f9f1047bebb9dddcce23e8d86279fc",
+    "0.2.28": "324b929ee5a1ecdc101ec330bd93ede92d34b0f9",
+    "0.2.29": "cff338094bd10e7507845f7c4dfbfb09af042d98",
+    "0.2.30": "a84b4e069bbcbfc24a4db1f8a9b1a642224017b9",
+    "0.2.31": "a644dbedec68b3099e8e9af46badcc970b88c41e",
+    "0.2.32": "2fe8ad213b4e0e67d3e01cacdf02e0f5b91f0be1",
+    "0.2.33": "f3170d094837828a649eaf7680383ae08bab16b0",
+    "0.2.34": "1ec37cd071d0f3d3d92e5e3824c0ad7c43b5b2ea",
+    "0.2.35": "e9cd37a75fd8ff013c382cc06c0698494bc97ac0",
+    "0.2.36": "e80fcdc5a21f3bc4e54887921391ea53c4c1e662",
+    "0.2.37": "30583cc151f192de4e65738fce0ffbcfb23b90c8",
+    "0.2.38": "f4583a2b9f5642bb8406589023af56a4e572260c",
+    "0.2.39": "c1ce6df5fb11646168e63f6dd7bc3cb196374c34"
+  },
+  "default_branch_sha": "7954f8b2ba6591cd2666f3b485486819f5aed655",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2023 Benjamin Bolte\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 18358437,
+  "bundle_sha256": "012aa33da4f74f5637fb6faa274f2e23aabb441b3652a53e731d789270d55544",
+  "snapshot_bytes": 134903,
+  "snapshot_files": 33
+}

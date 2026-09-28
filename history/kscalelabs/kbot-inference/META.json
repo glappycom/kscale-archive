@@ -1,0 +1,45 @@
+{
+  "full_name": "kscalelabs/kbot-inference",
+  "upstream_url": "https://github.com/kscalelabs/kbot-inference",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 2900,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "yes",
+  "snapshot_status": "yes",
+  "notes": [
+    "Snapshot working tree includes fetched LFS objects (pointers checked out)."
+  ],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "K-Bot model inference",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-05-10T00:51:34Z",
+  "branches": {
+    "master": "9c7e382115c91a32851530e6e114b04ba54d5a42",
+    "update_inf": "3789b6810b9c491f3fc8aa583f5c479e7ce9d90b"
+  },
+  "tags": {},
+  "default_branch_sha": "9c7e382115c91a32851530e6e114b04ba54d5a42",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 4684891,
+  "bundle_sha256": "fb177a3a05882e18c341a542ac3e36fb3c55be2d959c167bd5786faaf5a4f771",
+  "lfs_pointer_bytes": 36048000,
+  "lfs_object_count": 12,
+  "lfs_files": [
+    "lfs-objects.tar"
+  ],
+  "lfs_archive_bytes": 36423680,
+  "lfs_archive_sha256": "34680fcab7bc4b33cd211cf1f21fc9e07664b5905748b53eb548dfe8c1615a81",
+  "snapshot_bytes": 922347,
+  "snapshot_files": 29
+}

@@ -1,0 +1,52 @@
+{
+  "full_name": "kscalelabs/kbot_vr_teleop",
+  "upstream_url": "https://github.com/kscalelabs/kbot_vr_teleop",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 129687,
+  "inventory_default_branch": "main",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "no",
+  "notes": [],
+  "default_branch": "main",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2026-02-14T09:16:48Z",
+  "branches": {
+    "adiaz6/teleop_vr": "78c093435e7afb3d3cf585a9e713f467a1c9cc0e",
+    "dependabot/npm_and_yarn/frontend/body-parser-2.2.1": "209786022236975286a442e4e9493e61be69dfa6",
+    "dependabot/npm_and_yarn/frontend/jsonpath-1.2.1": "4ced385b7cd0ef780fc3ab3254ad555af8f7db28",
+    "dependabot/npm_and_yarn/frontend/lodash-4.17.23": "6d2cb1aaa4b313d9398addce862e44c1b8e58a60",
+    "dependabot/npm_and_yarn/frontend/multi-75e6bc5210": "f3284dee0a6fbb5e45295bca1c21144e7f307e86",
+    "dependabot/npm_and_yarn/frontend/multi-a07fd7252a": "831d136c024fc22a00ae14925ded26f80459df17",
+    "dependabot/npm_and_yarn/frontend/node-forge-1.3.2": "8daadfb51ad26e6ef3eb31b83df5c5500364d30c",
+    "dependabot/npm_and_yarn/frontend/webpack-5.105.0": "d0cf4a09de235f21ce53d8680040d04b924ba152",
+    "eric/reverse-ws-roles": "0030a55cfc43f1abc2baf54a4cf650f293338a70",
+    "eric/smooth-motion": "6f60793ba7d68c633f2c78619c292c69ec39aa91",
+    "eric/sphere-render": "bd6e250ab1ecdd164489f46be4d8022dab36c56a",
+    "experimental": "7dd42d6fc8e7b30dfc207f006591667b1cdf10bd",
+    "main": "4d6e712232539d298fff7fc8f17388fc37299bf2"
+  },
+  "tags": {},
+  "default_branch_sha": "4d6e712232539d298fff7fc8f17388fc37299bf2",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2025 Benjamin Bolte\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle.part-001",
+    "repo.bundle.part-002"
+  ],
+  "bundle_bytes": 131860232,
+  "bundle_sha256": "d17401bf0894b29563f4d6844096e1c6c361d7c0b141e286390da4455592e602"
+}

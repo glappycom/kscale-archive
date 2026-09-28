@@ -1,0 +1,42 @@
+{
+  "full_name": "kscalelabs/motostandup",
+  "upstream_url": "https://github.com/kscalelabs/motostandup",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 16,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-09-28T08:29:45Z",
+  "branches": {
+    "master": "a8b65b67ad4e45d2d628ca4e61430d8ba0eac60c",
+    "o1-motor-stand-fixes": "c052915ac6cc96eb9107588414ad7e645b28f839"
+  },
+  "tags": {},
+  "default_branch_sha": "a8b65b67ad4e45d2d628ca4e61430d8ba0eac60c",
+  "license_files": [
+    {
+      "path": "COPYING",
+      "detected_from_text": "MIT",
+      "excerpt": "Copyright 2024 K-Scale Labs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \u201cSoftware\u201d), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \u201cAS IS\u201d, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 14201,
+  "bundle_sha256": "18bf1849344398b7cd6fb47228550af25016413934c2387256caad479d62a2e1",
+  "snapshot_bytes": 6399,
+  "snapshot_files": 10
+}

@@ -1,0 +1,35 @@
+{
+  "full_name": "kscalelabs/bounties",
+  "upstream_url": "https://github.com/kscalelabs/bounties",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 2,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "Bounties repository",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-04-06T20:56:53Z",
+  "branches": {
+    "master": "38e7a901b2bb14640b466a5a9e572589990509ab"
+  },
+  "tags": {},
+  "default_branch_sha": "38e7a901b2bb14640b466a5a9e572589990509ab",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 2906,
+  "bundle_sha256": "4fcaf934ba95e0e595c3079426ba1148208e06376181611ddbe6c639a20fb693",
+  "snapshot_bytes": 591,
+  "snapshot_files": 2
+}
