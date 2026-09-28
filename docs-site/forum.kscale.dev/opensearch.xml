@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>K-Scale Labs Search</ShortName>
+  <Description>Search for posts on K-Scale Labs</Description>
+  <Tags>discourse forum</Tags>
+    <Image type="image/png">https://canada1.discourse-cdn.com/flex004/uploads/kscale1/optimized/1X/6fdffcd6eac7583fc7d1f3895c8d6cac7e6ed5d5_2_32x32.png</Image>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://forum.kscale.dev/opensearch.xml"/>
+  <Url type="text/html" template="https://forum.kscale.dev/search?q={searchTerms}"/>
+  <Query role="example" searchTerms="search term"/>
+</OpenSearchDescription>

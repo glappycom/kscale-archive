@@ -71,7 +71,19 @@ Browsing copies (no history) are under `snapshot/` for the requested core set â€
 
 ### Documentation site
 
-`docs-site/` is the Wayback capture listed in `meta/KSCALE-DEV-WAYBACK-SNAPSHOTS.csv`, fetched with `id_` URLs. Pages that still contained HTML were also converted to Markdown. Later `docs.kscale.dev` pages are a ReadMe.io application shell: the archived HTML often has no article body. Older Docusaurus-style pages (build guides, component notes, BOMs) do. Images that could be fetched are under `docs-site/_assets/`.
+`docs-site/` is the Wayback capture listed in `meta/KSCALE-DEV-WAYBACK-SNAPSHOTS.csv` (205 URLs), fetched with `id_` raw URLs on 28 September 2026.
+
+| | Count |
+| --- | ---: |
+| URLs attempted | 205 |
+| Saved | 200 |
+| Failed | 5 |
+| `docs.kscale.dev` saved | 148 / 148 |
+| `kscale.dev` saved | 23 / 23 |
+| Pages with article text converted to Markdown | 96 |
+| ReadMe.io JavaScript shells (HTML saved, article body was not in the capture) | 55 |
+
+Failures: `api.kscale.dev/`, `notion.kscale.dev/`, and `media.kscale.dev/` (empty body) were Wayback misses; `blog.kscale.dev/_/graphql` and one Medium post URL returned HTTP 403. `docs-site/manifest.csv` has the row for every URL. Images that could be fetched (136 files) are under `docs-site/_assets/`.
 
 A third-party `secretKey` embedded in some ReadMe page shells was removed before publication. Nothing else in those pages was edited.
 

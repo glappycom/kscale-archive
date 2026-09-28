@@ -1,0 +1,154 @@
+<!-- preserved from https://docs.kscale.dev/components/microphone via https://web.archive.org/web/20241111155956id_/https://docs.kscale.dev/components/microphone -->
+
+# Microphone - K-Scale Docs
+
+[Components](/components/mcu "Components")Microphone
+
+# Microphone
+
+⚠️
+
+This documentation is under construction. We currently use the ReSpeaker Mic Array v2.0 for our robots.
+
+## Hardware Setup
+
+We use the ReSpeaker Mic Array v2.0 ([product link](https://www.seeedstudio.com/ReSpeaker-Mic-Array-v2-0.html)), which features:
+
+* 4 high-performance digital microphones
+* 12 RGB LEDs
+* USB connectivity
+* Built-in algorithms for DOA (Direction of Arrival) and beamforming
+
+The microphone connects to the Jetson Orin via USB as shown:
+
+![Speaker and Mic Wiring](/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fspeaker_and_mic_wiring.9a8ff9e1.png&w=1080&q=75)
+
+## Recording Audio
+
+Here’s a basic example of recording audio using the microphone:
+
+```
+import numpy as np
+import sounddevice as sd
+import soundfile as sf
+ 
+def record_audio(duration=10.0, sample_rate=44100, channels=1):
+    """Record audio from the default microphone.
+ 
+    Args:
+        duration (float): Recording duration in seconds
+        sample_rate (int): Sample rate in Hz
+        channels (int): Number of audio channels
+    """
+    print("Recording...")
+    audio_data = sd.rec(
+        int(duration * sample_rate),
+        samplerate=sample_rate,
+        channels=channels,
+        blocking=True
+    )
+    print("Done recording!")
+    return audio_data
+ 
+# Example usage
+audio = record_audio()
+sf.write("recorded_audio.wav", audio, 44100)
+```
+
+### Device Selection
+
+The default audio device is usually correct, but you can:
+
+* List available devices: `sd.query_devices()`
+* Set a specific device: `sd.default.device = [device_id]`
+* Get current device info: `sd.query_devices(sd.default.device[0])`
+
+## Audio Signal Path
+
+For the ReSpeaker MEMS microphones:
+
+1. **Microphone Array** → MP34DT01 MEMS microphones capture audio
+2. **Digital Processing** → Outputs PDM (Pulse-Density Modulation) data
+3. **USB Interface** → Handles data transfer to the Jetson
+4. **Software Stack**
+
+## Physical Principles of Audio Recording
+
+### MEMS Microphone Technology
+
+The ReSpeaker uses MEMS (Micro-Electrical-Mechanical Systems) microphones, specifically the MP34DT01. Here’s how they work:
+
+1. **Mechanical Structure**
+
+   * A thin membrane (diaphragm) suspended over a fixed backplate
+   * Forms a variable capacitor where the membrane moves with sound waves
+   * Typical membrane size: 0.5-1mm diameter, ~1μm thick
+2. **Sound to Electrical Conversion**
+
+   ```
+   Sound Wave → Membrane Vibration → Capacitance Change → Electrical Signal
+   ```
+3. **Digital Output**
+
+   * Unlike analog mics, MEMS mics output digital PDM (Pulse Density Modulation)
+   * PDM represents analog amplitude through pulse density:
+
+     ```
+     Analog: ～～～～
+     PDM:   _▄_▄▄_▄_▄▄▄_▄  (Higher amplitude = more pulses)
+     ```
+
+### Array Processing
+
+The ReSpeaker’s 4-mic array enables:
+
+1. **Beamforming**
+
+   ```
+   Mic 1: ----sound1----→
+   Mic 2: ---sound1-delay→  → Digital Processing → Enhanced Signal
+   Mic 3: --sound1-delay2→
+   Mic 4: -sound1-delay3-→
+   ```
+
+   * Uses time differences between mics
+   * Constructively combines desired direction
+   * Destructively cancels other directions
+2. **Direction of Arrival (DOA)**
+
+   * Calculates sound source angle using:
+
+     ```
+     θ = arcsin(c × Δt / d)
+     where:
+     c = speed of sound
+     Δt = time delay between mics
+     d = distance between mics
+     ```
+
+### Sampling Process
+
+1. **Temporal Sampling**
+
+   ```
+   Continuous: ～～～～～
+   Sampled:    • • • • •
+   ```
+
+   * 44.1kHz standard (captures up to 22.05kHz per Nyquist)
+   * Each sample is typically 16-bit (65,536 amplitude levels)
+2. **Spatial Sampling**
+
+   * 4 mics in circular array
+   * Spatial Nyquist frequency: f = c/(2d)
+   * Where d is mic spacing (~4.36cm on ReSpeaker)
+
+### Digital Signal Chain
+
+```
+                                            ┌→ Beamforming
+Sound → MEMS → PDM → Decimation Filter → PCM┼→ DOA
+                                            └→ Audio Output
+```
+
+[IMU](/components/imu "IMU")[LCD](/components/lcd "LCD")

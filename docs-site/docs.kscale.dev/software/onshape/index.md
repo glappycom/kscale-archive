@@ -1,0 +1,107 @@
+<!-- preserved from https://docs.kscale.dev/software/onshape via https://web.archive.org/web/20241015001325id_/https://docs.kscale.dev/software/onshape -->
+
+# Onshape - K-Scale Labs Docs
+
+Software
+
+Onshape
+
+⚠️
+
+This documentation is under construction and incomplete. Please [sign up here for K-Scale updates (opens in a new tab)](https://forms.gle/xkba4WWGD5Pmayj96) and check back later for our progress.
+
+## Onshape to URDF Converter
+
+`kol` is what we use at K-Scale for interacting with OnShape. It is a wrapper around the OnShape API that allows us to easily import parts, postprocess them, and export them in a variety of formats. This is a key part of our mission to make robots more accessible --- Onshape is free, easy to use, and encourages open-source development through FeatureScript.
+
+In a single CLI, we support functions such as mesh simplification, mesh merging, joint cleanup, transferring between MJCF/URDF formats, and more.
+
+### Installation
+
+```
+pip install 'kscale-onshape-library[all]'
+```
+
+### Usage
+
+The KOL CLI provides several subcommands for different operations:
+
+```
+kol <subcommand> [options]
+```
+
+Available subcommands:
+
+* `run`: Download from Onshape and post-process
+* `download`: Only download from Onshape
+* `postprocess`: Post-process an existing URDF
+* `pybullet`: Run PyBullet simulation
+
+#### Download and Post-process
+
+To download a model from Onshape and apply post-processing:
+
+```
+kol run <onshape-document-url> <output-directory>
+```
+
+To see additional configuration options, consult the config file [here (opens in a new tab)](https://github.com/kscalelabs/onshape/blob/master/kol/onshape/config.py).
+
+#### Download Only
+
+To only download a model from Onshape without post-processing:
+
+```
+kol download <document-url> <output-directory>
+```
+
+Options are similar to the `run` subcommand.
+
+#### Post-process Existing URDF
+
+To apply post-processing to an existing URDF file:
+
+```
+kol postprocess <urdf-path>
+```
+
+#### PyBullet Simulation
+
+To run a PyBullet simulation with the processed URDF:
+
+```
+kol pybullet <urdf-path> [options]
+```
+
+Options:
+
+* `<urdf_path>`: Path to the URDF file to simulate (required)
+* `--dt FLOAT`: Time step for simulation (default: 0.01)
+* `-n`, `--hide-gui`: Hide the PyBullet GUI
+* `--no-merge`: Do not merge fixed links
+* `--hide-origin`: Do not show the origin of the robot
+* `--show-inertia`: Visualize the inertia frames
+* `--see-thru`: Use see-through mode for robot visualization
+* `--show-collision`: Show collision meshes
+
+### Examples
+
+1. Download and post-process an Onshape model:
+
+```
+kol run https://cad.onshape.com/documents/... ./robot
+```
+
+2. Post-process an existing URDF:
+
+```
+kol postprocess ./path/to/model.urdf voxel_size=0.005
+```
+
+3. Run PyBullet simulation:
+
+```
+kol pybullet ./output/model.urdf
+```
+
+[CLI](/software/cli "CLI")[E-VLA](/software/models/evla "E-VLA")

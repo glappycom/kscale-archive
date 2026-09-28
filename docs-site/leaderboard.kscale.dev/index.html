@@ -1,0 +1,160 @@
+<html>
+
+<head>
+    <title>K-Scale Humanoid Benchmark Leaderboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: white;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        p {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 4px;
+            font-family: 'SFMono-Regular', Consolas, monospace;
+            font-size: 0.9em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th {
+            padding: 12px;
+            text-align: left;
+            font-weight: 500;
+            color: #2c3e50;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #dee2e6;
+            color: #4a4a4a;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #e9ecef;
+            margin: 30px 0;
+        }
+
+        .footer-links {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="max-width: 700px; margin: auto;">
+        <h1 style="padding-top: 25px;">K-Scale Humanoid Benchmark Leaderboard</h1>
+        <p>Welcome to the K-Scale Labs Humanoid Benchmark Leaderboard!</p>
+        <h2>What is this?</h2>
+        <p>
+            This leaderboard is for people who want to try training their own RL policies and running them on a K-Scale
+            robot.
+        </p>
+        <h2>How do I win?</h2>
+        <p>
+            We will evaluate based on how cool the robot looks when it runs your code, for some subjective measurement
+            of "cool". All submissions will get a spot on the leaderboard, and we will be grateful for your assistance
+            in helping us move towards our <a href="https://url.kscale.dev/mission" target="_blank">mission</a>.
+        </p>
+        <p>
+            We will roughly score the submissions using an ELO rating system, since "coolness" should be roughly
+            monotonic and is easiest to evaluate pair-wise. If you wish to contest your score or someone else's score,
+            please tell us in our <a href="https://url.kscale.dev/discord" target="_blank">Discord</a>.
+        </p>
+        <h2>How do I get started?</h2>
+        <p>
+        <ol>
+            <li>Create a new repository from <a
+                    href="https://github.com/new?template_name=leaderboard-submission&template_owner=kscalelabs">this
+                    template</a>.
+            </li>
+            <li>
+                Follow the instructions in the template repository to train, export and visualize your own policy.
+            </li>
+            <li>
+                After you have a policy which looks good, go to our <a href="https://url.kscale.dev/discord"
+                    target="_blank">Discord</a> and submit a link with your policy to the "【🧠】submissions" channel
+            </li>
+            <li>
+                One of us will run your policy on the real robot and add the results to the leaderboard. We will try to
+                run new policies every night, so you shouldn't have to wait too long to see your policy on the
+                leaderboard.
+            </li>
+        </ol>
+        </p>
+        <p>
+        <div class="footer-links">
+            <a href="https://url.kscale.dev/discord" target="_blank">Discord</a> ·
+            <a href="https://url.kscale.dev/docs" target="_blank">K-Scale Documentation</a> ·
+            <a href="https://github.com/kscalelabs/leaderboard" target="_blank">Leaderboard Github</a>
+        </div>
+        </p>
+        <hr />
+        <h2>Submissions</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Submitter</th>
+                <th>Date</th>
+                <th>Submission</th>
+                <th>Sim Video</th>
+                <th>Real Video</th>
+            </tr>
+            <tr>
+                <td>MLP Baseline</td>
+                <td>kscalelabs</td>
+                <td>2025-04-25</td>
+                <td><a href="https://github.com/kscalelabs/kscale-humanoid-benchmark">Submission</a>
+                </td>
+                <td><a href="#" target="_blank">Sim Video</a></td>
+                <td><a href="https://youtu.be/O83fOF_3lxA?t=3322" target="_blank">Real Video</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
