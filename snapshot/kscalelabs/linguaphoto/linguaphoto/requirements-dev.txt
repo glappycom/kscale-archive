@@ -1,0 +1,25 @@
+# requirements-dev.txt
+
+# Linting
+black
+darglint
+mypy
+ruff
+isort
+# Testing
+moto[dynamodb]
+fakeredis
+pytest
+pytest-aiohttp
+pytest-aiomoto
+pytest-asyncio
+pytest-mock
+pytest-timeout
+pytest-trio
+s3fs
+
+# Types
+types-requests
+
+# # AWS
+# localstack

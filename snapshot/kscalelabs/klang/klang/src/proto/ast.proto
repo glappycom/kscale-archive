@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ast;
+
+message Program {
+  repeated Command commands = 1;
+}
+
+message Command {
+  string text = 1;
+  repeated Command children = 2;
+}

@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>services.inference API documentation</title>
+<meta name="description" content="Inference service client.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>services.inference</code></h1>
+</header>
+<section id="section-intro">
+<p>Inference service client.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="services.inference.ForwardResponse"><code class="flex name class">
+<span>class <span class="ident">ForwardResponse</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ForwardResponse(TypedDict):
+    &#34;&#34;&#34;Response from running model inference.
+
+    Args:
+        outputs: Dictionary mapping tensor names to output tensors
+        error: Optional error information if inference failed
+    &#34;&#34;&#34;
+
+    outputs: dict[str, Tensor]
+    error: NotRequired[common_pb2.Error | None]</code></pre>
+</details>
+<div class="desc"><p>Response from running model inference.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>outputs</code></strong></dt>
+<dd>Dictionary mapping tensor names to output tensors</dd>
+<dt><strong><code>error</code></strong></dt>
+<dd>Optional error information if inference failed</dd>
+</dl></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.inference.ForwardResponse.error"><code class="name">var <span class="ident">error</span> : kos.common_pb2.Error | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.inference.ForwardResponse.outputs"><code class="name">var <span class="ident">outputs</span> : dict[str, <a title="services.inference.Tensor" href="#services.inference.Tensor">Tensor</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.inference.GetModelsInfoResponse"><code class="flex name class">
+<span>class <span class="ident">GetModelsInfoResponse</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GetModelsInfoResponse(TypedDict):
+    &#34;&#34;&#34;Response containing information about available models.&#34;&#34;&#34;
+
+    models: list[ModelInfo]
+    error: NotRequired[common_pb2.Error | None]</code></pre>
+</details>
+<div class="desc"><p>Response containing information about available models.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.inference.GetModelsInfoResponse.error"><code class="name">var <span class="ident">error</span> : kos.common_pb2.Error | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.inference.GetModelsInfoResponse.models"><code class="name">var <span class="ident">models</span> : list[<a title="services.inference.ModelInfo" href="#services.inference.ModelInfo">ModelInfo</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.inference.InferenceServiceClient"><code class="flex name class">
+<span>class <span class="ident">InferenceServiceClient</span></span>
+<span>(</span><span>channel: grpc.aio._base_channel.Channel)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class InferenceServiceClient(AsyncClientBase):
+    &#34;&#34;&#34;Client for the InferenceService.
+
+    This service allows uploading models and running inference on them.
+    &#34;&#34;&#34;
+
+    def __init__(self, channel: grpc.aio.Channel) -&gt; None:
+        &#34;&#34;&#34;Initialize the inference service client.
+
+        Args:
+            channel: gRPC channel to use for communication.
+        &#34;&#34;&#34;
+        super().__init__()
+
+        self.stub = inference_pb2_grpc.InferenceServiceStub(channel)
+
+    async def upload_model(
+        self, model_data: bytes, metadata: ModelMetadata | None = None
+    ) -&gt; inference_pb2.UploadModelResponse:
+        &#34;&#34;&#34;Upload a model to the robot.
+
+        Example:
+        &gt;&gt;&gt; client.upload_model(model_data,
+        ... metadata={&#34;model_name&#34;: &#34;MyModel&#34;,
+        ... &#34;model_description&#34;: &#34;A model for inference&#34;,
+        ... &#34;model_version&#34;: &#34;1.0.0&#34;,
+        ... &#34;model_author&#34;: &#34;John Doe&#34;})
+
+        Args:
+            model_data: The binary model data to upload.
+            metadata: Optional metadata about the model that can include:
+                     model_name: Name of the model
+                     model_description: Description of the model
+                     model_version: Version of the model
+                     model_author: Author of the model
+
+        Returns:
+            UploadModelResponse containing the model UID and any error information.
+        &#34;&#34;&#34;
+        proto_metadata = None
+        if metadata is not None:
+            proto_metadata = inference_pb2.ModelMetadata(**metadata)
+        request = inference_pb2.UploadModelRequest(model=model_data, metadata=proto_metadata)
+        return await self.stub.UploadModel(request)
+
+    async def load_models(self, uids: list[str]) -&gt; inference_pb2.LoadModelsResponse:
+        &#34;&#34;&#34;Load models from the robot&#39;s filesystem.
+
+        Args:
+            uids: List of model UIDs to load.
+
+        Returns:
+            LoadModelsResponse containing information about the loaded models.
+        &#34;&#34;&#34;
+        request = inference_pb2.ModelUids(uids=uids)
+        return await self.stub.LoadModels(request)
+
+    async def unload_models(self, uids: list[str]) -&gt; common_pb2.ActionResponse:
+        &#34;&#34;&#34;Unload models from the robot&#39;s filesystem.
+
+        Args:
+            uids: List of model UIDs to unload.
+
+        Returns:
+            ActionResponse indicating success/failure of the unload operation.
+        &#34;&#34;&#34;
+        request = inference_pb2.ModelUids(uids=uids)
+        return await self.stub.UnloadModels(request)
+
+    async def get_models_info(self, model_uids: list[str] | None = None) -&gt; GetModelsInfoResponse:
+        &#34;&#34;&#34;Get information about available models.
+
+        Args:
+            model_uids: Optional list of specific model UIDs to get info for.
+                       If None, returns info for all models.
+
+        Returns:
+            GetModelsInfoResponse containing:
+                models: List of ModelInfo objects
+                error: Optional error information if fetching failed
+        &#34;&#34;&#34;
+        if model_uids is not None:
+            request = inference_pb2.GetModelsInfoRequest(model_uids=inference_pb2.ModelUids(uids=model_uids))
+        else:
+            request = inference_pb2.GetModelsInfoRequest(all=True)
+
+        response = await self.stub.GetModelsInfo(request)
+
+        return GetModelsInfoResponse(
+            models=[
+                ModelInfo(
+                    uid=model.uid,
+                    metadata=ModelMetadata(
+                        model_name=model.metadata.model_name if model.metadata.HasField(&#34;model_name&#34;) else None,
+                        model_description=(
+                            model.metadata.model_description if model.metadata.HasField(&#34;model_description&#34;) else None
+                        ),
+                        model_version=(
+                            model.metadata.model_version if model.metadata.HasField(&#34;model_version&#34;) else None
+                        ),
+                        model_author=model.metadata.model_author if model.metadata.HasField(&#34;model_author&#34;) else None,
+                    ),
+                    input_specs={
+                        name: Tensor(
+                            values=list(tensor.values),
+                            shape=[
+                                TensorDimension(size=dim.size, name=dim.name, dynamic=dim.dynamic)
+                                for dim in tensor.shape
+                            ],
+                        )
+                        for name, tensor in model.input_specs.items()
+                    },
+                    output_specs={
+                        name: Tensor(
+                            values=list(tensor.values),
+                            shape=[
+                                TensorDimension(size=dim.size, name=dim.name, dynamic=dim.dynamic)
+                                for dim in tensor.shape
+                            ],
+                        )
+                        for name, tensor in model.output_specs.items()
+                    },
+                    description=model.description,
+                )
+                for model in response.models
+            ],
+            error=response.error if response.HasField(&#34;error&#34;) else None,
+        )
+
+    async def forward(self, model_uid: str, inputs: dict[str, Tensor]) -&gt; ForwardResponse:
+        &#34;&#34;&#34;Run inference using a specified model.
+
+        Args:
+            model_uid: The UID of the model to use for inference.
+            inputs: Dictionary mapping tensor names to tensors.
+
+        Returns:
+            ForwardResponse containing:
+                outputs: Dictionary mapping tensor names to output tensors
+                error: Optional error information if inference failed
+        &#34;&#34;&#34;
+        tensor_inputs = {}
+        for name, tensor in inputs.items():
+            shape = [
+                inference_pb2.Tensor.Dimension(size=dim[&#34;size&#34;], name=dim[&#34;name&#34;], dynamic=dim[&#34;dynamic&#34;])
+                for dim in tensor[&#34;shape&#34;]
+            ]
+            proto_tensor = inference_pb2.Tensor(values=tensor[&#34;values&#34;], shape=shape)
+            tensor_inputs[name] = proto_tensor
+
+        response = await self.stub.Forward(inference_pb2.ForwardRequest(model_uid=model_uid, inputs=tensor_inputs))
+
+        return ForwardResponse(
+            outputs={
+                name: Tensor(
+                    values=list(tensor.values),
+                    shape=[TensorDimension(size=dim.size, name=dim.name, dynamic=dim.dynamic) for dim in tensor.shape],
+                )
+                for name, tensor in response.outputs.items()
+            },
+            error=response.error if response.HasField(&#34;error&#34;) else None,
+        )</code></pre>
+</details>
+<div class="desc"><p>Client for the InferenceService.</p>
+<p>This service allows uploading models and running inference on them.</p>
+<p>Initialize the inference service client.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>channel</code></strong></dt>
+<dd>gRPC channel to use for communication.</dd>
+</dl></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pykos.services.AsyncClientBase</li>
+<li>abc.ABC</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="services.inference.InferenceServiceClient.forward"><code class="name flex">
+<span>async def <span class="ident">forward</span></span>(<span>self,<br>model_uid: str,<br>inputs: dict[str, <a title="services.inference.Tensor" href="#services.inference.Tensor">Tensor</a>]) ‑> <a title="services.inference.ForwardResponse" href="#services.inference.ForwardResponse">ForwardResponse</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def forward(self, model_uid: str, inputs: dict[str, Tensor]) -&gt; ForwardResponse:
+    &#34;&#34;&#34;Run inference using a specified model.
+
+    Args:
+        model_uid: The UID of the model to use for inference.
+        inputs: Dictionary mapping tensor names to tensors.
+
+    Returns:
+        ForwardResponse containing:
+            outputs: Dictionary mapping tensor names to output tensors
+            error: Optional error information if inference failed
+    &#34;&#34;&#34;
+    tensor_inputs = {}
+    for name, tensor in inputs.items():
+        shape = [
+            inference_pb2.Tensor.Dimension(size=dim[&#34;size&#34;], name=dim[&#34;name&#34;], dynamic=dim[&#34;dynamic&#34;])
+            for dim in tensor[&#34;shape&#34;]
+        ]
+        proto_tensor = inference_pb2.Tensor(values=tensor[&#34;values&#34;], shape=shape)
+        tensor_inputs[name] = proto_tensor
+
+    response = await self.stub.Forward(inference_pb2.ForwardRequest(model_uid=model_uid, inputs=tensor_inputs))
+
+    return ForwardResponse(
+        outputs={
+            name: Tensor(
+                values=list(tensor.values),
+                shape=[TensorDimension(size=dim.size, name=dim.name, dynamic=dim.dynamic) for dim in tensor.shape],
+            )
+            for name, tensor in response.outputs.items()
+        },
+        error=response.error if response.HasField(&#34;error&#34;) else None,
+    )</code></pre>
+</details>
+<div class="desc"><p>Run inference using a specified model.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model_uid</code></strong></dt>
+<dd>The UID of the model to use for inference.</dd>
+<dt><strong><code>inputs</code></strong></dt>
+<dd>Dictionary mapping tensor names to tensors.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt>ForwardResponse containing:</dt>
+<dt><code>
+outputs</code></dt>
+<dd>Dictionary mapping tensor names to output tensors
+error: Optional error information if inference failed</dd>
+</dl></div>
+</dd>
+<dt id="services.inference.InferenceServiceClient.get_models_info"><code class="name flex">
+<span>async def <span class="ident">get_models_info</span></span>(<span>self, model_uids: list[str] | None = None) ‑> <a title="services.inference.GetModelsInfoResponse" href="#services.inference.GetModelsInfoResponse">GetModelsInfoResponse</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def get_models_info(self, model_uids: list[str] | None = None) -&gt; GetModelsInfoResponse:
+    &#34;&#34;&#34;Get information about available models.
+
+    Args:
+        model_uids: Optional list of specific model UIDs to get info for.
+                   If None, returns info for all models.
+
+    Returns:
+        GetModelsInfoResponse containing:
+            models: List of ModelInfo objects
+            error: Optional error information if fetching failed
+    &#34;&#34;&#34;
+    if model_uids is not None:
+        request = inference_pb2.GetModelsInfoRequest(model_uids=inference_pb2.ModelUids(uids=model_uids))
+    else:
+        request = inference_pb2.GetModelsInfoRequest(all=True)
+
+    response = await self.stub.GetModelsInfo(request)
+
+    return GetModelsInfoResponse(
+        models=[
+            ModelInfo(
+                uid=model.uid,
+                metadata=ModelMetadata(
+                    model_name=model.metadata.model_name if model.metadata.HasField(&#34;model_name&#34;) else None,
+                    model_description=(
+                        model.metadata.model_description if model.metadata.HasField(&#34;model_description&#34;) else None
+                    ),
+                    model_version=(
+                        model.metadata.model_version if model.metadata.HasField(&#34;model_version&#34;) else None
+                    ),
+                    model_author=model.metadata.model_author if model.metadata.HasField(&#34;model_author&#34;) else None,
+                ),
+                input_specs={
+                    name: Tensor(
+                        values=list(tensor.values),
+                        shape=[
+                            TensorDimension(size=dim.size, name=dim.name, dynamic=dim.dynamic)
+                            for dim in tensor.shape
+                        ],
+                    )
+                    for name, tensor in model.input_specs.items()
+                },
+                output_specs={
+                    name: Tensor(
+                        values=list(tensor.values),
+                        shape=[
+                            TensorDimension(size=dim.size, name=dim.name, dynamic=dim.dynamic)
+                            for dim in tensor.shape
+                        ],
+                    )
+                    for name, tensor in model.output_specs.items()
+                },
+                description=model.description,
+            )
+            for model in response.models
+        ],
+        error=response.error if response.HasField(&#34;error&#34;) else None,
+    )</code></pre>
+</details>
+<div class="desc"><p>Get information about available models.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model_uids</code></strong></dt>
+<dd>Optional list of specific model UIDs to get info for.
+If None, returns info for all models.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt>GetModelsInfoResponse containing:</dt>
+<dt><code>
+models</code></dt>
+<dd>List of ModelInfo objects
+error: Optional error information if fetching failed</dd>
+</dl></div>
+</dd>
+<dt id="services.inference.InferenceServiceClient.load_models"><code class="name flex">
+<span>async def <span class="ident">load_models</span></span>(<span>self, uids: list[str]) ‑> kos.inference_pb2.LoadModelsResponse</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def load_models(self, uids: list[str]) -&gt; inference_pb2.LoadModelsResponse:
+    &#34;&#34;&#34;Load models from the robot&#39;s filesystem.
+
+    Args:
+        uids: List of model UIDs to load.
+
+    Returns:
+        LoadModelsResponse containing information about the loaded models.
+    &#34;&#34;&#34;
+    request = inference_pb2.ModelUids(uids=uids)
+    return await self.stub.LoadModels(request)</code></pre>
+</details>
+<div class="desc"><p>Load models from the robot's filesystem.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>uids</code></strong></dt>
+<dd>List of model UIDs to load.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>LoadModelsResponse containing information about the loaded models.</p></div>
+</dd>
+<dt id="services.inference.InferenceServiceClient.unload_models"><code class="name flex">
+<span>async def <span class="ident">unload_models</span></span>(<span>self, uids: list[str]) ‑> kos.common_pb2.ActionResponse</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def unload_models(self, uids: list[str]) -&gt; common_pb2.ActionResponse:
+    &#34;&#34;&#34;Unload models from the robot&#39;s filesystem.
+
+    Args:
+        uids: List of model UIDs to unload.
+
+    Returns:
+        ActionResponse indicating success/failure of the unload operation.
+    &#34;&#34;&#34;
+    request = inference_pb2.ModelUids(uids=uids)
+    return await self.stub.UnloadModels(request)</code></pre>
+</details>
+<div class="desc"><p>Unload models from the robot's filesystem.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>uids</code></strong></dt>
+<dd>List of model UIDs to unload.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>ActionResponse indicating success/failure of the unload operation.</p></div>
+</dd>
+<dt id="services.inference.InferenceServiceClient.upload_model"><code class="name flex">
+<span>async def <span class="ident">upload_model</span></span>(<span>self,<br>model_data: bytes,<br>metadata: <a title="services.inference.ModelMetadata" href="#services.inference.ModelMetadata">ModelMetadata</a> | None = None) ‑> kos.inference_pb2.UploadModelResponse</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def upload_model(
+    self, model_data: bytes, metadata: ModelMetadata | None = None
+) -&gt; inference_pb2.UploadModelResponse:
+    &#34;&#34;&#34;Upload a model to the robot.
+
+    Example:
+    &gt;&gt;&gt; client.upload_model(model_data,
+    ... metadata={&#34;model_name&#34;: &#34;MyModel&#34;,
+    ... &#34;model_description&#34;: &#34;A model for inference&#34;,
+    ... &#34;model_version&#34;: &#34;1.0.0&#34;,
+    ... &#34;model_author&#34;: &#34;John Doe&#34;})
+
+    Args:
+        model_data: The binary model data to upload.
+        metadata: Optional metadata about the model that can include:
+                 model_name: Name of the model
+                 model_description: Description of the model
+                 model_version: Version of the model
+                 model_author: Author of the model
+
+    Returns:
+        UploadModelResponse containing the model UID and any error information.
+    &#34;&#34;&#34;
+    proto_metadata = None
+    if metadata is not None:
+        proto_metadata = inference_pb2.ModelMetadata(**metadata)
+    request = inference_pb2.UploadModelRequest(model=model_data, metadata=proto_metadata)
+    return await self.stub.UploadModel(request)</code></pre>
+</details>
+<div class="desc"><p>Upload a model to the robot.</p>
+<p>Example:</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; client.upload_model(model_data,
+... metadata={&quot;model_name&quot;: &quot;MyModel&quot;,
+... &quot;model_description&quot;: &quot;A model for inference&quot;,
+... &quot;model_version&quot;: &quot;1.0.0&quot;,
+... &quot;model_author&quot;: &quot;John Doe&quot;})
+</code></pre>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>model_data</code></strong></dt>
+<dd>The binary model data to upload.</dd>
+<dt><strong><code>metadata</code></strong></dt>
+<dd>Optional metadata about the model that can include:
+model_name: Name of the model
+model_description: Description of the model
+model_version: Version of the model
+model_author: Author of the model</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>UploadModelResponse containing the model UID and any error information.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.inference.ModelInfo"><code class="flex name class">
+<span>class <span class="ident">ModelInfo</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ModelInfo(TypedDict):
+    &#34;&#34;&#34;Information about a model.
+
+    Args:
+        uid: Model UID (assigned by server)
+        metadata: Model metadata
+        input_specs: Expected input tensor specifications
+        output_specs: Expected output tensor specifications
+        description: str
+    &#34;&#34;&#34;
+
+    uid: str
+    metadata: ModelMetadata
+    input_specs: dict[str, Tensor]
+    output_specs: dict[str, Tensor]
+    description: str</code></pre>
+</details>
+<div class="desc"><p>Information about a model.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>uid</code></strong></dt>
+<dd>Model UID (assigned by server)</dd>
+<dt><strong><code>metadata</code></strong></dt>
+<dd>Model metadata</dd>
+<dt><strong><code>input_specs</code></strong></dt>
+<dd>Expected input tensor specifications</dd>
+<dt><strong><code>output_specs</code></strong></dt>
+<dd>Expected output tensor specifications</dd>
+<dt><strong><code>description</code></strong></dt>
+<dd>str</dd>
+</dl></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.inference.ModelInfo.description"><code class="name">var <span class="ident">description</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.inference.ModelInfo.input_specs"><code class="name">var <span class="ident">input_specs</span> : dict[str, <a title="services.inference.Tensor" href="#services.inference.Tensor">Tensor</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.inference.ModelInfo.metadata"><code class="name">var <span class="ident">metadata</span> : <a title="services.inference.ModelMetadata" href="#services.inference.ModelMetadata">ModelMetadata</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.inference.ModelInfo.output_specs"><code class="name">var <span class="ident">output_specs</span> : dict[str, <a title="services.inference.Tensor" href="#services.inference.Tensor">Tensor</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.inference.ModelInfo.uid"><code class="name">var <span class="ident">uid</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.inference.ModelMetadata"><code class="flex name class">
+<span>class <span class="ident">ModelMetadata</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ModelMetadata(TypedDict):
+    &#34;&#34;&#34;Model metadata for uploading models.
+
+    All fields are optional and can be used to provide additional information about the model.
+    &#34;&#34;&#34;
+
+    model_name: NotRequired[str | None]
+    model_description: NotRequired[str | None]
+    model_version: NotRequired[str | None]
+    model_author: NotRequired[str | None]</code></pre>
+</details>
+<div class="desc"><p>Model metadata for uploading models.</p>
+<p>All fields are optional and can be used to provide additional information about the model.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.inference.ModelMetadata.model_author"><code class="name">var <span class="ident">model_author</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.inference.ModelMetadata.model_description"><code class="name">var <span class="ident">model_description</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.inference.ModelMetadata.model_name"><code class="name">var <span class="ident">model_name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.inference.ModelMetadata.model_version"><code class="name">var <span class="ident">model_version</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.inference.Tensor"><code class="flex name class">
+<span>class <span class="ident">Tensor</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Tensor(TypedDict):
+    &#34;&#34;&#34;A tensor containing data.
+
+    Args:
+        values: Tensor values in row-major order
+        shape: List of dimension information
+    &#34;&#34;&#34;
+
+    values: list[float]
+    shape: list[TensorDimension]</code></pre>
+</details>
+<div class="desc"><p>A tensor containing data.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>values</code></strong></dt>
+<dd>Tensor values in row-major order</dd>
+<dt><strong><code>shape</code></strong></dt>
+<dd>List of dimension information</dd>
+</dl></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.inference.Tensor.shape"><code class="name">var <span class="ident">shape</span> : list[<a title="services.inference.TensorDimension" href="#services.inference.TensorDimension">TensorDimension</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="services.inference.Tensor.values"><code class="name flex">
+<span>def <span class="ident">values</span></span>(<span>...) ‑> list[float]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>D.values() -&gt; an object providing a view on D's values</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.inference.TensorDimension"><code class="flex name class">
+<span>class <span class="ident">TensorDimension</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TensorDimension(TypedDict):
+    &#34;&#34;&#34;Information about a tensor dimension.
+
+    Args:
+        size: Size of this dimension
+        name: Name of this dimension (e.g., &#34;batch&#34;, &#34;channels&#34;, &#34;height&#34;)
+        dynamic: Whether this dimension can vary (e.g., batch size)
+    &#34;&#34;&#34;
+
+    size: int
+    name: str
+    dynamic: bool</code></pre>
+</details>
+<div class="desc"><p>Information about a tensor dimension.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>size</code></strong></dt>
+<dd>Size of this dimension</dd>
+<dt><strong><code>name</code></strong></dt>
+<dd>Name of this dimension (e.g., "batch", "channels", "height")</dd>
+<dt><strong><code>dynamic</code></strong></dt>
+<dd>Whether this dimension can vary (e.g., batch size)</dd>
+</dl></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.inference.TensorDimension.dynamic"><code class="name">var <span class="ident">dynamic</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.inference.TensorDimension.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.inference.TensorDimension.size"><code class="name">var <span class="ident">size</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="services" href="index.html">services</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="services.inference.ForwardResponse" href="#services.inference.ForwardResponse">ForwardResponse</a></code></h4>
+<ul class="">
+<li><code><a title="services.inference.ForwardResponse.error" href="#services.inference.ForwardResponse.error">error</a></code></li>
+<li><code><a title="services.inference.ForwardResponse.outputs" href="#services.inference.ForwardResponse.outputs">outputs</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.inference.GetModelsInfoResponse" href="#services.inference.GetModelsInfoResponse">GetModelsInfoResponse</a></code></h4>
+<ul class="">
+<li><code><a title="services.inference.GetModelsInfoResponse.error" href="#services.inference.GetModelsInfoResponse.error">error</a></code></li>
+<li><code><a title="services.inference.GetModelsInfoResponse.models" href="#services.inference.GetModelsInfoResponse.models">models</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.inference.InferenceServiceClient" href="#services.inference.InferenceServiceClient">InferenceServiceClient</a></code></h4>
+<ul class="">
+<li><code><a title="services.inference.InferenceServiceClient.forward" href="#services.inference.InferenceServiceClient.forward">forward</a></code></li>
+<li><code><a title="services.inference.InferenceServiceClient.get_models_info" href="#services.inference.InferenceServiceClient.get_models_info">get_models_info</a></code></li>
+<li><code><a title="services.inference.InferenceServiceClient.load_models" href="#services.inference.InferenceServiceClient.load_models">load_models</a></code></li>
+<li><code><a title="services.inference.InferenceServiceClient.unload_models" href="#services.inference.InferenceServiceClient.unload_models">unload_models</a></code></li>
+<li><code><a title="services.inference.InferenceServiceClient.upload_model" href="#services.inference.InferenceServiceClient.upload_model">upload_model</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.inference.ModelInfo" href="#services.inference.ModelInfo">ModelInfo</a></code></h4>
+<ul class="">
+<li><code><a title="services.inference.ModelInfo.description" href="#services.inference.ModelInfo.description">description</a></code></li>
+<li><code><a title="services.inference.ModelInfo.input_specs" href="#services.inference.ModelInfo.input_specs">input_specs</a></code></li>
+<li><code><a title="services.inference.ModelInfo.metadata" href="#services.inference.ModelInfo.metadata">metadata</a></code></li>
+<li><code><a title="services.inference.ModelInfo.output_specs" href="#services.inference.ModelInfo.output_specs">output_specs</a></code></li>
+<li><code><a title="services.inference.ModelInfo.uid" href="#services.inference.ModelInfo.uid">uid</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.inference.ModelMetadata" href="#services.inference.ModelMetadata">ModelMetadata</a></code></h4>
+<ul class="">
+<li><code><a title="services.inference.ModelMetadata.model_author" href="#services.inference.ModelMetadata.model_author">model_author</a></code></li>
+<li><code><a title="services.inference.ModelMetadata.model_description" href="#services.inference.ModelMetadata.model_description">model_description</a></code></li>
+<li><code><a title="services.inference.ModelMetadata.model_name" href="#services.inference.ModelMetadata.model_name">model_name</a></code></li>
+<li><code><a title="services.inference.ModelMetadata.model_version" href="#services.inference.ModelMetadata.model_version">model_version</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.inference.Tensor" href="#services.inference.Tensor">Tensor</a></code></h4>
+<ul class="">
+<li><code><a title="services.inference.Tensor.shape" href="#services.inference.Tensor.shape">shape</a></code></li>
+<li><code><a title="services.inference.Tensor.values" href="#services.inference.Tensor.values">values</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.inference.TensorDimension" href="#services.inference.TensorDimension">TensorDimension</a></code></h4>
+<ul class="">
+<li><code><a title="services.inference.TensorDimension.dynamic" href="#services.inference.TensorDimension.dynamic">dynamic</a></code></li>
+<li><code><a title="services.inference.TensorDimension.name" href="#services.inference.TensorDimension.name">name</a></code></li>
+<li><code><a title="services.inference.TensorDimension.size" href="#services.inference.TensorDimension.size">size</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.5</a>.</p>
+</footer>
+</body>
+</html>

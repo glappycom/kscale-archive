@@ -1,0 +1,6 @@
+[submodule "kos-zbot"]
+	path = kos-zbot
+	url = https://github.com/kscalelabs/kos-zbot
+[submodule "ksim-gym-zbot"]
+	path = ksim-gym-zbot
+	url = https://github.com/kscalelabs/ksim-gym-zbot

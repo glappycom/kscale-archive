@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Defaults
+websocket=false
+
+# Parse command line arguments
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --websocket)
+            websocket=true
+            shift
+            ;;
+        *)
+            echo "Unknown option $1"
+            echo "Usage: kbot-run [--websocket]"
+            exit 1
+            ;;
+    esac
+done
+
+# ---------------------------
+# Policy directory handling
+# ---------------------------
+policy_dir="${POLICY_DIR:-${HOME}/.policies}"
+remote_policies="mu:~/public_policies/"
+
+mkdir -p "$policy_dir"
+echo "Syncing policies from $remote_policies to $policy_dir (with deletion)..."
+rsync -aLP --delete "$remote_policies" "$policy_dir/"
+
+# ---------------------------
+# Bring up CAN and set torques
+# ---------------------------
+_set_can_and_max_torques.sh
+
+# ---------------------------
+# Run firmware policy loop
+# ---------------------------
+echo "=============================================="
+echo "               Running firmware               "
+echo "=============================================="
+PY="$(command -v python)"
+if [ "$websocket" = "true" ]; then
+    sudo -E chrt 30 "$PY" -m firmware.main "$policy_dir" --websocket
+else
+    sudo -E chrt 30 "$PY" -m firmware.main "$policy_dir"
+fi

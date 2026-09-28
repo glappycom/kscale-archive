@@ -1,0 +1,33 @@
+# .gitignore
+
+# Python
+*.py[oc]
+__pycache__/
+*.egg-info
+.eggs/
+.mypy_cache/*
+.pyre/
+.pytest_cache/
+.ruff_cache/
+.dmypy.json
+
+# Build artifacts
+build/
+dist/
+*.so
+out*/
+*.stl
+*.mp4
+*.notes
+
+# Directories
+environments/
+screenshots/
+scratch/
+assets/
+wandb/
+models/
+logs/
+
+# Other artifacts
+MUJOCO_LOG.TXT

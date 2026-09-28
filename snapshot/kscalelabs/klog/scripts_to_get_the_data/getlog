@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ssh -qt dpsh@klog '~/klog/klog-server/klog_server/scripts/getlog' | tee /tmp/run_id
+
+dirs=$(grep -o '/mnt/klog1\(/\w\+\)\+' /tmp/run_id)
+
+for dir in $dirs; do
+    read -p "Press enter to get directories: $dir"
+    rsync -aP "dpsh@klog:$dir" .
+done

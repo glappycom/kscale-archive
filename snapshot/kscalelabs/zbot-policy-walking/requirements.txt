@@ -1,0 +1,9 @@
+# requirements.txt
+
+# Training dependencies
+ksim=
+xax
+mujoco-scenes
+
+# Inference dependencies
+kinfer[jax]

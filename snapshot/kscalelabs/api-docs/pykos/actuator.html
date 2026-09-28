@@ -1,0 +1,1269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>services.actuator API documentation</title>
+<meta name="description" content="Actuator service client.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>services.actuator</code></h1>
+</header>
+<section id="section-intro">
+<p>Actuator service client.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="services.actuator.ActuatorCommand"><code class="flex name class">
+<span>class <span class="ident">ActuatorCommand</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ActuatorCommand(TypedDict):
+    actuator_id: int
+    position: NotRequired[float]
+    velocity: NotRequired[float]
+    torque: NotRequired[float]</code></pre>
+</details>
+<div class="desc"><p>dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+(key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+d = {}
+for k, v in iterable:
+d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+in the keyword argument list.
+For example:
+dict(one=1, two=2)</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.actuator.ActuatorCommand.actuator_id"><code class="name">var <span class="ident">actuator_id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.ActuatorCommand.position"><code class="name">var <span class="ident">position</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.ActuatorCommand.torque"><code class="name">var <span class="ident">torque</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.ActuatorCommand.velocity"><code class="name">var <span class="ident">velocity</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.actuator.ActuatorPosition"><code class="flex name class">
+<span>class <span class="ident">ActuatorPosition</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ActuatorPosition(TypedDict):
+    actuator_id: int
+    position: float</code></pre>
+</details>
+<div class="desc"><p>dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+(key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+d = {}
+for k, v in iterable:
+d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+in the keyword argument list.
+For example:
+dict(one=1, two=2)</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.actuator.ActuatorPosition.actuator_id"><code class="name">var <span class="ident">actuator_id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.ActuatorPosition.position"><code class="name">var <span class="ident">position</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.actuator.ActuatorServiceClient"><code class="flex name class">
+<span>class <span class="ident">ActuatorServiceClient</span></span>
+<span>(</span><span>channel: grpc.aio._base_channel.Channel)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ActuatorServiceClient(AsyncClientBase):
+    &#34;&#34;&#34;Client for the ActuatorService.&#34;&#34;&#34;
+
+    def __init__(self, channel: grpc.aio.Channel) -&gt; None:
+        super().__init__()
+        self.stub = actuator_pb2_grpc.ActuatorServiceStub(channel)
+        self.operations_stub = operations_pb2_grpc.OperationsStub(channel)
+
+    async def calibrate(self, actuator_id: int) -&gt; CalibrationMetadata:
+        &#34;&#34;&#34;Calibrate an actuator.&#34;&#34;&#34;
+        response = await self.stub.CalibrateActuator(actuator_pb2.CalibrateActuatorRequest(actuator_id=actuator_id))
+        metadata = CalibrationMetadata(response.metadata)
+        return metadata
+
+    async def get_calibration_status(self, actuator_id: int) -&gt; str | None:
+        &#34;&#34;&#34;Get the calibration status of an actuator.&#34;&#34;&#34;
+        response = await self.operations_stub.GetOperation(
+            operations_pb2.GetOperationRequest(name=f&#34;operations/calibrate_actuator/{actuator_id}&#34;)
+        )
+        metadata = CalibrationMetadata(response.metadata)
+        return metadata.status
+
+    async def command_actuators(self, commands: list[ActuatorCommand]) -&gt; actuator_pb2.CommandActuatorsResponse:
+        &#34;&#34;&#34;Command multiple actuators at once.
+
+        Example:
+            &gt;&gt;&gt; command_actuators([
+            ...     {&#34;actuator_id&#34;: 1, &#34;position&#34;: 90.0, &#34;velocity&#34;: 100.0, &#34;torque&#34;: 1.0},
+            ...     {&#34;actuator_id&#34;: 2, &#34;position&#34;: 180.0},
+            ... ])
+
+        Args:
+            commands: List of dictionaries containing actuator commands.
+                     Each dict should have &#39;actuator_id&#39; and optionally &#39;position&#39;,
+                     &#39;velocity&#39;, and &#39;torque&#39;.
+
+        Returns:
+            List of ActionResult objects indicating success/failure for each command.
+        &#34;&#34;&#34;
+        actuator_commands = [actuator_pb2.ActuatorCommand(**cmd) for cmd in commands]
+        request = actuator_pb2.CommandActuatorsRequest(commands=actuator_commands)
+        return await self.stub.CommandActuators(request)
+
+    async def configure_actuator(self, **kwargs: Unpack[ConfigureActuatorRequest]) -&gt; common_pb2.ActionResult:
+        &#34;&#34;&#34;Configure an actuator&#39;s parameters.
+
+        Example:
+            &gt;&gt;&gt; configure_actuator(
+            ...     actuator_id=1,
+            ...     kp=1.0,
+            ...     kd=0.1,
+            ...     ki=0.01,
+            ...     acceleration=2230,
+            ...     max_torque=100.0,
+            ...     protective_torque=None,
+            ...     protection_time=None,
+            ...     torque_enabled=True,
+            ...     new_actuator_id=None,
+            ...     zero_position=True,
+            ... )
+
+            &gt;&gt;&gt; configure_actuator(
+            ...     actuator_id=2,
+            ...     kp=1.0,
+            ...     kd=0.1,
+            ...     torque_enabled=True,
+            ... )
+
+        Args:
+            actuator_id: ID of the actuator to configure
+            **kwargs: Configuration parameters that may include:
+                     kp, kd, ki, max_torque, protective_torque,
+                     protection_time, torque_enabled, new_actuator_id
+
+        Returns:
+            ActionResponse indicating success/failure
+        &#34;&#34;&#34;
+        request = actuator_pb2.ConfigureActuatorRequest(**kwargs)
+        return await self.stub.ConfigureActuator(request)
+
+    async def get_actuators_state(
+        self,
+        actuator_ids: list[int] | None = None,
+    ) -&gt; actuator_pb2.GetActuatorsStateResponse:
+        &#34;&#34;&#34;Get the state of multiple actuators.
+
+        Example:
+            &gt;&gt;&gt; get_actuators_state([1, 2])
+
+        Args:
+            actuator_ids: List of actuator IDs to query. If None, gets state of all actuators.
+
+        Returns:
+            List of ActuatorStateResponse objects containing the state information
+        &#34;&#34;&#34;
+        request = actuator_pb2.GetActuatorsStateRequest(actuator_ids=actuator_ids or [])
+        return await self.stub.GetActuatorsState(request)
+
+    async def move_to_position(
+        self,
+        positions: list[ActuatorPosition],
+        num_seconds: float,
+        configure_actuators: list[ConfigureActuatorRequest] | None = None,
+        commands_per_second: int = 10,
+        torque_enabled: bool | None = None,
+    ) -&gt; None:
+        &#34;&#34;&#34;Helper function for moving actuators to a target position.
+
+        This first reads the current position of the actuators, then moves them
+        to the target positions at a rate of `commands_per_second` commands per
+        second.
+
+        We can additionally use this command to safely configure the actuator
+        PD parameters after setting the target position to the current position.
+
+        Args:
+            positions: The actuator target positions.
+            num_seconds: How long to take the actuators to move to the target
+                positions.
+            configure_actuators: List of dictionaries containing actuator
+                configuration parameters.
+            commands_per_second: How many commands to send per second.
+            torque_enabled: Whether to enable torque for the actuators.
+        &#34;&#34;&#34;
+        actuator_ids = [p[&#34;actuator_id&#34;] for p in positions]
+        states = await self.get_actuators_state(actuator_ids)
+        start_positions = {state.actuator_id: state.position for state in states.states}
+        target_positions = {p[&#34;actuator_id&#34;]: p[&#34;position&#34;] for p in positions}
+
+        if set(start_positions.keys()) != set(target_positions.keys()):
+            raise ValueError(&#34;All actuator IDs must be present in both start and target positions&#34;)
+
+        # Sets the target position to the current position for all actuators.
+        await self.command_actuators(
+            [
+                {
+                    &#34;actuator_id&#34;: id,
+                    &#34;position&#34;: start_positions[id],
+                    &#34;velocity&#34;: 0.0,
+                    &#34;torque&#34;: 0.0,
+                }
+                for id in actuator_ids
+            ]
+        )
+
+        # Computes target velocities for each actuator, in rad/s.
+        velocities = {id: (target_positions[id] - start_positions[id]) / num_seconds for id in actuator_ids}
+
+        # Optionally configure the actuators after setting the target position.
+        if configure_actuators is not None:
+            for configure_actuator in configure_actuators:
+                if torque_enabled is not None:
+                    configure_actuator[&#34;torque_enabled&#34;] = torque_enabled
+                await self.configure_actuator(**configure_actuator)
+        elif torque_enabled is not None:
+            for actuator_id in actuator_ids:
+                await self.configure_actuator(
+                    actuator_id=actuator_id,
+                    torque_enabled=torque_enabled,
+                )
+
+        # Calculate the number of commands to send.
+        num_commands = int(num_seconds * commands_per_second)
+
+        # Send the commands.
+        current_time = time.time()
+        for i in range(num_commands):
+            await self.command_actuators(
+                [
+                    {
+                        &#34;actuator_id&#34;: id,
+                        &#34;position&#34;: start_positions[id]
+                        + (target_positions[id] - start_positions[id]) * (i / num_commands),
+                        &#34;velocity&#34;: velocities[id],
+                    }
+                    for id in actuator_ids
+                ]
+            )
+
+            # Sleep until the next command is due.
+            next_time = current_time + (1 / commands_per_second)
+            if current_time &lt; next_time:
+                await asyncio.sleep(next_time - current_time)
+            current_time = next_time
+
+        # Finally, set the velocity to 0 for all actuators.
+        await self.command_actuators(
+            [
+                {
+                    &#34;actuator_id&#34;: id,
+                    &#34;position&#34;: target_positions[id],
+                    &#34;velocity&#34;: 0.0,
+                }
+                for id in actuator_ids
+            ]
+        )
+
+    async def zero_actuators(
+        self,
+        actuator_id: int,
+        zero_position: float,
+        configure_actuator: ConfigureActuatorRequest | None = None,
+        target_velocity: float = 0.25,
+        commands_per_second: int = 10,
+        move_back_seconds: float = 3.0,
+    ) -&gt; None:
+        &#34;&#34;&#34;Helper method for zeroing an actuator.
+
+        This function works to zero the actuator against an endstop, by moving
+        the actuator until it reaches that endstop, then moving it back a small
+        amount.
+
+        We can choose which endstop to zero against by setting the sign of
+        `zero_position`. If it is positive, then we rotate counterclockwise
+        until we reach an endstop, then back by this amount. If it is negative,
+        then we rotate clockwise until we reach an endstop, then back by this
+        amount.
+
+        Args:
+            actuator_id: The ID of the actuator to zero.
+            zero_position: The position to move the actuator back by after
+                reaching the endstop.
+            configure_actuator: Configuration parameters to set on the actuator
+                before zeroing.
+            target_velocity: The velocity to move the actuator at.
+            commands_per_second: How many commands to send per second.
+            move_back_seconds: How long to move the actuator back by after
+                reaching the endstop.
+        &#34;&#34;&#34;
+        start_state = await self.get_actuators_state([actuator_id])
+        current_position = start_state.states[0].position
+
+        # Sets the target position to the current position for all actuators.
+        await self.command_actuators(
+            [
+                {
+                    &#34;actuator_id&#34;: actuator_id,
+                    &#34;position&#34;: current_position,
+                    &#34;velocity&#34;: 0.0,
+                    &#34;torque&#34;: 0.0,
+                }
+            ]
+        )
+
+        if configure_actuator is not None:
+            configure_actuator[&#34;torque_enabled&#34;] = True
+            await self.configure_actuator(**configure_actuator)
+        else:
+            await self.configure_actuator(actuator_id=actuator_id, torque_enabled=True)
+
+        if target_velocity &lt;= 0:
+            raise ValueError(&#34;target_velocity must be positive&#34;)
+
+        # Calculates the position delta.
+        delta = target_velocity / commands_per_second
+
+        # Ensure the target velocity is oriented correctly.
+        if zero_position &gt; 0:
+            target_velocity = -target_velocity
+            delta = -delta
+        elif zero_position == 0:
+            raise ValueError(&#34;zero_position must be non-zero&#34;)
+
+        current_time = time.time()
+        while True:
+            current_state = await self.get_actuators_state([actuator_id])
+            current_read_position = current_state.states[0].position
+
+            # If we are not able to reach the target position, it means we are
+            # hitting against the endstop, so we should break.
+            if abs(current_read_position - current_position) &gt;= abs(delta / 2):
+                break
+
+            # Adds the delta to the current position.
+            current_position = current_position + delta
+
+            await self.command_actuators(
+                [
+                    {
+                        &#34;actuator_id&#34;: actuator_id,
+                        &#34;position&#34;: current_position,
+                        &#34;velocity&#34;: target_velocity,
+                    }
+                ]
+            )
+
+            # Sleep until the next command is due.
+            next_time = current_time + (1 / commands_per_second)
+            if current_time &lt; next_time:
+                await asyncio.sleep(next_time - current_time)
+            current_time = next_time
+
+        # Move back by the zero position.
+        await self.move_to_position(
+            positions=[
+                {
+                    &#34;actuator_id&#34;: actuator_id,
+                    &#34;position&#34;: current_position - zero_position,
+                },
+            ],
+            num_seconds=move_back_seconds,
+        )
+
+        # Finally, configure the new location as the actuator zero.
+        await self.configure_actuator(
+            actuator_id=actuator_id,
+            zero_position=True,
+        )</code></pre>
+</details>
+<div class="desc"><p>Client for the ActuatorService.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pykos.services.AsyncClientBase</li>
+<li>abc.ABC</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="services.actuator.ActuatorServiceClient.calibrate"><code class="name flex">
+<span>async def <span class="ident">calibrate</span></span>(<span>self, actuator_id: int) ‑> <a title="services.actuator.CalibrationMetadata" href="#services.actuator.CalibrationMetadata">CalibrationMetadata</a></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def calibrate(self, actuator_id: int) -&gt; CalibrationMetadata:
+    &#34;&#34;&#34;Calibrate an actuator.&#34;&#34;&#34;
+    response = await self.stub.CalibrateActuator(actuator_pb2.CalibrateActuatorRequest(actuator_id=actuator_id))
+    metadata = CalibrationMetadata(response.metadata)
+    return metadata</code></pre>
+</details>
+<div class="desc"><p>Calibrate an actuator.</p></div>
+</dd>
+<dt id="services.actuator.ActuatorServiceClient.command_actuators"><code class="name flex">
+<span>async def <span class="ident">command_actuators</span></span>(<span>self,<br>commands: list[<a title="services.actuator.ActuatorCommand" href="#services.actuator.ActuatorCommand">ActuatorCommand</a>]) ‑> kos.actuator_pb2.CommandActuatorsResponse</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def command_actuators(self, commands: list[ActuatorCommand]) -&gt; actuator_pb2.CommandActuatorsResponse:
+    &#34;&#34;&#34;Command multiple actuators at once.
+
+    Example:
+        &gt;&gt;&gt; command_actuators([
+        ...     {&#34;actuator_id&#34;: 1, &#34;position&#34;: 90.0, &#34;velocity&#34;: 100.0, &#34;torque&#34;: 1.0},
+        ...     {&#34;actuator_id&#34;: 2, &#34;position&#34;: 180.0},
+        ... ])
+
+    Args:
+        commands: List of dictionaries containing actuator commands.
+                 Each dict should have &#39;actuator_id&#39; and optionally &#39;position&#39;,
+                 &#39;velocity&#39;, and &#39;torque&#39;.
+
+    Returns:
+        List of ActionResult objects indicating success/failure for each command.
+    &#34;&#34;&#34;
+    actuator_commands = [actuator_pb2.ActuatorCommand(**cmd) for cmd in commands]
+    request = actuator_pb2.CommandActuatorsRequest(commands=actuator_commands)
+    return await self.stub.CommandActuators(request)</code></pre>
+</details>
+<div class="desc"><p>Command multiple actuators at once.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; command_actuators([
+...     {&quot;actuator_id&quot;: 1, &quot;position&quot;: 90.0, &quot;velocity&quot;: 100.0, &quot;torque&quot;: 1.0},
+...     {&quot;actuator_id&quot;: 2, &quot;position&quot;: 180.0},
+... ])
+</code></pre>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>commands</code></strong></dt>
+<dd>List of dictionaries containing actuator commands.
+Each dict should have 'actuator_id' and optionally 'position',
+'velocity', and 'torque'.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>List of ActionResult objects indicating success/failure for each command.</p></div>
+</dd>
+<dt id="services.actuator.ActuatorServiceClient.configure_actuator"><code class="name flex">
+<span>async def <span class="ident">configure_actuator</span></span>(<span>self,<br>**kwargs: Unpack[<a title="services.actuator.ConfigureActuatorRequest" href="#services.actuator.ConfigureActuatorRequest">ConfigureActuatorRequest</a>]) ‑> kos.common_pb2.ActionResult</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def configure_actuator(self, **kwargs: Unpack[ConfigureActuatorRequest]) -&gt; common_pb2.ActionResult:
+    &#34;&#34;&#34;Configure an actuator&#39;s parameters.
+
+    Example:
+        &gt;&gt;&gt; configure_actuator(
+        ...     actuator_id=1,
+        ...     kp=1.0,
+        ...     kd=0.1,
+        ...     ki=0.01,
+        ...     acceleration=2230,
+        ...     max_torque=100.0,
+        ...     protective_torque=None,
+        ...     protection_time=None,
+        ...     torque_enabled=True,
+        ...     new_actuator_id=None,
+        ...     zero_position=True,
+        ... )
+
+        &gt;&gt;&gt; configure_actuator(
+        ...     actuator_id=2,
+        ...     kp=1.0,
+        ...     kd=0.1,
+        ...     torque_enabled=True,
+        ... )
+
+    Args:
+        actuator_id: ID of the actuator to configure
+        **kwargs: Configuration parameters that may include:
+                 kp, kd, ki, max_torque, protective_torque,
+                 protection_time, torque_enabled, new_actuator_id
+
+    Returns:
+        ActionResponse indicating success/failure
+    &#34;&#34;&#34;
+    request = actuator_pb2.ConfigureActuatorRequest(**kwargs)
+    return await self.stub.ConfigureActuator(request)</code></pre>
+</details>
+<div class="desc"><p>Configure an actuator's parameters.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; configure_actuator(
+...     actuator_id=1,
+...     kp=1.0,
+...     kd=0.1,
+...     ki=0.01,
+...     acceleration=2230,
+...     max_torque=100.0,
+...     protective_torque=None,
+...     protection_time=None,
+...     torque_enabled=True,
+...     new_actuator_id=None,
+...     zero_position=True,
+... )
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; configure_actuator(
+...     actuator_id=2,
+...     kp=1.0,
+...     kd=0.1,
+...     torque_enabled=True,
+... )
+</code></pre>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>actuator_id</code></strong></dt>
+<dd>ID of the actuator to configure</dd>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Configuration parameters that may include:
+kp, kd, ki, max_torque, protective_torque,
+protection_time, torque_enabled, new_actuator_id</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>ActionResponse indicating success/failure</p></div>
+</dd>
+<dt id="services.actuator.ActuatorServiceClient.get_actuators_state"><code class="name flex">
+<span>async def <span class="ident">get_actuators_state</span></span>(<span>self, actuator_ids: list[int] | None = None) ‑> kos.actuator_pb2.GetActuatorsStateResponse</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def get_actuators_state(
+    self,
+    actuator_ids: list[int] | None = None,
+) -&gt; actuator_pb2.GetActuatorsStateResponse:
+    &#34;&#34;&#34;Get the state of multiple actuators.
+
+    Example:
+        &gt;&gt;&gt; get_actuators_state([1, 2])
+
+    Args:
+        actuator_ids: List of actuator IDs to query. If None, gets state of all actuators.
+
+    Returns:
+        List of ActuatorStateResponse objects containing the state information
+    &#34;&#34;&#34;
+    request = actuator_pb2.GetActuatorsStateRequest(actuator_ids=actuator_ids or [])
+    return await self.stub.GetActuatorsState(request)</code></pre>
+</details>
+<div class="desc"><p>Get the state of multiple actuators.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; get_actuators_state([1, 2])
+</code></pre>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>actuator_ids</code></strong></dt>
+<dd>List of actuator IDs to query. If None, gets state of all actuators.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>List of ActuatorStateResponse objects containing the state information</p></div>
+</dd>
+<dt id="services.actuator.ActuatorServiceClient.get_calibration_status"><code class="name flex">
+<span>async def <span class="ident">get_calibration_status</span></span>(<span>self, actuator_id: int) ‑> str | None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def get_calibration_status(self, actuator_id: int) -&gt; str | None:
+    &#34;&#34;&#34;Get the calibration status of an actuator.&#34;&#34;&#34;
+    response = await self.operations_stub.GetOperation(
+        operations_pb2.GetOperationRequest(name=f&#34;operations/calibrate_actuator/{actuator_id}&#34;)
+    )
+    metadata = CalibrationMetadata(response.metadata)
+    return metadata.status</code></pre>
+</details>
+<div class="desc"><p>Get the calibration status of an actuator.</p></div>
+</dd>
+<dt id="services.actuator.ActuatorServiceClient.move_to_position"><code class="name flex">
+<span>async def <span class="ident">move_to_position</span></span>(<span>self,<br>positions: list[<a title="services.actuator.ActuatorPosition" href="#services.actuator.ActuatorPosition">ActuatorPosition</a>],<br>num_seconds: float,<br>configure_actuators: list[<a title="services.actuator.ConfigureActuatorRequest" href="#services.actuator.ConfigureActuatorRequest">ConfigureActuatorRequest</a>] | None = None,<br>commands_per_second: int = 10,<br>torque_enabled: bool | None = None) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def move_to_position(
+    self,
+    positions: list[ActuatorPosition],
+    num_seconds: float,
+    configure_actuators: list[ConfigureActuatorRequest] | None = None,
+    commands_per_second: int = 10,
+    torque_enabled: bool | None = None,
+) -&gt; None:
+    &#34;&#34;&#34;Helper function for moving actuators to a target position.
+
+    This first reads the current position of the actuators, then moves them
+    to the target positions at a rate of `commands_per_second` commands per
+    second.
+
+    We can additionally use this command to safely configure the actuator
+    PD parameters after setting the target position to the current position.
+
+    Args:
+        positions: The actuator target positions.
+        num_seconds: How long to take the actuators to move to the target
+            positions.
+        configure_actuators: List of dictionaries containing actuator
+            configuration parameters.
+        commands_per_second: How many commands to send per second.
+        torque_enabled: Whether to enable torque for the actuators.
+    &#34;&#34;&#34;
+    actuator_ids = [p[&#34;actuator_id&#34;] for p in positions]
+    states = await self.get_actuators_state(actuator_ids)
+    start_positions = {state.actuator_id: state.position for state in states.states}
+    target_positions = {p[&#34;actuator_id&#34;]: p[&#34;position&#34;] for p in positions}
+
+    if set(start_positions.keys()) != set(target_positions.keys()):
+        raise ValueError(&#34;All actuator IDs must be present in both start and target positions&#34;)
+
+    # Sets the target position to the current position for all actuators.
+    await self.command_actuators(
+        [
+            {
+                &#34;actuator_id&#34;: id,
+                &#34;position&#34;: start_positions[id],
+                &#34;velocity&#34;: 0.0,
+                &#34;torque&#34;: 0.0,
+            }
+            for id in actuator_ids
+        ]
+    )
+
+    # Computes target velocities for each actuator, in rad/s.
+    velocities = {id: (target_positions[id] - start_positions[id]) / num_seconds for id in actuator_ids}
+
+    # Optionally configure the actuators after setting the target position.
+    if configure_actuators is not None:
+        for configure_actuator in configure_actuators:
+            if torque_enabled is not None:
+                configure_actuator[&#34;torque_enabled&#34;] = torque_enabled
+            await self.configure_actuator(**configure_actuator)
+    elif torque_enabled is not None:
+        for actuator_id in actuator_ids:
+            await self.configure_actuator(
+                actuator_id=actuator_id,
+                torque_enabled=torque_enabled,
+            )
+
+    # Calculate the number of commands to send.
+    num_commands = int(num_seconds * commands_per_second)
+
+    # Send the commands.
+    current_time = time.time()
+    for i in range(num_commands):
+        await self.command_actuators(
+            [
+                {
+                    &#34;actuator_id&#34;: id,
+                    &#34;position&#34;: start_positions[id]
+                    + (target_positions[id] - start_positions[id]) * (i / num_commands),
+                    &#34;velocity&#34;: velocities[id],
+                }
+                for id in actuator_ids
+            ]
+        )
+
+        # Sleep until the next command is due.
+        next_time = current_time + (1 / commands_per_second)
+        if current_time &lt; next_time:
+            await asyncio.sleep(next_time - current_time)
+        current_time = next_time
+
+    # Finally, set the velocity to 0 for all actuators.
+    await self.command_actuators(
+        [
+            {
+                &#34;actuator_id&#34;: id,
+                &#34;position&#34;: target_positions[id],
+                &#34;velocity&#34;: 0.0,
+            }
+            for id in actuator_ids
+        ]
+    )</code></pre>
+</details>
+<div class="desc"><p>Helper function for moving actuators to a target position.</p>
+<p>This first reads the current position of the actuators, then moves them
+to the target positions at a rate of <code>commands_per_second</code> commands per
+second.</p>
+<p>We can additionally use this command to safely configure the actuator
+PD parameters after setting the target position to the current position.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>positions</code></strong></dt>
+<dd>The actuator target positions.</dd>
+<dt><strong><code>num_seconds</code></strong></dt>
+<dd>How long to take the actuators to move to the target
+positions.</dd>
+<dt><strong><code>configure_actuators</code></strong></dt>
+<dd>List of dictionaries containing actuator
+configuration parameters.</dd>
+<dt><strong><code>commands_per_second</code></strong></dt>
+<dd>How many commands to send per second.</dd>
+<dt><strong><code>torque_enabled</code></strong></dt>
+<dd>Whether to enable torque for the actuators.</dd>
+</dl></div>
+</dd>
+<dt id="services.actuator.ActuatorServiceClient.zero_actuators"><code class="name flex">
+<span>async def <span class="ident">zero_actuators</span></span>(<span>self,<br>actuator_id: int,<br>zero_position: float,<br>configure_actuator: <a title="services.actuator.ConfigureActuatorRequest" href="#services.actuator.ConfigureActuatorRequest">ConfigureActuatorRequest</a> | None = None,<br>target_velocity: float = 0.25,<br>commands_per_second: int = 10,<br>move_back_seconds: float = 3.0) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def zero_actuators(
+    self,
+    actuator_id: int,
+    zero_position: float,
+    configure_actuator: ConfigureActuatorRequest | None = None,
+    target_velocity: float = 0.25,
+    commands_per_second: int = 10,
+    move_back_seconds: float = 3.0,
+) -&gt; None:
+    &#34;&#34;&#34;Helper method for zeroing an actuator.
+
+    This function works to zero the actuator against an endstop, by moving
+    the actuator until it reaches that endstop, then moving it back a small
+    amount.
+
+    We can choose which endstop to zero against by setting the sign of
+    `zero_position`. If it is positive, then we rotate counterclockwise
+    until we reach an endstop, then back by this amount. If it is negative,
+    then we rotate clockwise until we reach an endstop, then back by this
+    amount.
+
+    Args:
+        actuator_id: The ID of the actuator to zero.
+        zero_position: The position to move the actuator back by after
+            reaching the endstop.
+        configure_actuator: Configuration parameters to set on the actuator
+            before zeroing.
+        target_velocity: The velocity to move the actuator at.
+        commands_per_second: How many commands to send per second.
+        move_back_seconds: How long to move the actuator back by after
+            reaching the endstop.
+    &#34;&#34;&#34;
+    start_state = await self.get_actuators_state([actuator_id])
+    current_position = start_state.states[0].position
+
+    # Sets the target position to the current position for all actuators.
+    await self.command_actuators(
+        [
+            {
+                &#34;actuator_id&#34;: actuator_id,
+                &#34;position&#34;: current_position,
+                &#34;velocity&#34;: 0.0,
+                &#34;torque&#34;: 0.0,
+            }
+        ]
+    )
+
+    if configure_actuator is not None:
+        configure_actuator[&#34;torque_enabled&#34;] = True
+        await self.configure_actuator(**configure_actuator)
+    else:
+        await self.configure_actuator(actuator_id=actuator_id, torque_enabled=True)
+
+    if target_velocity &lt;= 0:
+        raise ValueError(&#34;target_velocity must be positive&#34;)
+
+    # Calculates the position delta.
+    delta = target_velocity / commands_per_second
+
+    # Ensure the target velocity is oriented correctly.
+    if zero_position &gt; 0:
+        target_velocity = -target_velocity
+        delta = -delta
+    elif zero_position == 0:
+        raise ValueError(&#34;zero_position must be non-zero&#34;)
+
+    current_time = time.time()
+    while True:
+        current_state = await self.get_actuators_state([actuator_id])
+        current_read_position = current_state.states[0].position
+
+        # If we are not able to reach the target position, it means we are
+        # hitting against the endstop, so we should break.
+        if abs(current_read_position - current_position) &gt;= abs(delta / 2):
+            break
+
+        # Adds the delta to the current position.
+        current_position = current_position + delta
+
+        await self.command_actuators(
+            [
+                {
+                    &#34;actuator_id&#34;: actuator_id,
+                    &#34;position&#34;: current_position,
+                    &#34;velocity&#34;: target_velocity,
+                }
+            ]
+        )
+
+        # Sleep until the next command is due.
+        next_time = current_time + (1 / commands_per_second)
+        if current_time &lt; next_time:
+            await asyncio.sleep(next_time - current_time)
+        current_time = next_time
+
+    # Move back by the zero position.
+    await self.move_to_position(
+        positions=[
+            {
+                &#34;actuator_id&#34;: actuator_id,
+                &#34;position&#34;: current_position - zero_position,
+            },
+        ],
+        num_seconds=move_back_seconds,
+    )
+
+    # Finally, configure the new location as the actuator zero.
+    await self.configure_actuator(
+        actuator_id=actuator_id,
+        zero_position=True,
+    )</code></pre>
+</details>
+<div class="desc"><p>Helper method for zeroing an actuator.</p>
+<p>This function works to zero the actuator against an endstop, by moving
+the actuator until it reaches that endstop, then moving it back a small
+amount.</p>
+<p>We can choose which endstop to zero against by setting the sign of
+<code>zero_position</code>. If it is positive, then we rotate counterclockwise
+until we reach an endstop, then back by this amount. If it is negative,
+then we rotate clockwise until we reach an endstop, then back by this
+amount.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>actuator_id</code></strong></dt>
+<dd>The ID of the actuator to zero.</dd>
+<dt><strong><code>zero_position</code></strong></dt>
+<dd>The position to move the actuator back by after
+reaching the endstop.</dd>
+<dt><strong><code>configure_actuator</code></strong></dt>
+<dd>Configuration parameters to set on the actuator
+before zeroing.</dd>
+<dt><strong><code>target_velocity</code></strong></dt>
+<dd>The velocity to move the actuator at.</dd>
+<dt><strong><code>commands_per_second</code></strong></dt>
+<dd>How many commands to send per second.</dd>
+<dt><strong><code>move_back_seconds</code></strong></dt>
+<dd>How long to move the actuator back by after
+reaching the endstop.</dd>
+</dl></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.actuator.ActuatorStateRequest"><code class="flex name class">
+<span>class <span class="ident">ActuatorStateRequest</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ActuatorStateRequest(TypedDict):
+    actuator_ids: list[int]</code></pre>
+</details>
+<div class="desc"><p>dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+(key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+d = {}
+for k, v in iterable:
+d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+in the keyword argument list.
+For example:
+dict(one=1, two=2)</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.actuator.ActuatorStateRequest.actuator_ids"><code class="name">var <span class="ident">actuator_ids</span> : list[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.actuator.CalibrateActuatorMetadata"><code class="flex name class">
+<span>class <span class="ident">CalibrateActuatorMetadata</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A ProtocolMessage</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>google.protobuf.pyext._message.CMessage</li>
+<li>google.protobuf.message.Message</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.actuator.CalibrateActuatorMetadata.DESCRIPTOR"><code class="name">var <span class="ident">DESCRIPTOR</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="services.actuator.CalibrateActuatorMetadata.actuator_id"><code class="name">var <span class="ident">actuator_id</span></code></dt>
+<dd>
+<div class="desc"><p>Field kos.actuator.CalibrateActuatorMetadata.actuator_id</p></div>
+</dd>
+<dt id="services.actuator.CalibrateActuatorMetadata.status"><code class="name">var <span class="ident">status</span></code></dt>
+<dd>
+<div class="desc"><p>Field kos.actuator.CalibrateActuatorMetadata.status</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.actuator.CalibrationMetadata"><code class="flex name class">
+<span>class <span class="ident">CalibrationMetadata</span></span>
+<span>(</span><span>metadata_any: google.protobuf.any_pb2.Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CalibrationMetadata:
+    def __init__(self, metadata_any: AnyPb2) -&gt; None:
+        self.actuator_id: int | None = None
+        self.status: str | None = None
+        self.decode_metadata(metadata_any)
+
+    def decode_metadata(self, metadata_any: AnyPb2) -&gt; None:
+        metadata = CalibrateActuatorMetadata()
+        if metadata_any.Is(CalibrateActuatorMetadata.DESCRIPTOR):
+            metadata_any.Unpack(metadata)
+            self.actuator_id = metadata.actuator_id
+            self.status = metadata.status if metadata.HasField(&#34;status&#34;) else None
+
+    def __str__(self) -&gt; str:
+        return f&#34;CalibrationMetadata(actuator_id={self.actuator_id}, status={self.status})&#34;
+
+    def __repr__(self) -&gt; str:
+        return self.__str__()</code></pre>
+</details>
+<div class="desc"></div>
+<h3>Methods</h3>
+<dl>
+<dt id="services.actuator.CalibrationMetadata.decode_metadata"><code class="name flex">
+<span>def <span class="ident">decode_metadata</span></span>(<span>self, metadata_any: google.protobuf.any_pb2.Any) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def decode_metadata(self, metadata_any: AnyPb2) -&gt; None:
+    metadata = CalibrateActuatorMetadata()
+    if metadata_any.Is(CalibrateActuatorMetadata.DESCRIPTOR):
+        metadata_any.Unpack(metadata)
+        self.actuator_id = metadata.actuator_id
+        self.status = metadata.status if metadata.HasField(&#34;status&#34;) else None</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.actuator.CalibrationStatus"><code class="flex name class">
+<span>class <span class="ident">CalibrationStatus</span></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CalibrationStatus:
+    Calibrating = &#34;calibrating&#34;
+    Calibrated = &#34;calibrated&#34;
+    Timeout = &#34;timeout&#34;</code></pre>
+</details>
+<div class="desc"></div>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.actuator.CalibrationStatus.Calibrated"><code class="name">var <span class="ident">Calibrated</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.CalibrationStatus.Calibrating"><code class="name">var <span class="ident">Calibrating</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.CalibrationStatus.Timeout"><code class="name">var <span class="ident">Timeout</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.actuator.ConfigureActuatorRequest"><code class="flex name class">
+<span>class <span class="ident">ConfigureActuatorRequest</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ConfigureActuatorRequest(TypedDict):
+    actuator_id: int
+    kp: NotRequired[float]
+    kd: NotRequired[float]
+    ki: NotRequired[float]
+    acceleration: NotRequired[float]
+    max_torque: NotRequired[float]
+    protective_torque: NotRequired[float]
+    protection_time: NotRequired[float]
+    torque_enabled: NotRequired[bool]
+    new_actuator_id: NotRequired[int]
+    zero_position: NotRequired[bool]</code></pre>
+</details>
+<div class="desc"><p>dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+(key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+d = {}
+for k, v in iterable:
+d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+in the keyword argument list.
+For example:
+dict(one=1, two=2)</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.actuator.ConfigureActuatorRequest.acceleration"><code class="name">var <span class="ident">acceleration</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.ConfigureActuatorRequest.actuator_id"><code class="name">var <span class="ident">actuator_id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.ConfigureActuatorRequest.kd"><code class="name">var <span class="ident">kd</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.ConfigureActuatorRequest.ki"><code class="name">var <span class="ident">ki</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.ConfigureActuatorRequest.kp"><code class="name">var <span class="ident">kp</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.ConfigureActuatorRequest.max_torque"><code class="name">var <span class="ident">max_torque</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.ConfigureActuatorRequest.new_actuator_id"><code class="name">var <span class="ident">new_actuator_id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.ConfigureActuatorRequest.protection_time"><code class="name">var <span class="ident">protection_time</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.ConfigureActuatorRequest.protective_torque"><code class="name">var <span class="ident">protective_torque</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.ConfigureActuatorRequest.torque_enabled"><code class="name">var <span class="ident">torque_enabled</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.actuator.ConfigureActuatorRequest.zero_position"><code class="name">var <span class="ident">zero_position</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="services" href="index.html">services</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="services.actuator.ActuatorCommand" href="#services.actuator.ActuatorCommand">ActuatorCommand</a></code></h4>
+<ul class="">
+<li><code><a title="services.actuator.ActuatorCommand.actuator_id" href="#services.actuator.ActuatorCommand.actuator_id">actuator_id</a></code></li>
+<li><code><a title="services.actuator.ActuatorCommand.position" href="#services.actuator.ActuatorCommand.position">position</a></code></li>
+<li><code><a title="services.actuator.ActuatorCommand.torque" href="#services.actuator.ActuatorCommand.torque">torque</a></code></li>
+<li><code><a title="services.actuator.ActuatorCommand.velocity" href="#services.actuator.ActuatorCommand.velocity">velocity</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.actuator.ActuatorPosition" href="#services.actuator.ActuatorPosition">ActuatorPosition</a></code></h4>
+<ul class="">
+<li><code><a title="services.actuator.ActuatorPosition.actuator_id" href="#services.actuator.ActuatorPosition.actuator_id">actuator_id</a></code></li>
+<li><code><a title="services.actuator.ActuatorPosition.position" href="#services.actuator.ActuatorPosition.position">position</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.actuator.ActuatorServiceClient" href="#services.actuator.ActuatorServiceClient">ActuatorServiceClient</a></code></h4>
+<ul class="">
+<li><code><a title="services.actuator.ActuatorServiceClient.calibrate" href="#services.actuator.ActuatorServiceClient.calibrate">calibrate</a></code></li>
+<li><code><a title="services.actuator.ActuatorServiceClient.command_actuators" href="#services.actuator.ActuatorServiceClient.command_actuators">command_actuators</a></code></li>
+<li><code><a title="services.actuator.ActuatorServiceClient.configure_actuator" href="#services.actuator.ActuatorServiceClient.configure_actuator">configure_actuator</a></code></li>
+<li><code><a title="services.actuator.ActuatorServiceClient.get_actuators_state" href="#services.actuator.ActuatorServiceClient.get_actuators_state">get_actuators_state</a></code></li>
+<li><code><a title="services.actuator.ActuatorServiceClient.get_calibration_status" href="#services.actuator.ActuatorServiceClient.get_calibration_status">get_calibration_status</a></code></li>
+<li><code><a title="services.actuator.ActuatorServiceClient.move_to_position" href="#services.actuator.ActuatorServiceClient.move_to_position">move_to_position</a></code></li>
+<li><code><a title="services.actuator.ActuatorServiceClient.zero_actuators" href="#services.actuator.ActuatorServiceClient.zero_actuators">zero_actuators</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.actuator.ActuatorStateRequest" href="#services.actuator.ActuatorStateRequest">ActuatorStateRequest</a></code></h4>
+<ul class="">
+<li><code><a title="services.actuator.ActuatorStateRequest.actuator_ids" href="#services.actuator.ActuatorStateRequest.actuator_ids">actuator_ids</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.actuator.CalibrateActuatorMetadata" href="#services.actuator.CalibrateActuatorMetadata">CalibrateActuatorMetadata</a></code></h4>
+<ul class="">
+<li><code><a title="services.actuator.CalibrateActuatorMetadata.DESCRIPTOR" href="#services.actuator.CalibrateActuatorMetadata.DESCRIPTOR">DESCRIPTOR</a></code></li>
+<li><code><a title="services.actuator.CalibrateActuatorMetadata.actuator_id" href="#services.actuator.CalibrateActuatorMetadata.actuator_id">actuator_id</a></code></li>
+<li><code><a title="services.actuator.CalibrateActuatorMetadata.status" href="#services.actuator.CalibrateActuatorMetadata.status">status</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.actuator.CalibrationMetadata" href="#services.actuator.CalibrationMetadata">CalibrationMetadata</a></code></h4>
+<ul class="">
+<li><code><a title="services.actuator.CalibrationMetadata.decode_metadata" href="#services.actuator.CalibrationMetadata.decode_metadata">decode_metadata</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.actuator.CalibrationStatus" href="#services.actuator.CalibrationStatus">CalibrationStatus</a></code></h4>
+<ul class="">
+<li><code><a title="services.actuator.CalibrationStatus.Calibrated" href="#services.actuator.CalibrationStatus.Calibrated">Calibrated</a></code></li>
+<li><code><a title="services.actuator.CalibrationStatus.Calibrating" href="#services.actuator.CalibrationStatus.Calibrating">Calibrating</a></code></li>
+<li><code><a title="services.actuator.CalibrationStatus.Timeout" href="#services.actuator.CalibrationStatus.Timeout">Timeout</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.actuator.ConfigureActuatorRequest" href="#services.actuator.ConfigureActuatorRequest">ConfigureActuatorRequest</a></code></h4>
+<ul class="two-column">
+<li><code><a title="services.actuator.ConfigureActuatorRequest.acceleration" href="#services.actuator.ConfigureActuatorRequest.acceleration">acceleration</a></code></li>
+<li><code><a title="services.actuator.ConfigureActuatorRequest.actuator_id" href="#services.actuator.ConfigureActuatorRequest.actuator_id">actuator_id</a></code></li>
+<li><code><a title="services.actuator.ConfigureActuatorRequest.kd" href="#services.actuator.ConfigureActuatorRequest.kd">kd</a></code></li>
+<li><code><a title="services.actuator.ConfigureActuatorRequest.ki" href="#services.actuator.ConfigureActuatorRequest.ki">ki</a></code></li>
+<li><code><a title="services.actuator.ConfigureActuatorRequest.kp" href="#services.actuator.ConfigureActuatorRequest.kp">kp</a></code></li>
+<li><code><a title="services.actuator.ConfigureActuatorRequest.max_torque" href="#services.actuator.ConfigureActuatorRequest.max_torque">max_torque</a></code></li>
+<li><code><a title="services.actuator.ConfigureActuatorRequest.new_actuator_id" href="#services.actuator.ConfigureActuatorRequest.new_actuator_id">new_actuator_id</a></code></li>
+<li><code><a title="services.actuator.ConfigureActuatorRequest.protection_time" href="#services.actuator.ConfigureActuatorRequest.protection_time">protection_time</a></code></li>
+<li><code><a title="services.actuator.ConfigureActuatorRequest.protective_torque" href="#services.actuator.ConfigureActuatorRequest.protective_torque">protective_torque</a></code></li>
+<li><code><a title="services.actuator.ConfigureActuatorRequest.torque_enabled" href="#services.actuator.ConfigureActuatorRequest.torque_enabled">torque_enabled</a></code></li>
+<li><code><a title="services.actuator.ConfigureActuatorRequest.zero_position" href="#services.actuator.ConfigureActuatorRequest.zero_position">zero_position</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.5</a>.</p>
+</footer>
+</body>
+</html>

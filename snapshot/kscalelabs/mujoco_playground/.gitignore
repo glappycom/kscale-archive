@@ -1,0 +1,33 @@
+# .gitignore
+
+# Python
+*.py[oc]
+__pycache__/
+*.egg-info
+.eggs/
+.mypy_cache/*
+.pyre/
+.pytest_cache/
+.ruff_cache/
+.dmypy.json
+
+# Databases
+*.db
+*.mp4
+
+# Build artifacts
+build/
+dist/
+*.so
+out*/
+*.json
+.DS_STORE
+
+# Other artifacts
+robot/
+adhoc/
+checkpoints/
+*.png
+!config_example.json
+!hfield.png
+!rocky_texture.png

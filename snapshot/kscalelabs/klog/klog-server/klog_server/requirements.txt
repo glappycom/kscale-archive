@@ -1,0 +1,12 @@
+# requirements.txt
+
+rerun-sdk==0.24.0
+urdfpy
+puid-py
+colorlogging
+kscale
+numpy
+pytz
+trimesh
+pyyaml
+kinfer

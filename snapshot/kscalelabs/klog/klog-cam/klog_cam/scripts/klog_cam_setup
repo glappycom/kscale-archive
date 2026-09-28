@@ -1,0 +1,43 @@
+#!/bin/bash
+
+devs_noidx=$(ls /dev/v4l/by-id | sed 's/-index[0-9]*//' | sort -u)
+
+devs=$(for dev in $devs_noidx; do ls /dev/v4l/by-id/$dev* | head -n 1; done)
+
+if [ -z $devs ]; then
+    echo "No video devices found."
+    exit 1
+fi
+
+selected=$(for dev in $devs; do printf "$(v4l2-ctl --device "$dev" --all | grep Name | sed 's/\s*Name\s*:\s*//')\t$dev\n"; done | fzf -m --delimiter "\t" --with-nth=1 --height=10 --reverse | awk -F'\t' '{print $NF}')
+
+echo "Selected device(s): $selected"
+
+read -p "Set target directory for recordings (default: $HOME/kbot-logs): " log_path
+
+if [ -z "$log_path" ]; then
+    log_path="$HOME/kbot-logs"
+fi
+
+# Create YAML config
+config_yaml="cameras:"
+for cam in $selected; do
+    config_yaml="$config_yaml
+  - $cam"
+done
+config_yaml="$config_yaml
+log_path: $log_path"
+
+echo "Configuration:"
+echo "$config_yaml"
+
+read -p "Save this configuration to ~/.config/klog-cam.yaml? (y/n): " save_config
+
+if [[ "$save_config" != "y" && "$save_config" != "Y" ]]; then
+    echo "Configuration not saved."
+    exit 0
+else
+    echo "Saving configuration to ~/.config/klog-cam.yaml"
+    mkdir -p ~/.config
+    echo "$config_yaml" > ~/.config/klog-cam.yaml
+fi

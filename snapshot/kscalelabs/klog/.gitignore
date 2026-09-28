@@ -1,0 +1,29 @@
+# .gitignore
+
+# Python
+*.py[oc]
+**/__pycache__/
+*.egg-info
+.eggs/
+.mypy_cache/*
+.pyre/
+.pytest_cache/
+.ruff_cache/
+.dmypy.json
+.venv
+
+# Databases
+*.db
+
+# Build artifacts
+build/
+dist/
+*.so
+out*/
+shell.nix
+
+*.swp
+
+# Telemetry
+.aider*
+.env

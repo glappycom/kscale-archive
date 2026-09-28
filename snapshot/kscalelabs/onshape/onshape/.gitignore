@@ -1,0 +1,7 @@
+# .gitignore
+
+*.part
+*.stl
+
+.env
+*.png

@@ -1,0 +1,1 @@
+recursive-include telemetry/ *.py *.txt py.typed MANIFEST.in

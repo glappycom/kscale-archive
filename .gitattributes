@@ -1,0 +1,5 @@
+# Bundle parts and LFS tarballs are already compressed. Skip delta compression.
+history/** -delta -text linguist-generated
+guides/*.pdf -delta -text
+guides/*.docx -delta -text
+docs-site/_assets/** -delta -text

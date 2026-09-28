@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "klog-sync"
+version = "0.0.1"
+description = "Klog Syncing Daemon"
+readme = "Readme.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }  # or omit/change if not using MIT
+authors = [
+  { name = "AJ Williams" }
+]
+urls = { Homepage = "https://github.com/kscalelabs/klog" }
+
+dependencies = [
+  "watchdog==6.0.0",
+  "pyyaml==6.0.2",
+  "colorlogging==0.0.2",
+  "paho.mqtt==2.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy",
+  "pytest",
+  "ruff"
+]
+
+[project.scripts]
+klog-sync = "klog_sync.main:main"

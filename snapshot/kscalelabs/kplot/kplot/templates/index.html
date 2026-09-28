@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kinfer NDJSON Viewer</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+      * { box-sizing: border-box; }
+      body { 
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; 
+        margin: 0; 
+        padding: 0;
+        background: #1e1e1e;
+        color: #cccccc;
+        overflow: hidden;
+      }
+      .main-container {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+      }
+      .sidebar {
+        width: 320px;
+        background: #252526;
+        border-right: 1px solid #3e3e42;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .sidebar-header {
+        padding: 12px 16px;
+        background: #2d2d30;
+        border-bottom: 1px solid #3e3e42;
+      }
+      .sidebar-search {
+        width: 100%;
+        padding: 8px 12px;
+        background: #3c3c3c;
+        border: 1px solid #3e3e42;
+        border-radius: 4px;
+        color: #cccccc;
+        font-size: 13px;
+        outline: none;
+      }
+      .sidebar-search:focus {
+        border-color: #007acc;
+        background: #1e1e1e;
+      }
+      .series-list {
+        flex: 1;
+        overflow-y: auto;
+        padding: 8px;
+      }
+      .series-category {
+        margin-bottom: 8px;
+      }
+      .series-category-title {
+        padding: 6px 8px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #888888;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 4px;
+      }
+      .series-item {
+        display: flex;
+        align-items: center;
+        padding: 4px 8px;
+        cursor: pointer;
+        border-radius: 3px;
+        font-size: 13px;
+      }
+      .series-item:hover {
+        background: #2a2d2e;
+      }
+      .series-item input[type=checkbox] {
+        margin-right: 8px;
+        cursor: pointer;
+      }
+      .series-item label {
+        cursor: pointer;
+        flex: 1;
+        user-select: none;
+      }
+      .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      header { 
+        background: #2d2d30;
+        padding: 12px 16px;
+        border-bottom: 1px solid #3e3e42;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .control-group { 
+        display: flex; 
+        align-items: center; 
+        gap: 6px; 
+      }
+      .control-group label {
+        font-size: 12px;
+        color: #888888;
+      }
+      input[type=number] { 
+        width: 80px; 
+        padding: 4px 8px;
+        background: #3c3c3c;
+        border: 1px solid #3e3e42;
+        border-radius: 3px;
+        color: #cccccc;
+        font-size: 12px;
+      }
+      button { 
+        padding: 6px 12px;
+        border: 1px solid #3e3e42;
+        background: #0e639c;
+        color: #ffffff;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 500;
+      }
+      button:hover { 
+        background: #1177bb;
+      }
+      .legend-label { 
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 3px;
+        border: 1px solid #3e3e42;
+        margin-right: 4px;
+        font-size: 11px;
+        background: #3c3c3c;
+      }
+      .src-toggle { 
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+      .src-off { 
+        opacity: 0.4;
+        background: #2d2d30;
+      }
+      .charts-container {
+        flex: 1;
+        overflow-y: auto;
+        padding: 16px;
+      }
+      /* Layout modes for charts area */
+      #charts.full {
+        display: block;
+      }
+      #charts.panes {
+        display: block; /* category grids handle layout in panes mode */
+      }
+      .category { 
+        margin: 0 0 24px;
+      }
+      .category h2 { 
+        margin: 0 0 12px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #888888;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .category-grid { 
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        gap: 16px;
+      }
+      .category-grid .chart {
+        margin: 0; /* Grid handles spacing */
+      }
+      .chart { 
+        border: 1px solid #3e3e42;
+        border-radius: 4px;
+        padding: 12px;
+        background: #252526;
+      }
+      .chart h3 { 
+        margin: 0 0 8px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #cccccc;
+      }
+      #status {
+        font-size: 12px;
+        color: #888888;
+      }
+      /* Custom scrollbar for VSCode look */
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1e1e1e;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #424242;
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #4e4e4e;
+      }
+      .select-all-btn {
+        background: #3c3c3c;
+        padding: 4px 8px;
+        margin: 4px 8px 8px;
+        font-size: 11px;
+      }
+      .select-all-btn:hover {
+        background: #4e4e4e;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Sidebar: Data Sources -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <strong style="font-size: 13px; display: block; margin-bottom: 8px;">Data Sources</strong>
+          <input type="text" id="source-search" class="sidebar-search" placeholder="Search sources..." />
+          <span id="source-count" style="font-size: 11px; color: #888; display: block; margin-top: 8px;"></span>
+        </div>
+        <button class="select-all-btn" id="deselect-all-sources">Clear All</button>
+        <div class="series-list" id="source-list">
+          <!-- Data source checkboxes -->
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <div class="content">
+        <header>
+          <input type="text" id="plot-search" placeholder="Search plots..." style="padding: 6px 12px; background: #3c3c3c; border: 1px solid #3e3e42; border-radius: 3px; color: #cccccc; font-size: 13px; min-width: 300px; outline: none;" />
+          <button id="refresh-btn">Refresh</button>
+          <button id="copy-link-btn" style="background: #3c3c3c; color: #cccccc;" title="Copy shareable link">Copy Link</button>
+          <button style="background: #3c3c3c; color: #cccccc;" onclick="window.location.href='/latest'">Latest View</button>
+          <label class="control-group" title="Toggle layout mode">
+            <input type="checkbox" id="layout-toggle" checked />
+            <span>Panes layout</span>
+          </label>
+          <span id="status"></span>
+        </header>
+        <main class="charts-container">
+          <div id="charts"></div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      let sourceLabels = {{ source_labels_json | safe }};
+      let searchTexts = {{ search_texts_json | safe }};
+      let sourcePaths = {{ source_paths_json | safe }}; // Stable identifiers for sources
+      let selectedSources = []; // Indices of selected sources
+      let allSeries = [];
+      let seriesData = null;
+      let plotSearchQuery = '';
+      let sourceSearchQuery = '';
+      let layoutMode = 'panes'; // 'full' or 'panes'
+
+      // Parse URL parameters to restore state
+      function parseUrlParams() {
+        const params = new URLSearchParams(window.location.search);
+        
+        // Restore selected sources (using stable path identifiers)
+        const sourcesParam = params.get('sources');
+        if (sourcesParam) {
+          try {
+            const identifiers = sourcesParam.split(',').map(s => s.trim()).filter(s => s);
+            selectedSources = [];
+            
+            // Convert paths back to indices
+            for (const identifier of identifiers) {
+              // Try finding by path
+              const idx = sourcePaths.indexOf(identifier);
+              if (idx !== -1) {
+                selectedSources.push(idx);
+              } else {
+                // Fallback: try as numeric index for backward compatibility
+                const numIdx = parseInt(identifier);
+                if (!isNaN(numIdx) && numIdx >= 0 && numIdx < sourceLabels.length) {
+                  selectedSources.push(numIdx);
+                }
+              }
+            }
+          } catch (e) {
+            console.error('Error parsing sources parameter:', e);
+          }
+        }
+        
+        // Restore plot search query
+        const plotSearchParam = params.get('plots');
+        if (plotSearchParam) {
+          plotSearchQuery = plotSearchParam;
+          document.getElementById('plot-search').value = plotSearchParam;
+        }
+        
+        // Restore layout mode
+        const layoutParam = params.get('layout');
+        if (layoutParam === 'full' || layoutParam === 'panes') {
+          layoutMode = layoutParam;
+          document.getElementById('layout-toggle').checked = layoutMode === 'panes';
+        }
+      }
+
+      // Update URL with current state (using stable path identifiers)
+      function updateUrl() {
+        const params = new URLSearchParams();
+        
+        // Add selected sources using stable paths
+        if (selectedSources.length > 0) {
+          const paths = selectedSources.map(idx => sourcePaths[idx]).filter(p => p);
+          if (paths.length > 0) {
+            params.set('sources', paths.join(','));
+          }
+        }
+        
+        // Add plot search if present
+        if (plotSearchQuery) {
+          params.set('plots', plotSearchQuery);
+        }
+        
+        // Add layout mode if not default
+        if (layoutMode !== 'panes') {
+          params.set('layout', layoutMode);
+        }
+        
+        // Update URL without reloading
+        const newUrl = params.toString() ? 
+          `${window.location.pathname}?${params.toString()}` : 
+          window.location.pathname;
+        window.history.replaceState({}, '', newUrl);
+      }
+
+      function makeId(name) {
+        return 'chart-' + name.replace(/[^a-zA-Z0-9_\-]/g, '_');
+      }
+
+      // Build data source checkboxes in sidebar
+      function buildSourceList() {
+        const list = document.getElementById('source-list');
+        list.innerHTML = '';
+        
+        const terms = sourceSearchQuery.toLowerCase().split(/\s+/).filter(t => t);
+        let currentRobot = '';
+        let visibleCount = 0;
+        
+        sourceLabels.forEach((label, idx) => {
+          // Filter by search query (AND logic for multiple terms)
+          if (terms.length > 0 && !terms.every(term => searchTexts[idx].includes(term))) {
+            return;
+          }
+          
+          visibleCount++;
+          
+          // Extract robot name for grouping
+          const robotName = label.split(' | ')[0];
+          
+          // Add robot header if new robot
+          if (robotName !== currentRobot) {
+            currentRobot = robotName;
+            const header = document.createElement('div');
+            header.className = 'series-category-title';
+            header.textContent = robotName;
+            header.style.marginTop = visibleCount > 1 ? '12px' : '0';
+            list.appendChild(header);
+          }
+          
+          const item = document.createElement('div');
+          item.className = 'series-item';
+          
+          const cb = document.createElement('input');
+          cb.type = 'checkbox';
+          cb.checked = selectedSources.includes(idx);
+          cb.id = `src-${idx}`;
+          cb.onchange = () => {
+            if (cb.checked) {
+              selectedSources.push(idx);
+            } else {
+              selectedSources = selectedSources.filter(i => i !== idx);
+            }
+            updateUrl();
+            loadData();
+          };
+          
+          const lbl = document.createElement('label');
+          lbl.htmlFor = cb.id;
+          // Show only the policy part (after " | ")
+          const policyPart = label.split(' | ')[1] || label;
+          lbl.textContent = policyPart;
+          lbl.style.cursor = 'pointer';
+          lbl.style.fontFamily = 'monospace';
+          lbl.style.fontSize = '12px';
+          
+          // Toggle when clicking the row (but not the checkbox or label)
+          item.addEventListener('click', (e) => {
+            if (e.target !== cb && e.target !== lbl) {
+              cb.click();
+            }
+          });
+
+          item.appendChild(cb);
+          item.appendChild(lbl);
+          list.appendChild(item);
+        });
+        
+        if (visibleCount === 0) {
+          list.innerHTML = '<div style="padding: 16px; color: #888; text-align: center; font-size: 12px;">No sources found</div>';
+        }
+        
+        updateSourceCount();
+      }
+
+      function updateSourceCount() {
+        const count = document.getElementById('source-count');
+        count.textContent = `${selectedSources.length} of ${sourceLabels.length} selected`;
+      }
+
+      // Get filtered plot names based on search
+      function getFilteredPlots() {
+        if (!plotSearchQuery) return allSeries;
+        const terms = plotSearchQuery.toLowerCase().split(/\s+/).filter(t => t);
+        if (terms.length === 0) return allSeries;
+        return allSeries.filter(s => {
+          const lower = s.toLowerCase();
+          return terms.every(term => lower.includes(term));
+        });
+      }
+
+      // Determine category for a plot name
+      function getCategory(plotName) {
+        // Jointed/dotted series
+        if (plotName.startsWith('action.')) return 'Actions';
+        if (plotName.startsWith('joint_angles.')) return 'Joint Angles';
+        if (plotName.startsWith('joint_velocities.')) return 'Joint Velocities';
+        if (plotName.startsWith('joint_torques.')) return 'Joint Torques';
+        if (plotName.startsWith('joint_amps.')) return 'Joint Currents';
+        if (plotName.startsWith('joint_temps.')) return 'Joint Temperatures';
+        if (plotName.startsWith('projected_gravity.') || plotName.startsWith('projected_gravity[')) return 'Projected Gravity';
+        if (plotName.startsWith('gyro.') || plotName.startsWith('gyroscope.') || plotName.startsWith('gyro[') || plotName.startsWith('gyroscope[')) return 'Gyroscope';
+        if (plotName.startsWith('command.') || plotName.startsWith('commands.') || plotName.startsWith('cmd.') ||
+            plotName.startsWith('command[') || plotName.startsWith('commands[') || plotName.startsWith('cmd[')) return 'Commands';
+        if (plotName.startsWith('output.')) return 'Outputs';
+        return 'Other';
+      }
+
+      // Render charts
+      function render() {
+        const plots = getFilteredPlots();
+        const charts = document.getElementById('charts');
+        
+        // Purge existing plots before clearing
+        charts.querySelectorAll('[id^="chart-"]').forEach(el => {
+          Plotly.purge(el);
+        });
+        
+        charts.innerHTML = '';
+
+        // Apply layout class
+        charts.classList.remove('full', 'panes');
+        charts.classList.add(layoutMode === 'panes' ? 'panes' : 'full');
+
+        if (selectedSources.length === 0) {
+          charts.innerHTML = '<p style="color: #888; padding: 40px; text-align: center;">Select data sources from the sidebar</p>';
+          return;
+        }
+
+        if (!seriesData || plots.length === 0) {
+          charts.innerHTML = '<p style="color: #888; padding: 40px; text-align: center;">No plots found</p>';
+          return;
+        }
+
+        const colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b'];
+
+        // Group plots by category
+        const grouped = {};
+        plots.forEach(name => {
+          const cat = getCategory(name);
+          if (!grouped[cat]) grouped[cat] = [];
+          grouped[cat].push(name);
+        });
+
+        const categoryOrder = [
+          'Actions',
+          'Joint Angles',
+          'Joint Velocities',
+          'Joint Torques',
+          'Joint Currents',
+          'Joint Temperatures',
+          'Projected Gravity',
+          'Gyroscope',
+          'Commands',
+          'Other'
+        ];
+
+        function renderCategory(category, names) {
+          if (names.length === 0) return;
+          const catDiv = document.createElement('div');
+          catDiv.className = 'category';
+          const h2 = document.createElement('h2');
+          h2.textContent = category;
+          catDiv.appendChild(h2);
+          const container = document.createElement('div');
+          if (layoutMode === 'panes') container.className = 'category-grid';
+          catDiv.appendChild(container);
+          charts.appendChild(catDiv);
+
+          names.forEach(plotName => {
+            const data = seriesData[plotName];
+            if (!data) return;
+
+            const chartDiv = document.createElement('div');
+            chartDiv.className = 'chart';
+            if (layoutMode === 'full') {
+              chartDiv.style.marginBottom = '16px';
+            }
+
+            const title = document.createElement('h3');
+            title.textContent = plotName;
+            chartDiv.appendChild(title);
+
+            const plotDiv = document.createElement('div');
+            plotDiv.id = makeId(plotName);
+            plotDiv.style.width = '100%';
+            plotDiv.style.height = '300px';
+            chartDiv.appendChild(plotDiv);
+
+            container.appendChild(chartDiv);
+
+            const traces = data.map((srcData, idx) => ({
+              x: srcData.x || [],
+              y: srcData.y || [],
+              mode: 'lines',
+              name: seriesData._sources ? seriesData._sources[idx] : `Source ${idx}`,
+              line: { color: colors[idx % colors.length], width: 1.5 }
+            }));
+
+            const layout = {
+              margin: { l: 50, r: 20, t: 10, b: 40 },
+              showlegend: traces.length > 1,
+              legend: { orientation: 'h' },
+              xaxis: { gridcolor: '#3e3e42', zerolinecolor: '#3e3e42' },
+              yaxis: { gridcolor: '#3e3e42', zerolinecolor: '#3e3e42' },
+              paper_bgcolor: '#252526',
+              plot_bgcolor: '#1e1e1e',
+              font: { color: '#cccccc', size: 11 }
+            };
+
+            Plotly.newPlot(plotDiv.id, traces, layout, { responsive: true });
+          });
+        }
+
+        // Render known categories in order
+        categoryOrder.forEach(category => {
+          renderCategory(category, grouped[category] || []);
+        });
+
+        // Render any remaining categories not in the predefined order
+        Object.keys(grouped)
+          .filter(cat => !categoryOrder.includes(cat))
+          .forEach(cat => {
+            renderCategory(cat, grouped[cat]);
+          });
+      }
+
+      // Load data for selected sources only
+      async function loadData() {
+        updateSourceCount();
+        
+        if (selectedSources.length === 0) {
+          seriesData = null;
+          allSeries = [];
+          render();
+          return;
+        }
+
+        try {
+          document.getElementById('status').textContent = 'Loading...';
+          // Use stable path identifiers instead of indices
+          const paths = selectedSources.map(idx => sourcePaths[idx]).filter(p => p);
+          const params = new URLSearchParams();
+          params.set('sources', paths.join(','));
+          const resp = await fetch('/data?' + params.toString());
+          const data = await resp.json();
+          seriesData = data.series_data;
+          seriesData._sources = data.sources; // Store source labels
+          allSeries = data.series || [];
+          render();
+          document.getElementById('status').textContent = '';
+        } catch (err) {
+          console.error(err);
+          document.getElementById('status').textContent = 'Error';
+        }
+      }
+
+      // Check for new source files
+      async function checkUpdates() {
+        try {
+          const resp = await fetch('/sources');
+          const data = await resp.json();
+          if (JSON.stringify(data.sources) !== JSON.stringify(sourceLabels)) {
+            sourceLabels = data.sources;
+            searchTexts = data.search_texts || sourceLabels.map(s => s.toLowerCase());
+            sourcePaths = data.paths || [];
+            buildSourceList();
+          }
+        } catch (err) {
+          console.error(err);
+        }
+      }
+
+      // Initialize
+      parseUrlParams(); // Parse URL params first to restore state
+      buildSourceList();
+      if (selectedSources.length > 0) {
+        loadData(); // Load data if sources were restored from URL
+      } else {
+        render(); // Just render empty state
+      }
+
+      // Source search
+      let sourceSearchTimeout;
+      document.getElementById('source-search').oninput = (e) => {
+        clearTimeout(sourceSearchTimeout);
+        sourceSearchTimeout = setTimeout(() => {
+          sourceSearchQuery = e.target.value.trim();
+          buildSourceList();
+        }, 150);
+      };
+
+      // Plot search
+      let plotSearchTimeout;
+      document.getElementById('plot-search').oninput = (e) => {
+        clearTimeout(plotSearchTimeout);
+        plotSearchTimeout = setTimeout(() => {
+          plotSearchQuery = e.target.value.trim();
+          updateUrl();
+          render();
+        }, 100);
+      };
+
+      // Clear all button
+      document.getElementById('deselect-all-sources').onclick = () => {
+        selectedSources = [];
+        updateUrl();
+        buildSourceList();
+        loadData();
+      };
+
+      document.getElementById('refresh-btn').onclick = loadData;
+
+      // Copy link button
+      document.getElementById('copy-link-btn').onclick = async () => {
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+          const btn = document.getElementById('copy-link-btn');
+          const originalText = btn.textContent;
+          btn.textContent = 'Copied!';
+          btn.style.background = '#4ec9b0';
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '#3c3c3c';
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy link:', err);
+          alert('Failed to copy link. Please copy from the address bar.');
+        }
+      };
+
+      // Layout toggle checkbox
+      const layoutToggle = document.getElementById('layout-toggle');
+      layoutToggle.checked = layoutMode === 'panes';
+      layoutToggle.onchange = () => {
+        layoutMode = layoutToggle.checked ? 'panes' : 'full';
+        updateUrl();
+        render();
+      };
+
+      // Cleanup on page unload
+      window.addEventListener('beforeunload', () => {
+        document.querySelectorAll('[id^="chart-"]').forEach(el => {
+          Plotly.purge(el);
+        });
+      });
+
+    </script>
+  </body>
+</html>
+

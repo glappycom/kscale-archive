@@ -1,0 +1,19 @@
+# requirements.txt
+
+# Training
+tqdm
+colorlogging
+
+# Environment
+brax
+distrax
+equinox
+jax
+optax
+kscale
+
+# Configuration management.
+omegaconf
+
+# Types
+types-tqdm

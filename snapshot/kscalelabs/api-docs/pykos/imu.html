@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.5">
+<title>services.imu API documentation</title>
+<meta name="description" content="IMU service client.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>services.imu</code></h1>
+</header>
+<section id="section-intro">
+<p>IMU service client.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="services.imu.CalibrateIMUMetadata"><code class="flex name class">
+<span>class <span class="ident">CalibrateIMUMetadata</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A ProtocolMessage</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>google.protobuf.pyext._message.CMessage</li>
+<li>google.protobuf.message.Message</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.imu.CalibrateIMUMetadata.DESCRIPTOR"><code class="name">var <span class="ident">DESCRIPTOR</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="services.imu.CalibrateIMUMetadata.status"><code class="name">var <span class="ident">status</span></code></dt>
+<dd>
+<div class="desc"><p>Field kos.imu.CalibrateIMUMetadata.status</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.imu.CalibrationMetadata"><code class="flex name class">
+<span>class <span class="ident">CalibrationMetadata</span></span>
+<span>(</span><span>metadata_any: google.protobuf.any_pb2.Any)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CalibrationMetadata:
+    def __init__(self, metadata_any: AnyPb2) -&gt; None:
+        self.status: str | None = None
+        self.decode_metadata(metadata_any)
+
+    def decode_metadata(self, metadata_any: AnyPb2) -&gt; None:
+        metadata = CalibrateIMUMetadata()
+        if metadata_any.Is(CalibrateIMUMetadata.DESCRIPTOR):
+            metadata_any.Unpack(metadata)
+            self.status = metadata.status if metadata.HasField(&#34;status&#34;) else None
+
+    def __str__(self) -&gt; str:
+        return f&#34;CalibrationMetadata(status={self.status})&#34;
+
+    def __repr__(self) -&gt; str:
+        return self.__str__()</code></pre>
+</details>
+<div class="desc"></div>
+<h3>Methods</h3>
+<dl>
+<dt id="services.imu.CalibrationMetadata.decode_metadata"><code class="name flex">
+<span>def <span class="ident">decode_metadata</span></span>(<span>self, metadata_any: google.protobuf.any_pb2.Any) ‑> None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def decode_metadata(self, metadata_any: AnyPb2) -&gt; None:
+    metadata = CalibrateIMUMetadata()
+    if metadata_any.Is(CalibrateIMUMetadata.DESCRIPTOR):
+        metadata_any.Unpack(metadata)
+        self.status = metadata.status if metadata.HasField(&#34;status&#34;) else None</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.imu.CalibrationStatus"><code class="flex name class">
+<span>class <span class="ident">CalibrationStatus</span></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CalibrationStatus:
+    IN_PROGRESS = &#34;IN_PROGRESS&#34;
+    SUCCEEDED = &#34;SUCCEEDED&#34;
+    FAILED = &#34;FAILED&#34;</code></pre>
+</details>
+<div class="desc"></div>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.imu.CalibrationStatus.FAILED"><code class="name">var <span class="ident">FAILED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.imu.CalibrationStatus.IN_PROGRESS"><code class="name">var <span class="ident">IN_PROGRESS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.imu.CalibrationStatus.SUCCEEDED"><code class="name">var <span class="ident">SUCCEEDED</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.imu.IMUServiceClient"><code class="flex name class">
+<span>class <span class="ident">IMUServiceClient</span></span>
+<span>(</span><span>channel: grpc.aio._base_channel.Channel)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class IMUServiceClient(AsyncClientBase):
+    &#34;&#34;&#34;Client for the IMUService.&#34;&#34;&#34;
+
+    def __init__(self, channel: grpc.aio.Channel) -&gt; None:
+        super().__init__()
+        self.stub = imu_pb2_grpc.IMUServiceStub(channel)
+        self.operations_stub = operations_pb2_grpc.OperationsStub(channel)
+
+    async def get_imu_values(self) -&gt; imu_pb2.IMUValuesResponse:
+        &#34;&#34;&#34;Get the latest IMU sensor values.
+
+        Returns:
+            ImuValuesResponse: The latest IMU sensor values.
+        &#34;&#34;&#34;
+        return await self.stub.GetValues(Empty())
+
+    async def get_imu_advanced_values(self) -&gt; imu_pb2.IMUAdvancedValuesResponse:
+        &#34;&#34;&#34;Get the latest IMU advanced values.
+
+        Returns:
+            ImuAdvancedValuesResponse: The latest IMU advanced values.
+        &#34;&#34;&#34;
+        return await self.stub.GetAdvancedValues(Empty())
+
+    async def get_euler_angles(self) -&gt; imu_pb2.EulerAnglesResponse:
+        &#34;&#34;&#34;Get the latest Euler angles.
+
+        Returns:
+            EulerAnglesResponse: The latest Euler angles.
+        &#34;&#34;&#34;
+        return await self.stub.GetEuler(Empty())
+
+    async def get_quaternion(self) -&gt; imu_pb2.QuaternionResponse:
+        &#34;&#34;&#34;Get the latest quaternion.
+
+        Returns:
+            QuaternionResponse: The latest quaternion.
+        &#34;&#34;&#34;
+        return await self.stub.GetQuaternion(Empty())
+
+    async def zero(self, duration: float = 1.0, **kwargs: Unpack[ZeroIMURequest]) -&gt; common_pb2.ActionResponse:
+        &#34;&#34;&#34;Zero the IMU.
+
+        Example:
+            &gt;&gt;&gt; await zero(duration=1.0,
+            ...     max_retries=3,
+            ...     max_angular_error=1.0,
+            ...     max_velocity=1.0,
+            ...     max_acceleration=1.0
+            ... )
+
+        Args:
+            duration: Duration in seconds for zeroing operation
+            **kwargs: Additional zeroing parameters that may include:
+                     max_retries: Maximum number of retries
+                     max_angular_error: Maximum angular error during zeroing
+                     max_velocity: Maximum velocity during zeroing
+                     max_acceleration: Maximum acceleration during zeroing
+
+        Returns:
+            ActionResponse: The response from the zero operation.
+        &#34;&#34;&#34;
+        request = imu_pb2.ZeroIMURequest(duration=_duration_from_seconds(duration), **kwargs)
+        return await self.stub.Zero(request)
+
+    async def calibrate(self) -&gt; imu_pb2.CalibrateIMUResponse:
+        &#34;&#34;&#34;Calibrate the IMU.
+
+        This starts a long-running calibration operation. The operation can be monitored
+        using get_calibration_status().
+
+        Returns:
+            CalibrationMetadata: Metadata about the calibration operation.
+        &#34;&#34;&#34;
+        return await self.stub.Calibrate(Empty())</code></pre>
+</details>
+<div class="desc"><p>Client for the IMUService.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>pykos.services.AsyncClientBase</li>
+<li>abc.ABC</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="services.imu.IMUServiceClient.calibrate"><code class="name flex">
+<span>async def <span class="ident">calibrate</span></span>(<span>self) ‑> kos.imu_pb2.CalibrateIMUResponse</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def calibrate(self) -&gt; imu_pb2.CalibrateIMUResponse:
+    &#34;&#34;&#34;Calibrate the IMU.
+
+    This starts a long-running calibration operation. The operation can be monitored
+    using get_calibration_status().
+
+    Returns:
+        CalibrationMetadata: Metadata about the calibration operation.
+    &#34;&#34;&#34;
+    return await self.stub.Calibrate(Empty())</code></pre>
+</details>
+<div class="desc"><p>Calibrate the IMU.</p>
+<p>This starts a long-running calibration operation. The operation can be monitored
+using get_calibration_status().</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="services.imu.CalibrationMetadata" href="#services.imu.CalibrationMetadata">CalibrationMetadata</a></code></dt>
+<dd>Metadata about the calibration operation.</dd>
+</dl></div>
+</dd>
+<dt id="services.imu.IMUServiceClient.get_euler_angles"><code class="name flex">
+<span>async def <span class="ident">get_euler_angles</span></span>(<span>self) ‑> kos.imu_pb2.EulerAnglesResponse</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def get_euler_angles(self) -&gt; imu_pb2.EulerAnglesResponse:
+    &#34;&#34;&#34;Get the latest Euler angles.
+
+    Returns:
+        EulerAnglesResponse: The latest Euler angles.
+    &#34;&#34;&#34;
+    return await self.stub.GetEuler(Empty())</code></pre>
+</details>
+<div class="desc"><p>Get the latest Euler angles.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>EulerAnglesResponse</code></dt>
+<dd>The latest Euler angles.</dd>
+</dl></div>
+</dd>
+<dt id="services.imu.IMUServiceClient.get_imu_advanced_values"><code class="name flex">
+<span>async def <span class="ident">get_imu_advanced_values</span></span>(<span>self) ‑> kos.imu_pb2.IMUAdvancedValuesResponse</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def get_imu_advanced_values(self) -&gt; imu_pb2.IMUAdvancedValuesResponse:
+    &#34;&#34;&#34;Get the latest IMU advanced values.
+
+    Returns:
+        ImuAdvancedValuesResponse: The latest IMU advanced values.
+    &#34;&#34;&#34;
+    return await self.stub.GetAdvancedValues(Empty())</code></pre>
+</details>
+<div class="desc"><p>Get the latest IMU advanced values.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ImuAdvancedValuesResponse</code></dt>
+<dd>The latest IMU advanced values.</dd>
+</dl></div>
+</dd>
+<dt id="services.imu.IMUServiceClient.get_imu_values"><code class="name flex">
+<span>async def <span class="ident">get_imu_values</span></span>(<span>self) ‑> kos.imu_pb2.IMUValuesResponse</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def get_imu_values(self) -&gt; imu_pb2.IMUValuesResponse:
+    &#34;&#34;&#34;Get the latest IMU sensor values.
+
+    Returns:
+        ImuValuesResponse: The latest IMU sensor values.
+    &#34;&#34;&#34;
+    return await self.stub.GetValues(Empty())</code></pre>
+</details>
+<div class="desc"><p>Get the latest IMU sensor values.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ImuValuesResponse</code></dt>
+<dd>The latest IMU sensor values.</dd>
+</dl></div>
+</dd>
+<dt id="services.imu.IMUServiceClient.get_quaternion"><code class="name flex">
+<span>async def <span class="ident">get_quaternion</span></span>(<span>self) ‑> kos.imu_pb2.QuaternionResponse</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def get_quaternion(self) -&gt; imu_pb2.QuaternionResponse:
+    &#34;&#34;&#34;Get the latest quaternion.
+
+    Returns:
+        QuaternionResponse: The latest quaternion.
+    &#34;&#34;&#34;
+    return await self.stub.GetQuaternion(Empty())</code></pre>
+</details>
+<div class="desc"><p>Get the latest quaternion.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>QuaternionResponse</code></dt>
+<dd>The latest quaternion.</dd>
+</dl></div>
+</dd>
+<dt id="services.imu.IMUServiceClient.zero"><code class="name flex">
+<span>async def <span class="ident">zero</span></span>(<span>self,<br>duration: float = 1.0,<br>**kwargs: Unpack[<a title="services.imu.ZeroIMURequest" href="#services.imu.ZeroIMURequest">ZeroIMURequest</a>]) ‑> kos.common_pb2.ActionResponse</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">async def zero(self, duration: float = 1.0, **kwargs: Unpack[ZeroIMURequest]) -&gt; common_pb2.ActionResponse:
+    &#34;&#34;&#34;Zero the IMU.
+
+    Example:
+        &gt;&gt;&gt; await zero(duration=1.0,
+        ...     max_retries=3,
+        ...     max_angular_error=1.0,
+        ...     max_velocity=1.0,
+        ...     max_acceleration=1.0
+        ... )
+
+    Args:
+        duration: Duration in seconds for zeroing operation
+        **kwargs: Additional zeroing parameters that may include:
+                 max_retries: Maximum number of retries
+                 max_angular_error: Maximum angular error during zeroing
+                 max_velocity: Maximum velocity during zeroing
+                 max_acceleration: Maximum acceleration during zeroing
+
+    Returns:
+        ActionResponse: The response from the zero operation.
+    &#34;&#34;&#34;
+    request = imu_pb2.ZeroIMURequest(duration=_duration_from_seconds(duration), **kwargs)
+    return await self.stub.Zero(request)</code></pre>
+</details>
+<div class="desc"><p>Zero the IMU.</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; await zero(duration=1.0,
+...     max_retries=3,
+...     max_angular_error=1.0,
+...     max_velocity=1.0,
+...     max_acceleration=1.0
+... )
+</code></pre>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>duration</code></strong></dt>
+<dd>Duration in seconds for zeroing operation</dd>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Additional zeroing parameters that may include:
+max_retries: Maximum number of retries
+max_angular_error: Maximum angular error during zeroing
+max_velocity: Maximum velocity during zeroing
+max_acceleration: Maximum acceleration during zeroing</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>ActionResponse</code></dt>
+<dd>The response from the zero operation.</dd>
+</dl></div>
+</dd>
+</dl>
+</dd>
+<dt id="services.imu.ZeroIMURequest"><code class="flex name class">
+<span>class <span class="ident">ZeroIMURequest</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ZeroIMURequest(TypedDict):
+    max_retries: NotRequired[int]
+    max_angular_error: NotRequired[float]
+    max_velocity: NotRequired[float]
+    max_acceleration: NotRequired[float]</code></pre>
+</details>
+<div class="desc"><p>dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+(key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+d = {}
+for k, v in iterable:
+d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+in the keyword argument list.
+For example:
+dict(one=1, two=2)</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="services.imu.ZeroIMURequest.max_acceleration"><code class="name">var <span class="ident">max_acceleration</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.imu.ZeroIMURequest.max_angular_error"><code class="name">var <span class="ident">max_angular_error</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.imu.ZeroIMURequest.max_retries"><code class="name">var <span class="ident">max_retries</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="services.imu.ZeroIMURequest.max_velocity"><code class="name">var <span class="ident">max_velocity</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="services" href="index.html">services</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="services.imu.CalibrateIMUMetadata" href="#services.imu.CalibrateIMUMetadata">CalibrateIMUMetadata</a></code></h4>
+<ul class="">
+<li><code><a title="services.imu.CalibrateIMUMetadata.DESCRIPTOR" href="#services.imu.CalibrateIMUMetadata.DESCRIPTOR">DESCRIPTOR</a></code></li>
+<li><code><a title="services.imu.CalibrateIMUMetadata.status" href="#services.imu.CalibrateIMUMetadata.status">status</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.imu.CalibrationMetadata" href="#services.imu.CalibrationMetadata">CalibrationMetadata</a></code></h4>
+<ul class="">
+<li><code><a title="services.imu.CalibrationMetadata.decode_metadata" href="#services.imu.CalibrationMetadata.decode_metadata">decode_metadata</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.imu.CalibrationStatus" href="#services.imu.CalibrationStatus">CalibrationStatus</a></code></h4>
+<ul class="">
+<li><code><a title="services.imu.CalibrationStatus.FAILED" href="#services.imu.CalibrationStatus.FAILED">FAILED</a></code></li>
+<li><code><a title="services.imu.CalibrationStatus.IN_PROGRESS" href="#services.imu.CalibrationStatus.IN_PROGRESS">IN_PROGRESS</a></code></li>
+<li><code><a title="services.imu.CalibrationStatus.SUCCEEDED" href="#services.imu.CalibrationStatus.SUCCEEDED">SUCCEEDED</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.imu.IMUServiceClient" href="#services.imu.IMUServiceClient">IMUServiceClient</a></code></h4>
+<ul class="">
+<li><code><a title="services.imu.IMUServiceClient.calibrate" href="#services.imu.IMUServiceClient.calibrate">calibrate</a></code></li>
+<li><code><a title="services.imu.IMUServiceClient.get_euler_angles" href="#services.imu.IMUServiceClient.get_euler_angles">get_euler_angles</a></code></li>
+<li><code><a title="services.imu.IMUServiceClient.get_imu_advanced_values" href="#services.imu.IMUServiceClient.get_imu_advanced_values">get_imu_advanced_values</a></code></li>
+<li><code><a title="services.imu.IMUServiceClient.get_imu_values" href="#services.imu.IMUServiceClient.get_imu_values">get_imu_values</a></code></li>
+<li><code><a title="services.imu.IMUServiceClient.get_quaternion" href="#services.imu.IMUServiceClient.get_quaternion">get_quaternion</a></code></li>
+<li><code><a title="services.imu.IMUServiceClient.zero" href="#services.imu.IMUServiceClient.zero">zero</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="services.imu.ZeroIMURequest" href="#services.imu.ZeroIMURequest">ZeroIMURequest</a></code></h4>
+<ul class="">
+<li><code><a title="services.imu.ZeroIMURequest.max_acceleration" href="#services.imu.ZeroIMURequest.max_acceleration">max_acceleration</a></code></li>
+<li><code><a title="services.imu.ZeroIMURequest.max_angular_error" href="#services.imu.ZeroIMURequest.max_angular_error">max_angular_error</a></code></li>
+<li><code><a title="services.imu.ZeroIMURequest.max_retries" href="#services.imu.ZeroIMURequest.max_retries">max_retries</a></code></li>
+<li><code><a title="services.imu.ZeroIMURequest.max_velocity" href="#services.imu.ZeroIMURequest.max_velocity">max_velocity</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.5</a>.</p>
+</footer>
+</body>
+</html>

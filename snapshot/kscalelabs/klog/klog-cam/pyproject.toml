@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "klog-cam"
+version = "0.0.1"
+description = "Camera system for klog"
+authors = [
+    { name="AJ Williams" },
+]
+requires-python = ">=3.11"
+dependencies = [
+    "paho.mqtt==2.1.0",
+    "colorlogging==0.0.2",
+    "klog-sync"
+]
+
+[project.scripts]
+klog-cam-cli = "klog_cam.cli:main"
+klog-cam = "klog_cam.main:main"
+
+[project.urls]
+Homepage = "https://github.com/kscalelabs/klog"
+
+[project.optional-dependencies]
+dev = [
+    "mypy",
+    "pytest",
+    "ruff",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+klog_cam = ["scripts/*.sh"]
+
+[tool.setuptools.data-files]
+"bin" = ["scripts/klog_cam_start", "scripts/klog_cam_stop", "scripts/klog_cam_preview", "scripts/klog_cam_config"]

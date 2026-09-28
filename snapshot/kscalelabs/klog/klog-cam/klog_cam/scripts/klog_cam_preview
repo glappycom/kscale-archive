@@ -1,0 +1,37 @@
+#!/bin/bash
+
+if [ -z $1 ]; then
+    echo "usage: klog-cam-preview IP_ADDRESS"
+    exit 1
+fi
+
+export DISPLAY=:0
+
+cams=($(cat ~/.config/klog-cam.yaml | yq -r '.cameras[]'))
+log_path=$(cat ~/.config/klog-cam.yaml | yq -r '.log_path')
+
+for cam in "${cams[@]}"; do
+    ls $cam
+    kill -s SIGTERM $(lsof -t "$cam") 2>/dev/null
+
+    echo "Sending camera previeww to $1:1234"
+
+    # magic options for SPEED
+    ffmpeg -f v4l2 \
+        -framerate 30 \
+        -video_size 1280x720 \
+        -input_format mjpeg \
+        -i "$cam" \
+        -c:v libx264 \
+        -preset ultrafast \
+        -tune zerolatency \
+        -crf 25 \
+        -maxrate 2M \
+        -bufsize 1M \
+        -g 15 \
+        -keyint_min 15 \
+        -sc_threshold 0 \
+        -f mpegts \
+        -flush_packets 1 \
+        udp://$1:1234?pkt_size=1316
+done

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+ssh -qt dpsh@klog '~/klog/klog-server/klog_server/scripts/getlog' | tee /tmp/run_id
+
+dirs=$(grep -o '/mnt/klog1\(/\w\+\)\+' /tmp/run_id)
+
+for dir in $dirs; do
+    id=$(echo $dir | awk -F'/' '{print $NF}')
+    echo "http://klog:8000/$id"
+    echo "http://klog:8000/$id" | xsel -b
+done

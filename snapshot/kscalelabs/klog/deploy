@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+
+import yaml
+import sys
+import subprocess
+
+remotes = {}
+
+def main():
+    global remotes
+
+    with open("remotes.yaml", "r") as f:
+        remotes = yaml.safe_load(f)
+
+    if sys.argv[1:] == []:
+        print("usage: ./deploy [remote1 remote2 ...]")
+        print_available_remotes()
+        sys.exit(1)
+
+    targets = []
+
+    for arg in sys.argv[1:]:
+        if arg in remotes.keys():
+            targets.append(arg)
+
+        elif arg == "all":
+            targets = list(remotes.keys())
+            break
+
+        else:
+            print(f"Remote '{arg}' not found in remotes.yaml")
+            print_available_remotes()
+            sys.exit(1)
+
+    for target in targets:
+        print(f"Syncing to remote: {target}")
+        for item in remotes[target]["dirs"]:
+            cmd = f"rsync -aLP --exclude .git --exclude-from=<(git ls-files --exclude-standard -oi --directory) --mkpath {item['local']}/ {remotes[target]['host']}:{item['remote']}"
+            subprocess.run(cmd, shell=True)
+
+def print_available_remotes():
+    print("Available remotes:")
+    for remote in remotes.keys():
+        print(f"  {remote}")
+
+main()

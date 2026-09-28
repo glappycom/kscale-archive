@@ -1,0 +1,14 @@
+# Core LeRobot dependency
+lerobot>=0.3.0
+
+# Common hardware integration dependencies
+numpy>=1.21.0
+opencv-python>=4.5.0
+pyserial>=3.5
+
+# Optional dependencies for specific hardware
+# Uncomment as needed for your hardware
+# pyserial-asyncio>=0.6
+# canopen>=1.0.0
+# hidapi>=0.14.0
+# pyusb>=1.2.0

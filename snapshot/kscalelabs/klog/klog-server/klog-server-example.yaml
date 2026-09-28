@@ -1,0 +1,3 @@
+log_dir: "/mnt/klog1"
+mqtt_host: klog
+mqtt_port: 1883

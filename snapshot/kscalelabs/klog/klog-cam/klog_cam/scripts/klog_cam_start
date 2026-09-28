@@ -1,0 +1,80 @@
+#!/bin/bash
+
+if ! [ -f ~/.config/klog-cam.yaml ]; then
+    echo "Camera configuration file not found. Please run 'klog-cam setup' or manually configure first."
+    exit 1
+fi
+
+cams=($(cat ~/.config/klog-cam.yaml | yq -r '.cameras[]'))
+log_path=$(cat ~/.config/klog-cam.yaml | yq -r '.log_path')
+
+if [ -z "$cams" ]; then
+    echo "No cameras configured. Please add cameras using 'klog-cam setup'."
+    exit 1
+fi
+
+if [ -z "$log_path" ]; then
+    echo "No log path configured. Please set 'log_path' in ~/.config/klog-cam.conf."
+    exit 1
+fi
+
+# Kill anything else (previews or recordings) that are using the cameras
+for cam in "${cams[@]}"; do
+    kill -s SIGTERM $(lsof -t "$cam") 2>/dev/null
+done
+
+# Check for uuid passed
+if [ -z "$1" ]; then
+    echo "expected 1 argument: run_id"
+    exit 1
+else
+    id=$(printf "$1" | sed 's/^\s*//;s/\s*$//') # strip leading & trailing whitespace
+fi
+
+# Check for uuid collision and fallback to /tmp/<TIMESTAMP>
+if [ -e "$log_path/$id" ]; then
+    # I'll lose it if this ever actually happens lol
+    echo "UUID COLLISION!"
+    run_dir="/tmp/$(date +'%Y-%m-%d_%H-%M-%S')"
+    echo "Videos will be saved to $run_dir for later recovery."
+    exit_code=2
+else
+    run_dir="$log_path/$1"
+    exit_code=0
+fi
+
+for i in "${!cams[@]}"; do
+    if [ ! -e "${cams[$i]}" ]; then
+        echo "Camera device $cam not found. Please check your configuration."
+        exit 1
+    fi
+done
+
+mkdir -p "$run_dir"
+date +'%Y-%m-%d_%H-%M-%S' > "$run_dir/timestamp"
+
+for i in "${!cams[@]}"; do
+    cam="${cams[$i]}"
+
+    out_name="$(hostname)-$i"
+
+    exec -a "rec-${i}_${id}" ffmpeg -f v4l2 \
+        -loglevel verbose \
+        -thread_queue_size 512 \
+        -framerate 30 \
+        -input_format mjpeg \
+        -video_size 1920x1080 \
+        -i "$cam" \
+        -preset ultrafast \
+        -filter_complex \
+            settb=1/1000,setpts=RTCTIME,split[out][ts]\;[out]setpts=N/FRAME_RATE/TB[out] \
+        -c:v libx264 \
+        -map [out] "$run_dir/$out_name.mkv" \
+        -map [ts] -f mkvtimestamp_v2 "$run_dir/$out_name.txt" -fps_mode:v passthrough > /tmp/video-logs$i 2>&1 & pids[$i]=$!
+done
+
+for pid in "${pids[@]}"; do
+    printf "%s\n" "$pid"
+done
+
+exit $exit_code

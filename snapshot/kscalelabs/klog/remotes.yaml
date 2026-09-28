@@ -1,0 +1,29 @@
+cam1:
+  host: "dpsh@klog-cam1"
+  dirs:
+    - local: "klog-cam"
+      remote: "klog/klog-cam"
+    - local: "klog-sync"
+      remote: "klog/klog-sync"
+
+cam2:
+  host: "dpsh@klog-cam2"
+  dirs:
+    - local: "klog-cam"
+      remote: "klog/klog-cam"
+    - local: "klog-sync"
+      remote: "klog/klog-sync"
+
+klog:
+  host: "dpsh@klog"
+  dirs:
+    - local: "klog-server"
+      remote: "klog/klog-server"
+
+kbot11:
+  host: "dpsh@kbotv2-no11"
+  dirs:
+    - local: "klog-sync"
+      remote: "klog/klog-sync"
+    - local: "klog-robot"
+      remote: "klog/klog-robot"

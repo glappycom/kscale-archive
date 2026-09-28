@@ -1,0 +1,9 @@
+# requirements.txt
+
+brax
+jax
+mujoco
+mujoco-mjx
+numpy
+omegaconf
+torch

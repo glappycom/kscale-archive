@@ -1,0 +1,10 @@
+# .gitignore
+
+# Rust
+/target
+Cargo.lock
+**/*.rs.bk
+
+# Python
+build/
+dist/

@@ -1,0 +1,1 @@
+This snapshot omits Git LFS pointer files. kteleop tracks media with Git LFS, and on 2026-09-28 GitHub LFS returned HTTP 404 for every object (about 3.5 GB, 870 pointers). The pointer files remain inside history/kscalelabs/kteleop/repo.bundle.

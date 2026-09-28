@@ -1,0 +1,10 @@
+{
+  "merge_fixed_joints": true,
+  "simplify_meshes": true,
+  "voxel_size": 0.00002,
+  "convex_collision_meshes": false,
+  "remove_collision_meshes": false,
+  "add_mjcf": false,
+  "package_tgz": false,
+  "debug": true
+}

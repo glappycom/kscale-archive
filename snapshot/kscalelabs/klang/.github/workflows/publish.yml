@@ -1,0 +1,135 @@
+name: Publish Python and Rust Packages
+
+on:
+  release:
+    types: [created]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: "publish"
+  cancel-in-progress: true
+
+jobs:
+  publish-python:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    name: Build and publish Python package (${{ matrix.os }})
+    timeout-minutes: 10
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install cibuildwheel
+        shell: bash
+
+      - name: Build package
+        env:
+          CIBW_SKIP: "pp* *-musllinux*"  # Skip PyPy and musllinux builds
+          CIBW_BEFORE_BUILD: |
+            curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+            source $HOME/.cargo/env
+            pip install setuptools-rust
+            if [ "${{ runner.os }}" == "Linux" ]; then
+              yum install -y protobuf-compiler
+            elif [ "${{ runner.os }}" == "macOS" ]; then
+              brew install protobuf
+            else
+              echo "Unsupported OS: ${{ runner.os }}"
+              exit 1
+            fi
+            protoc --version
+          CIBW_ENVIRONMENT: |
+            PATH="/usr/local/bin:$HOME/.cargo/bin:$PATH"
+            PROTOC="/usr/local/bin/protoc"
+            CARGO_NET_GIT_FETCH_WITH_CLI=true
+        run: cibuildwheel --output-dir dist
+
+      - name: Upload wheel artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: wheels-${{ matrix.os }}
+          path: dist/*.whl
+
+  publish-wheels:
+    needs: publish-python
+    name: Publish Python wheels
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download all wheels
+        uses: actions/download-artifact@v3
+        with:
+          path: dist
+
+      - name: Move wheels to dist directory
+        run: |
+          mkdir -p final_dist
+          find dist -name "*.whl" -exec mv {} final_dist/ \;
+
+      - name: Publish package
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: final_dist/
+
+  publish-rust:
+    name: Build and publish Rust package
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libudev-dev pkg-config protobuf-compiler
+
+      - name: Cache Cargo registry
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/registry
+          key: ${{ runner.os }}-cargo-registry
+          restore-keys: |
+            ${{ runner.os }}-cargo-registry
+
+      - name: Cache Cargo index
+        uses: actions/cache@v4
+        with:
+          path: ~/.cargo/git
+          key: ${{ runner.os }}-cargo-index
+          restore-keys: |
+            ${{ runner.os }}-cargo-index
+
+      - name: Publish package to crates.io
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
+        run: |
+          cd klang/
+          cargo publish
