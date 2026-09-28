@@ -1,0 +1,54 @@
+{
+  "full_name": "kscalelabs/imu",
+  "upstream_url": "https://github.com/kscalelabs/imu",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 3702,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "Package to read IMUs",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-09-12T19:49:53Z",
+  "branches": {
+    "bmi088_driver": "b6921b28ee4d80ad438594ef18e0a4cf9e4371a3",
+    "bno055-imrpove-loop": "e29835578ff9cbd3726d2fb6636c3af7866b5919",
+    "freq": "e216e63e4955baeb2365dac75ee96eb773918b3b",
+    "hiwonder-100hz": "21f7bbf9c30707844e89dabe73c95655f9345e94",
+    "hiwonder_dev_plot": "f682416dfae20c0e5763e51d62a74a7154ee4924",
+    "imu_write_with_unlock": "7aaca3dc94689c7c80ef9bfc762066f532039aeb",
+    "jx/dual-port-imu": "b907e3053e793742292ca3e4fba6b3ecb11bd90b",
+    "lsm6dsv-branch": "a768970adb4ed81bd5d3432950c00fdbc09827fa",
+    "macos-testing": "cdc1ae41e0c37da257627761a7e16317ed387251",
+    "master": "ee33350efa815c72686861f8c521354e4489dcf6",
+    "refactor": "fa6b000a7dec6a892ea2459338051629a8c33e66",
+    "test_acc_filt": "90b81d62b66b965f462798cf2e122a4a207be1fa",
+    "two_imu_call": "ee256c657d8c43aacc9d5cefded5359a313d9cd1",
+    "use-docker": "c99dcad032a91713248785873f2ac8cbf3450d21"
+  },
+  "tags": {},
+  "default_branch_sha": "ee33350efa815c72686861f8c521354e4489dcf6",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2024 K-Scale Labs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 4005796,
+  "bundle_sha256": "626f659c4fccc7cc0402f016e238aacc0d399098ee7e4aed9d6005e2c83f6a6a",
+  "snapshot_bytes": 164410,
+  "snapshot_files": 52
+}

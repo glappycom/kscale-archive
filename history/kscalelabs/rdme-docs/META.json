@@ -1,0 +1,38 @@
+{
+  "full_name": "kscalelabs/rdme-docs",
+  "upstream_url": "https://github.com/kscalelabs/rdme-docs",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 754,
+  "inventory_default_branch": "v1.0",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "v1.0",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-07-09T17:37:22Z",
+  "branches": {
+    "ksim_docs": "223bf798e9f1906ae267967a21ea5d1440e4ad60",
+    "v1.0": "ecfe8da5c987c93873bfa4efcda0feb9456a7645",
+    "v1.1": "ecfe8da5c987c93873bfa4efcda0feb9456a7645",
+    "v1.2": "d71d7727a6888d5a6034f441d35f7824cc0871e1"
+  },
+  "tags": {},
+  "default_branch_sha": "ecfe8da5c987c93873bfa4efcda0feb9456a7645",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 731688,
+  "bundle_sha256": "3bc0eb1d21c7bde1f8705aa963731a306bc2356f0a9c867b3dbb3e979a14c13f",
+  "snapshot_bytes": 104204,
+  "snapshot_files": 56
+}

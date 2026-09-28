@@ -1,0 +1,35 @@
+{
+  "full_name": "zeroth-robotics/quickstart",
+  "upstream_url": "https://github.com/zeroth-robotics/quickstart",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 8,
+  "inventory_default_branch": "main",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "main",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "The starting place for all example code to get up and running using a Zeroth Bot.",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-01-16T02:02:23Z",
+  "branches": {
+    "main": "de99e39d241b36949e9b611b8076cfd74e2caa85"
+  },
+  "tags": {},
+  "default_branch_sha": "de99e39d241b36949e9b611b8076cfd74e2caa85",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 8600,
+  "bundle_sha256": "240d72e3bed0627dfa793e44bf36da2a635c466f1194f134a64e04716927bcd1",
+  "snapshot_bytes": 101132,
+  "snapshot_files": 11
+}

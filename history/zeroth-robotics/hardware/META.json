@@ -1,0 +1,35 @@
+{
+  "full_name": "zeroth-robotics/hardware",
+  "upstream_url": "https://github.com/zeroth-robotics/hardware",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 20655,
+  "inventory_default_branch": "main",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "main",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-12-04T07:49:24Z",
+  "branches": {
+    "main": "8ec6dfe4b44d3f99a1d39726c7996d47ff0a72ff"
+  },
+  "tags": {},
+  "default_branch_sha": "8ec6dfe4b44d3f99a1d39726c7996d47ff0a72ff",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 21151046,
+  "bundle_sha256": "9c35d5723aadc0678385d3a128b9717ded610e202f3ff635c4d07859e9fc6f0a",
+  "snapshot_bytes": 117032851,
+  "snapshot_files": 56
+}

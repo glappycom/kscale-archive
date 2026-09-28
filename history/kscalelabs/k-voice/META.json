@@ -1,0 +1,35 @@
+{
+  "full_name": "kscalelabs/k-voice",
+  "upstream_url": "https://github.com/kscalelabs/k-voice",
+  "captured_at": "2026-09-28T17:50:29Z",
+  "inventory_size_kb": 0,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-01-10T01:59:35Z",
+  "branches": {
+    "master": "3e6cffb4183efc1afe8ad1e7f9f1327a777f72fa"
+  },
+  "tags": {},
+  "default_branch_sha": "3e6cffb4183efc1afe8ad1e7f9f1327a777f72fa",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 1001,
+  "bundle_sha256": "f414836cb903e1edb32aa8e74bb5c588eb35be9d4ae6e35c59fc8dab7b5811ba",
+  "snapshot_bytes": 9,
+  "snapshot_files": 1
+}

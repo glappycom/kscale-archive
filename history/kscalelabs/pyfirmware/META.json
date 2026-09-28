@@ -1,0 +1,61 @@
+{
+  "full_name": "kscalelabs/pyfirmware",
+  "upstream_url": "https://github.com/kscalelabs/pyfirmware",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 505,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "Python firmware",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-10-28T18:30:19Z",
+  "branches": {
+    "boolean-and-fault-check": "c94cdf7d135b66b7500b3fc20545c7522c4bdfb6",
+    "can-com-refactor": "eaaea27085a17775af40464e7280c714a0aa041c",
+    "can-debugging": "13742fe9b39e9661793bd4f09dc2784bb7e4921b",
+    "can-refactor": "dffdca9bfe7c66b0d8ea48fc1f5b44dab2e249e9",
+    "dismiss-faults": "4c8ad89b759c1954ca9218cb4cd8fd8e754813b8",
+    "jack-dev": "fbf0ad5b6e7007f75c19e83cafe137b43c505e38",
+    "lerobot": "0d453daf8210053bf7a400f896ec57be5cab5767",
+    "master": "401bcc09873205fabfd720ea67e5eefc22dd71ce",
+    "master-process": "8f050e5b79666b9fbffab9cb7ff69940dd3131f7",
+    "mo-dev": "8e8aa477fe3080aa9d841445f271c2c2999a92ae",
+    "real-shit": "39c39679c54cf397ecb6a312fa353c7bd5ef283c",
+    "split-file": "9f1454b08e3331a684ad2d53147c637bdbf2613e",
+    "timeout-jitter": "fd5cfcb930db0d1be1860be7a8c2e8c533101eb3",
+    "upper-body": "da94b010bc83be02e30f54b1b7f7c32d264fbdac"
+  },
+  "tags": {
+    "1.1.0": "dd598954a2c5ec5e1152b25474baf17a9a1d2347",
+    "1.2.0": "7552c1b67493716cad85dc1e32476d7f68694b86",
+    "1.3.0": "155acb3da329bdfc4b16855bdb7a5f8e54c255e8",
+    "1.3.1": "8b44a32ce8a3c2ccdd9f7c336f8e0081d4d77a9a",
+    "1.4.0": "201fee819a7d7e5b5ee2669991e5edb66d52ed29",
+    "v1.0.0": "08d06cbc6f9b970fd974932d1c43345214c787b1"
+  },
+  "default_branch_sha": "401bcc09873205fabfd720ea67e5eefc22dd71ce",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2025 Benjamin Bolte\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 638976,
+  "bundle_sha256": "23a362dfc084976270ec6481685c7e009c716c596b81c8ba1be21736b25061cc",
+  "snapshot_bytes": 117858,
+  "snapshot_files": 40
+}

@@ -1,0 +1,42 @@
+{
+  "full_name": "kscalelabs/minppo",
+  "upstream_url": "https://github.com/kscalelabs/minppo",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 5881,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "Repository for learning a policy to get a humanoid robot to stand up",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-02-13T23:41:02Z",
+  "branches": {
+    "master": "29169ba71d555f5b477f3a1991b19c15ee77abc1",
+    "speed-fixes": "730ea08aad85c98024bbc2658394ce2f756680be"
+  },
+  "tags": {},
+  "default_branch_sha": "29169ba71d555f5b477f3a1991b19c15ee77abc1",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2024 Nathan Zhao\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 12673007,
+  "bundle_sha256": "02d2f2d67dcb91291f3f2da6eb09d8048bc0ce6c1a280dc50b765cf3e0111813",
+  "snapshot_bytes": 41222,
+  "snapshot_files": 21
+}

@@ -1,0 +1,36 @@
+{
+  "full_name": "kscalelabs/kbotv2_teleop",
+  "upstream_url": "https://github.com/kscalelabs/kbotv2_teleop",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 6088,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-04-06T01:20:12Z",
+  "branches": {
+    "master": "c06b5cb1759f4e610c74974adf338cabd82d0c2c",
+    "pybullet_teleop": "42418c08f58a521c8197e3a9cc56c833a0c4696c"
+  },
+  "tags": {},
+  "default_branch_sha": "c06b5cb1759f4e610c74974adf338cabd82d0c2c",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 6119222,
+  "bundle_sha256": "259bbfb311032c6a4a6455e9146a7f1f34358e0845fe3f367765de7a9d3d504d",
+  "snapshot_bytes": 10996613,
+  "snapshot_files": 69
+}

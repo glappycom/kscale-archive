@@ -1,0 +1,55 @@
+{
+  "full_name": "kscalelabs/ksim-gym-zbot",
+  "upstream_url": "https://github.com/kscalelabs/ksim-gym-zbot",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 2381,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "no",
+  "snapshot_status": "yes",
+  "notes": [
+    "Snapshot working tree includes fetched LFS objects (pointers checked out).",
+    "Git LFS fetch stored 1 of 2 objects (about 2 MB). The other object returns HTTP 404 from GitHub LFS and was not recoverable."
+  ],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "RL Policy benchmark for K-Scale's ZBot robot",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-06-28T22:35:47Z",
+  "branches": {
+    "initial-baseline": "8e7a3a22ccdacda558107fc42008c5348e718aed",
+    "master": "a48211269a2d729d58bc770e3fb832ac2f9dd9cd",
+    "planner-strategy": "df22fce0d82a7279dc4858ee7501269ab1d6d7e2",
+    "updates3": "d508ffc9a9888379a3f28a3d50596df7906a908b",
+    "wes": "6b3367e144d8860be74d4a897b2aaea28ea84604"
+  },
+  "tags": {},
+  "default_branch_sha": "a48211269a2d729d58bc770e3fb832ac2f9dd9cd",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2025 K-Scale Labs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 2396651,
+  "bundle_sha256": "30ef2cbd76de544eab610b27f35b07a2ab1375bafcfcc35eca4c067eb7ed599f",
+  "lfs_pointer_bytes": 14000000,
+  "lfs_object_count": 2,
+  "lfs_files": [
+    "lfs-objects.tar"
+  ],
+  "lfs_archive_bytes": 2017280,
+  "lfs_archive_sha256": "3256e9f135364aaf3ce0b266fbffd74f37eb9ac8eff8868e9e9d5235787e5db3",
+  "snapshot_bytes": 77717,
+  "snapshot_files": 11
+}

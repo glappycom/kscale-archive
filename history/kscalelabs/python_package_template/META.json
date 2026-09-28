@@ -1,0 +1,41 @@
+{
+  "full_name": "kscalelabs/python_package_template",
+  "upstream_url": "https://github.com/kscalelabs/python_package_template",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 17,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "Make a python package using this template!",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-08-08T22:28:53Z",
+  "branches": {
+    "master": "1374ab0f6e80cd4cb24933060dbbb9a70cefc5cb"
+  },
+  "tags": {},
+  "default_branch_sha": "1374ab0f6e80cd4cb24933060dbbb9a70cefc5cb",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2025 Your Name\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 13340,
+  "bundle_sha256": "1f1693f7262616ce2c2cd803a7df0a021bad9b8c9e15eef5d6f9c47915dea7d0",
+  "snapshot_bytes": 22563,
+  "snapshot_files": 16
+}

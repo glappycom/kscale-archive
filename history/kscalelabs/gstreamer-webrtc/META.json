@@ -1,0 +1,35 @@
+{
+  "full_name": "kscalelabs/gstreamer-webrtc",
+  "upstream_url": "https://github.com/kscalelabs/gstreamer-webrtc",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 6,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "GStreamer with WebRTC plugins",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-03-04T09:54:57Z",
+  "branches": {
+    "master": "10c4342101cb03c0177b6845445812db4c0ccbaf"
+  },
+  "tags": {},
+  "default_branch_sha": "10c4342101cb03c0177b6845445812db4c0ccbaf",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 5628,
+  "bundle_sha256": "481161790a7f88bccd3bf05814b4168e7d9757609be718098b810f622a36e72d",
+  "snapshot_bytes": 4262,
+  "snapshot_files": 2
+}

@@ -1,0 +1,36 @@
+{
+  "full_name": "kscalelabs/kbot_deployment",
+  "upstream_url": "https://github.com/kscalelabs/kbot_deployment",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 49,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "all the kbot deployment garbage: scripts, misc pieces, etc",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-09-29T21:53:46Z",
+  "branches": {
+    "dev-bart": "59f2ea69afcf542c8d08a3c438867126c2f82139",
+    "master": "51fbee399effbf14f7eef3a5546a73d61a2ec02d"
+  },
+  "tags": {},
+  "default_branch_sha": "51fbee399effbf14f7eef3a5546a73d61a2ec02d",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 39045,
+  "bundle_sha256": "4b2ddc849a60c61a51597dc4e430eb5cd992fabaf531e7c0be3defd64eb2068e",
+  "snapshot_bytes": 73638,
+  "snapshot_files": 25
+}

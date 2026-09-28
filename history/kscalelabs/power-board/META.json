@@ -1,0 +1,35 @@
+{
+  "full_name": "kscalelabs/power-board",
+  "upstream_url": "https://github.com/kscalelabs/power-board",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 139,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-07-15T00:03:22Z",
+  "branches": {
+    "master": "6d0ffc61a09be81a8e80808064236d6a9092b6b7"
+  },
+  "tags": {},
+  "default_branch_sha": "6d0ffc61a09be81a8e80808064236d6a9092b6b7",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 142537,
+  "bundle_sha256": "f0eb1bfe019a125c44dbeeae7b45e3c9e0d49cb895aad44086f07c35e2fb23b5",
+  "snapshot_bytes": 826318,
+  "snapshot_files": 18
+}

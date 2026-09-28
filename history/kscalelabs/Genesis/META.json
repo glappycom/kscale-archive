@@ -1,0 +1,65 @@
+{
+  "full_name": "kscalelabs/Genesis",
+  "upstream_url": "https://github.com/kscalelabs/Genesis",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 92457,
+  "inventory_default_branch": "main",
+  "inventory_fork": true,
+  "priority_tier": "3-fork",
+  "history_status": "partial",
+  "history_method": "delta-bundle-of-diverging-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "no",
+  "notes": [
+    "Repo has .gitmodules. Submodule commits were not vendored; submodule URLs remain in the tree.",
+    "Delta bundle contains this fork's diverging commits and tags. Prerequisite cadeef4087f5335c5eae6d1dc607f918e78a0441 must come from https://github.com/Genesis-Embodied-AI/genesis-world (still public on the capture date; compare ahead 2). A full standalone bundle was not stored because the fork is a 92457 KB copy of that upstream."
+  ],
+  "default_branch": "main",
+  "fork": true,
+  "parent": "Genesis-Embodied-AI/genesis-world",
+  "parent_default_branch": "main",
+  "github_license_spdx": "Apache-2.0",
+  "description": "A generative world for general-purpose robotics & embodied AI learning.",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-01-17T07:25:39Z",
+  "branches": {
+    "main": "a4e6119eabc7e7c8f82821bf3b0beda344839c1b"
+  },
+  "tags": {},
+  "default_branch_sha": "a4e6119eabc7e7c8f82821bf3b0beda344839c1b",
+  "fork_compare": {
+    "ahead_by": 2,
+    "behind_by": 1537,
+    "merge_base": "cadeef4087f5335c5eae6d1dc607f918e78a0441",
+    "status": "diverged"
+  },
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "Apache-2.0",
+      "excerpt": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n"
+    },
+    {
+      "path": "genesis/assets/urdf/panda_bullet/LICENSE.txt",
+      "detected_from_text": "Apache-2.0",
+      "excerpt": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n"
+    },
+    {
+      "path": "genesis/assets/xml/franka_sim/LICENSE",
+      "detected_from_text": "Apache-2.0",
+      "excerpt": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n"
+    },
+    {
+      "path": "genesis/assets/xml/universal_robots_ur5e/LICENSE",
+      "detected_from_text": "unrecognized",
+      "excerpt": "Copyright 2018 ROS Industrial Consortium\n\nRedistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this\nlist of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice,\nthis list of conditions and the following disclaimer in the documentation and/or\nother materials provided with the distribution.\n\n3. Neither the name of the copyright holder nor the names of its contributors\nmay be used to endorse or promote products derived from this software without\nspecific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS"
+    }
+  ],
+  "bundle_files": [
+    "delta.bundle"
+  ],
+  "bundle_bytes": 7145814,
+  "bundle_sha256": "5a4775972c128498e1c958836036f9c4203b67ca876b2f61941d51353e5d006e",
+  "delta_prerequisite_sha": "cadeef4087f5335c5eae6d1dc607f918e78a0441",
+  "delta_prerequisite_repo": "Genesis-Embodied-AI/genesis-world"
+}

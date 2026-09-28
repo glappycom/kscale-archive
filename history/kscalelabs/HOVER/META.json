@@ -1,0 +1,44 @@
+{
+  "full_name": "kscalelabs/HOVER",
+  "upstream_url": "https://github.com/kscalelabs/HOVER",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 5597,
+  "inventory_default_branch": "main",
+  "inventory_fork": true,
+  "priority_tier": "3-fork",
+  "history_status": "partial",
+  "history_method": "upstream-pointer-no-unique-commits",
+  "lfs_status": "no",
+  "snapshot_status": "no",
+  "notes": [
+    "Fork has no commits that are absent from NVlabs/HOVER (compare status identical, behind 0). Upstream still hosted this history on the capture date. Restore with: git clone https://github.com/NVlabs/HOVER.git && git checkout 8088f6cfb42a8f307dc614735197796a86ce8490",
+    "Third-party fork uses Git LFS. Blobs were not mirrored because this fork adds no commits of its own. Upstream still hosts the LFS objects."
+  ],
+  "default_branch": "main",
+  "fork": true,
+  "parent": "NVlabs/HOVER",
+  "parent_default_branch": "main",
+  "github_license_spdx": "Apache-2.0",
+  "description": "HOVER",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-07-30T01:21:51Z",
+  "branches": {
+    "main": "8088f6cfb42a8f307dc614735197796a86ce8490"
+  },
+  "tags": {},
+  "default_branch_sha": "8088f6cfb42a8f307dc614735197796a86ce8490",
+  "fork_compare": {
+    "ahead_by": 0,
+    "behind_by": 0,
+    "merge_base": "8088f6cfb42a8f307dc614735197796a86ce8490",
+    "status": "identical"
+  },
+  "refs_missing_from_parent": [],
+  "license_files": [
+    {
+      "path": "LICENCE",
+      "detected_from_text": "Apache-2.0",
+      "excerpt": "Apache License\nVersion 2.0, January 2004\nhttp://www.apache.org/licenses/\n\nTERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n1. Definitions.\n\n\"License\" shall mean the terms and conditions for use, reproduction,\nand distribution as defined by Sections 1 through 9 of this document.\n\n\"Licensor\" shall mean the copyright owner or entity authorized by\nthe copyright owner that is granting the License.\n\n\"Legal Entity\" shall mean the union of the acting entity and all\nother entities that control, are controlled by, or are under common\ncontrol with that entity. For the purposes of this definition,\n\"control\" means (i) the power, direct or indirect, to cause the\ndirection or management of such entity, whether by contract or\notherwise, or (ii) ownership of fifty percent (50%) or more of the\noutstanding shares, or (iii) beneficial ownership of such entity.\n\n\"You\" (or \"Your\") shall mean an individual or Legal Entity\nexercising permissions granted by this License.\n"
+    }
+  ]
+}

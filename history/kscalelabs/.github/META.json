@@ -1,0 +1,35 @@
+{
+  "full_name": "kscalelabs/.github",
+  "upstream_url": "https://github.com/kscalelabs/.github",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 396,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-04-06T01:02:19Z",
+  "branches": {
+    "master": "342500b3ac1ecb7ec0b6203d4b199d38f8e466ba"
+  },
+  "tags": {},
+  "default_branch_sha": "342500b3ac1ecb7ec0b6203d4b199d38f8e466ba",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 402835,
+  "bundle_sha256": "8163a3405e8b482f8b7486b2fc9ccaede8150d2c02cbe2666e929c17ae879780",
+  "snapshot_bytes": 393421,
+  "snapshot_files": 4
+}

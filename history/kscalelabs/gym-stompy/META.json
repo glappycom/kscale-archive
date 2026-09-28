@@ -1,0 +1,49 @@
+{
+  "full_name": "kscalelabs/gym-stompy",
+  "upstream_url": "https://github.com/kscalelabs/gym-stompy",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 815,
+  "inventory_default_branch": "main",
+  "inventory_fork": true,
+  "priority_tier": "3-fork",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "no",
+  "notes": [],
+  "default_branch": "main",
+  "fork": true,
+  "parent": "huggingface/gym-aloha",
+  "parent_default_branch": "main",
+  "github_license_spdx": "MIT",
+  "description": "A gym environment for Stompy",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-07-15T19:40:17Z",
+  "branches": {
+    "dependabot/pip/certifi-2024.7.4": "9598244f4cd2f255c60b4040509c119ecf4b0da8",
+    "dependabot/pip/requests-2.32.0": "a562f59bd5c3984c9fd9a6e2dfaf3b648419313e",
+    "dependabot/pip/setuptools-70.0.0": "e79091a048cf2850df519124992791a2c2bdb21f",
+    "dependabot/pip/urllib3-2.2.2": "856013d38e44e4cef98fe60daee5465bbc76bd52",
+    "main": "5693ea1b6c27a963e7824505fecf189c00127813"
+  },
+  "tags": {},
+  "default_branch_sha": "5693ea1b6c27a963e7824505fecf189c00127813",
+  "fork_compare": {
+    "ahead_by": 12,
+    "behind_by": 8,
+    "merge_base": "7f19312f453f45fbe8ca8883d6250626dfa36373",
+    "status": "diverged"
+  },
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2024 K-Scale Labs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 526417,
+  "bundle_sha256": "9567087503d90a697d67258af11590b957437ea836430d3ed9a0f00119e24f7c"
+}

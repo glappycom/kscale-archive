@@ -1,0 +1,56 @@
+{
+  "full_name": "kscalelabs/kscale-mujoco-viewer",
+  "upstream_url": "https://github.com/kscalelabs/kscale-mujoco-viewer",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 103,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-10-14T17:28:06Z",
+  "branches": {
+    "master": "0c717313e5fcfb7471c4d93bca8f8c1929603527"
+  },
+  "tags": {
+    "0.1.13": "46a541a7de22508e1888e23114c9a77dfa74fe6a",
+    "0.3.0": "59c3188b16f27264a59189d9a6314ef868c6ecfc",
+    "0.3.1": "1cdc0161819887a942fdc4bdfeabbc78125d9339",
+    "0.3.12": "705921230f63d2b9c563220bc7ca515fe987b041",
+    "0.3.13": "7311f452e532101f4d2cdf2f582569e48931461d",
+    "0.3.14": "bcb0506cd09561595255f4e1e7e1abce19a309f5",
+    "0.3.15": "628c357a8bf0a3dc8eacab2406e5faf910c5e065",
+    "0.3.16": "92e9891b232614bf0b5df1bfea2a0b259f91d8e6",
+    "0.3.17": "c6cf8884bc6f6f5b782548376f4aa15687fcebe9",
+    "0.3.18": "d7de42db1a01a1af7bbbaff9f60ec447ce88d72d",
+    "0.3.19": "22f8e29de7f9d6b9e8d26f557ca8cfc140cd6896",
+    "0.3.20": "f1da76182dbb665065edb1fead9e5d199362104e",
+    "0.3.21": "6988567886b8a7ae13fc8592c1b52ab2950240f3",
+    "0.3.22": "0c717313e5fcfb7471c4d93bca8f8c1929603527"
+  },
+  "default_branch_sha": "0c717313e5fcfb7471c4d93bca8f8c1929603527",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2024 K-Scale Labs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 301885,
+  "bundle_sha256": "2bd5bbb6ef768fe1b415909c746ac979a54eca521dfc4beb42a8f231eb389ac6",
+  "snapshot_bytes": 103905,
+  "snapshot_files": 40
+}

@@ -1,0 +1,62 @@
+{
+  "full_name": "kscalelabs/lerobot",
+  "upstream_url": "https://github.com/kscalelabs/lerobot",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 100351,
+  "inventory_default_branch": "main",
+  "inventory_fork": true,
+  "priority_tier": "3-fork",
+  "history_status": "partial",
+  "history_method": "delta-bundle-of-diverging-refs",
+  "lfs_status": "no",
+  "snapshot_status": "no",
+  "notes": [
+    "Delta bundle contains this fork's diverging commits and tags. Prerequisite 73b64c30896ecec681ce533ac9d327d2b128bf4c must come from https://github.com/huggingface/lerobot (still public on the capture date; compare ahead 20). A full standalone bundle was not stored because the fork is a 100351 KB copy of that upstream.",
+    "LFS pointer metadata says 3446911836 bytes across 838 objects. Blobs were not downloaded (third-party fork above the size cutoff). Pointer files remain in the bundle."
+  ],
+  "default_branch": "main",
+  "fork": true,
+  "parent": "huggingface/lerobot",
+  "parent_default_branch": "main",
+  "github_license_spdx": "Apache-2.0",
+  "description": "\ud83e\udd17 LeRobot: State-of-the-art Machine Learning for Real-World Robotics in Pytorch",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-12-22T17:13:38Z",
+  "branches": {
+    "act_krec": "5b4e444155d6bd23a97f04d103114750f35fe08d",
+    "dependabot/pip/aiohttp-3.10.2": "75d23c466c48cbcd03c8079aa2a2b977909f34c8",
+    "dependabot/pip/certifi-2024.7.4": "e4a00287274c2b93164c97f3bbd04c044cf4ad46",
+    "dependabot/pip/requests-2.32.0": "2049f532277bee2e6ccfe30896e129fb08772244",
+    "dependabot/pip/sentry-sdk-2.8.0": "c224615a417bc06ef1a1389f696e7efbd35c74ef",
+    "dependabot/pip/setuptools-70.0.0": "a59c2309db2ba9d92900b72735ec26a3184ffde2",
+    "dependabot/pip/urllib3-2.2.2": "1c3e85dead5b86959c25afb77ff36e638e172784",
+    "dependabot/pip/zipp-3.19.1": "fecb352e0f0aa53bc83bc57504658012b3c13733",
+    "gpr_dataset_integration": "3047ee79378d13686567050ce99c90a15b3cb7b5",
+    "krec_dataloader": "8e7d6970eaf5a64b8af6ec45586d201b8ca9ef16",
+    "main": "26834cdfcb9c906563ee7743ecaff8d80f7815e1"
+  },
+  "tags": {},
+  "default_branch_sha": "26834cdfcb9c906563ee7743ecaff8d80f7815e1",
+  "fork_compare": {
+    "ahead_by": 20,
+    "behind_by": 1119,
+    "merge_base": "73b64c30896ecec681ce533ac9d327d2b128bf4c",
+    "status": "diverged"
+  },
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "Apache-2.0",
+      "excerpt": "Copyright 2024 The Hugging Face team. All rights reserved.\n\n                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity"
+    }
+  ],
+  "bundle_files": [
+    "delta.bundle"
+  ],
+  "bundle_bytes": 65876,
+  "bundle_sha256": "7f3ff9ca371a7abd17fd1c9485441c8c1af320704c7edca190ebb99dcc6b9faf",
+  "delta_prerequisite_sha": "73b64c30896ecec681ce533ac9d327d2b128bf4c",
+  "delta_prerequisite_repo": "huggingface/lerobot",
+  "lfs_pointer_bytes": 3446911836,
+  "lfs_object_count": 838
+}

@@ -1,0 +1,50 @@
+{
+  "full_name": "kscalelabs/kscale",
+  "upstream_url": "https://github.com/kscalelabs/kscale",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 275,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "K-Scale master repository, for interacting with various K-Scale services",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-09-04T00:00:33Z",
+  "branches": {
+    "master": "2afc534531a50a1ad31c6a794b34daa450196373"
+  },
+  "tags": {
+    "0.3.12": "9d63d4d78b59964d0b005dc8abc76adb275acfe6",
+    "0.3.13": "78858511598805b81c986982b3656595ff3ecb08",
+    "0.3.14": "78858511598805b81c986982b3656595ff3ecb08",
+    "0.3.15": "c3b8eb786408f69b27a035fcc965541c8d3092bf",
+    "0.3.16": "cad92b3ecd36938f746c6210e5d34eb98731e6f0",
+    "0.3.17": "f13652b889947a8f8fc66633adef677bc7b2c8f4",
+    "0.3.18": "2afc534531a50a1ad31c6a794b34daa450196373",
+    "3.13": "3b3572f2fd66ca955f70baf607c6f101d2e31c15"
+  },
+  "default_branch_sha": "2afc534531a50a1ad31c6a794b34daa450196373",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2023 Benjamin Bolte\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 403583,
+  "bundle_sha256": "148327c4d1a3e8cfd1961a704c9ffafb392bce1827b2de32ce490f2f007289be",
+  "snapshot_bytes": 96380,
+  "snapshot_files": 49
+}

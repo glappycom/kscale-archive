@@ -1,0 +1,50 @@
+{
+  "full_name": "kscalelabs/mujoco-scenes",
+  "upstream_url": "https://github.com/kscalelabs/mujoco-scenes",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 6675,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "Package for creating different scenes in Mujoco",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-10-28T07:38:57Z",
+  "branches": {
+    "master": "b221b813765a918df274efde798a0e488de7b8c2"
+  },
+  "tags": {
+    "0.0.10": "820bfd2542309a1d86eebf0915094144115d5cd9",
+    "0.0.11": "d13316b17f0a46ee304abd37245685b6dc47d853",
+    "0.0.12": "5430cf3c2c1c94dac9153d5a6240b6c345c36917",
+    "0.0.13": "ebd87b0f953d4d7cba379bdf0eac4b8116f7c1ad",
+    "0.0.14": "e2dd141e3c78c38c606957b302e1b7ea82377c5a",
+    "0.0.15": "1bf5353b019604e70a72dd91d68ed734dac6902e",
+    "0.0.16": "7311d68908e5e729b5bcc1ae4c364efb21c2ff1e",
+    "0.0.17": "b221b813765a918df274efde798a0e488de7b8c2"
+  },
+  "default_branch_sha": "b221b813765a918df274efde798a0e488de7b8c2",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2023 Benjamin Bolte\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 7017622,
+  "bundle_sha256": "1ee59d24646ab06ceb1c6f7ff104569748c23db617d8b96fce7d24ae13b1b99e",
+  "snapshot_bytes": 6686867,
+  "snapshot_files": 29
+}

@@ -1,0 +1,161 @@
+{
+  "full_name": "zeroth-robotics/buildroot",
+  "upstream_url": "https://github.com/zeroth-robotics/buildroot",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 1120713,
+  "inventory_default_branch": "develop",
+  "inventory_fork": true,
+  "priority_tier": "3-fork",
+  "history_status": "partial",
+  "history_method": "delta-bundle-of-diverging-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "no",
+  "notes": [
+    "Delta bundle contains this fork's diverging commits and tags. Prerequisite 8e970aa49decfddc6f7f5bd66d0e798ffcf712c4 must come from https://github.com/milkv-duo/duo-buildroot-sdk (still public on the capture date; compare ahead 74). A full standalone bundle was not stored because the fork is a 1120713 KB copy of that upstream."
+  ],
+  "default_branch": "develop",
+  "fork": true,
+  "parent": "milkv-duo/duo-buildroot-sdk",
+  "parent_default_branch": "develop",
+  "github_license_spdx": null,
+  "description": "Image for OpenLCH platform based on Milk-V Duo Official buildroot SDK",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-02-18T05:42:25Z",
+  "branches": {
+    "develop": "f6eb2eaf4b147b5ca2b9b0c02b1448fd5fe3227c",
+    "factory_validation": "c7ba73b050ac609189b01f4680504e08f45203df",
+    "feetechv2": "af6c076e674cd93d1a65a492c19b9c75c75c2c4e"
+  },
+  "tags": {
+    "v0.0.2": "ee56efab50f877cc1c675a1f1088d33fa505e09f",
+    "v0.0.2-p2": "aa79d8885672dfa210587baf1a075317e251e219",
+    "v0.0.2-p3": "a01c8e351b5396d5cf7ac1d1b034df29133cd7ec",
+    "v0.0.2-p4": "e1636131873a3c516732a58cbac72a918504ef6e",
+    "v0.0.2-p5": "e06b9eaea3ebe6995ae8d8bb86c590b387251f68",
+    "v0.0.2-p6": "804f19df74eef8e4ef1bd3e9dde778a787ebf4b5",
+    "v0.0.2-p7": "83938f6a2f81628662c7086ab393edb4c2d151b4",
+    "v0.1.0": "93ff3f700c2e0e4874fc2f851c0534c27ccd0ab2",
+    "v0.1.1": "93ff3f700c2e0e4874fc2f851c0534c27ccd0ab2",
+    "v0.1.10": "a32f95ac84f8b8a47391eeed0517e9202b7fe9ea",
+    "v0.1.2": "f69e0acaad7cac4191dc3b0e53c9324d487f5753",
+    "v0.1.3": "bf672fd79bb739d23ca2f84bd1fc9be1580c21fe",
+    "v0.1.4": "1a4e0cec67a01f62d08a3382785af250a322e1a7",
+    "v0.1.5": "b244ab9d8072e20732dc596e61c75076338e1c6d",
+    "v0.1.6": "075d879b7e817effc0e0c5e0f77d6e54a9589e37",
+    "v0.1.7": "40b8bf50ad62b9f6f8917023e208ab0f89685b69",
+    "v0.1.8": "7315ff79a4d8c008e3bffbf9282ccb5394c76acf",
+    "v0.1.9": "6b57e13fb41cf6cebca2cf519d67e25986b5ffb7",
+    "v0.2.0": "c382b2e52ba8d17b05d4205f00311415dd2de327",
+    "v0.2.1": "403d91609823fc29de0771b8641fbb214f5eba7e",
+    "v0.2.2": "e9fc5ec58de8560b5423b67041e3f34d7d2f1598",
+    "v0.2.3": "22c6fef49be074a2c8bdf8defe9e7cde4c35b315",
+    "v0.2.4": "dd79d0c98e391526c3ae502777f2cb869f164d71",
+    "v0.2.5": "dd79d0c98e391526c3ae502777f2cb869f164d71",
+    "v0.3.0": "94ca28ccc624485ef9eb1481739a77c020b7f04a",
+    "v0.3.1": "a55df901fc8660cf0e0e43f763f3af8bb16d906f",
+    "v0.3.2": "a55df901fc8660cf0e0e43f763f3af8bb16d906f",
+    "v0.3.3": "d0daa83837bfb97351e5a60c736725b90301ad20",
+    "v0.3.4": "a22cdca6ade67aaf5e25687979a3422df765bec2",
+    "v0.4.0": "1dafc87094409bae9221dba21706316cbcd09337",
+    "v0.4.1": "1dafc87094409bae9221dba21706316cbcd09337",
+    "v0.4.2": "1dafc87094409bae9221dba21706316cbcd09337",
+    "v0.4.3": "e2aaaccb1c4b0837b1f8e3d5548f378035d61c16",
+    "v0.4.4": "833b2e915c2cd7972d732fe4fc766b904e0ff8c6",
+    "v0.4.5": "cf1cf307c20d0f410fb09656ed0eafeba959ad4e",
+    "v0.4.6": "15c2a4cda6a5140003173c75a3d64f11fdf1a52c",
+    "v0.4.7": "76050d75fb8ac5bc53cf8215d5b6b20f17e5a3a1",
+    "v0.4.7-RC1": "ff44cea512782243f4f644b9dfd9db3f0a2b378e",
+    "v0.4.7-RC2": "134fd06ae5fd29fcf34349090667e9979f655d27",
+    "v0.4.7-RC3": "93f84f03e2f6d4f23484231cff6f8e3198c19c43",
+    "v0.4.7-RC4": "58bea14c6749cf651ca8472095fa418d7fd4b9ae",
+    "v0.4.7-RC5": "af6c076e674cd93d1a65a492c19b9c75c75c2c4e",
+    "v0.4.8": "76050d75fb8ac5bc53cf8215d5b6b20f17e5a3a1",
+    "v0.5.0": "76050d75fb8ac5bc53cf8215d5b6b20f17e5a3a1",
+    "v0.5.1": "4c2a705efad1be835ef9a6cd04e24e813a714868",
+    "v0.5.2": "787ee8c34efd3445f89557930c2ac354e24c5112",
+    "v0.5.3": "79eaf315bca4f6ab64629cfa8039d7fa185379dd",
+    "v0.6.0": "79eaf315bca4f6ab64629cfa8039d7fa185379dd",
+    "v0.6.1": "94efd79f243ca4cc3bdd4e6fbc306c61ab2a4c37",
+    "v0.6.2": "0e18b12900b9659fae873e593f2d9b8aabaebadc",
+    "v0.6.3": "e7476a3aeba130bc848426cd3bb9c45feb3f1761",
+    "v0.6.4": "e7476a3aeba130bc848426cd3bb9c45feb3f1761",
+    "v0.7.0": "f6eb2eaf4b147b5ca2b9b0c02b1448fd5fe3227c",
+    "v0.7.1": "f6eb2eaf4b147b5ca2b9b0c02b1448fd5fe3227c"
+  },
+  "default_branch_sha": "f6eb2eaf4b147b5ca2b9b0c02b1448fd5fe3227c",
+  "fork_compare": {
+    "ahead_by": 74,
+    "behind_by": 3,
+    "merge_base": "8e970aa49decfddc6f7f5bd66d0e798ffcf712c4",
+    "status": "diverged"
+  },
+  "license_files": [
+    {
+      "path": "buildroot-2021.05/COPYING",
+      "detected_from_text": "unrecognized",
+      "excerpt": "With the exceptions below, Buildroot is distributed under the terms of\nthe GNU General Public License, reproduced below; either version 2 of\nthe License, or (at your option) any later version.\n\nSome files in Buildroot contain a different license statement. Those\nfiles are licensed under the license contained in the file itself.\n\nBuildroot also bundles patch files, which are applied to the sources\nof the various packages. Those patches are not covered by the license\nof Buildroot. Instead, they are covered by the license of the software\nto which the patches are applied. When said software is available\nunder multiple licenses, the Buildroot patches are only provided under\nthe publicly accessible licenses.\n\n-----------------------------------------------------------------\n\n\t\t    GNU GENERAL PUBLIC LICENSE\n\t\t       Version 2, June 1991\n\n Copyright (C) 1989, 1991 Free Software Foundation, Inc.,\n 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n Everyone is permitted to copy and distribute verbatim copies\n of this license document, but changing it is not allowed.\n\n\t\t\t    Preamble"
+    },
+    {
+      "path": "buildroot-2021.05/docs/website/copyright.txt",
+      "detected_from_text": "unrecognized",
+      "excerpt": "\nThe code and graphics on this website (and it's mirror sites, if any) are\nCopyright (c) 1999-2005 by Erik Andersen, 2006-2020 The Buildroot\ndevelopers. All rights reserved.\n\nDocuments on this Web site including their graphical elements, design, and\nlayout are protected by trade dress and other laws and MAY BE COPIED OR\nIMITATED IN WHOLE OR IN PART.  THIS WEBSITE IS LICENSED FREE OF CHARGE, THERE\nIS NO WARRANTY FOR THE WEBSITE TO THE EXTENT PERMITTED BY APPLICABLE LAW.\nSHOULD THIS WEBSITE PROVE DEFECTIVE, YOU MAY ASSUME THAT SOMEONE MIGHT GET\nAROUND TO SERVICING, REPAIRING OR CORRECTING IT SOMETIME WHEN THEY HAVE NOTHING\nBETTER TO DO.  REGARDLESS, YOU GET TO KEEP BOTH PIECES.\n\nIN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY\nCOPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE THIS\nWEBSITE AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY\nGENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR\nINABILITY TO USE THIS WEBSITE (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR\nLOSS OF HAIR, LOSS OF LIFE, LOSS OF MEMORY, LOSS OF YOUR CARKEYS, MISPLACEMENT\nOF YOUR PAYCHECK, OR COMMANDER DATA BEING RENDERED UNABLE TO ASSIST THE\nSTARFLEET OFFICERS ABORD THE STARSHIP ENTERPRISE TO RECALIBRATE THE MAIN\nDEFLECTOR ARRAY, LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE\nWEBSITE TO OPERATE WITH YOUR WEBBROWSER), EVEN IF SUCH HOLDER OR OTHER PARTY\nHAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.\n"
+    },
+    {
+      "path": "freertos/Demo/Common/ethernet/lwip-1.4.0/COPYING",
+      "detected_from_text": "unrecognized",
+      "excerpt": "/*\n * Copyright (c) 2001, 2002 Swedish Institute of Computer Science.\n * All rights reserved. \n * \n * Redistribution and use in source and binary forms, with or without modification, \n * are permitted provided that the following conditions are met:\n *\n * 1. Redistributions of source code must retain the above copyright notice,\n *    this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright notice,\n *    this list of conditions and the following disclaimer in the documentation\n *    and/or other materials provided with the distribution.\n * 3. The name of the author may not be used to endorse or promote products\n *    derived from this software without specific prior written permission. \n *\n * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED \n * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF \n * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT \n * SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, \n * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT \n * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS \n * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN \n * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING \n * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY \n * OF SUCH DAMAGE."
+    },
+    {
+      "path": "freertos/License/license.txt",
+      "detected_from_text": "MIT",
+      "excerpt": "The FreeRTOS kernel is released under the MIT open source license, the text of\nwhich is provided below.\n\nThis license covers the FreeRTOS kernel source files, which are located in the\n/FreeRTOS/Source directory of the official FreeRTOS kernel download.  It also\ncovers most of the source files in the demo application projects, which are\nlocated in the /FreeRTOS/Demo directory of the official FreeRTOS download.  The\ndemo projects may also include third party software that is not part of FreeRTOS\nand is licensed separately to FreeRTOS.  Examples of third party software\nincludes header files provided by chip or tools vendors, linker scripts,\nperipheral drivers, etc.  All the software in subdirectories of the /FreeRTOS\ndirectory is either open source or distributed with permission, and is free for\nuse.  For the avoidance of doubt, refer to the comments at the top of each\nsource file.\n\n\nLicense text:\n-------------\n\nCopyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,"
+    },
+    {
+      "path": "freertos/Source/FreeRTOS-Plus-POSIX/LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2019 FreeRTOS\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    },
+    {
+      "path": "freertos/Source/LICENSE.md",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    },
+    {
+      "path": "fsbl/lib/BigDigits/LICENSE.txt",
+      "detected_from_text": "MPL-2.0",
+      "excerpt": "Mozilla Public License Version 2.0\n==================================\n\n1. Definitions\n--------------\n\n1.1. \"Contributor\"\n    means each individual or legal entity that creates, contributes to\n    the creation of, or owns Covered Software.\n\n1.2. \"Contributor Version\"\n    means the combination of the Contributions of others (if any) used\n    by a Contributor and that particular Contributor's Contribution.\n\n1.3. \"Contribution\"\n    means Covered Software of a particular Contributor.\n\n1.4. \"Covered Software\"\n    means Source Code Form to which the initial Contributor has attached\n    the notice in Exhibit A, the Executable Form of such Source Code\n    Form, and Modifications of such Source Code Form, in each case\n    including portions thereof.\n\n1.5. \"Incompatible With Secondary Licenses\"\n    means"
+    },
+    {
+      "path": "fsbl/lib/libtomcrypt/LICENSE",
+      "detected_from_text": "unrecognized",
+      "excerpt": "LibTomCrypt is licensed under DUAL licensing terms.\n\nChoose and use the license of your needs.\n\n[LICENSE #1]\n\nLibTomCrypt is public domain.  As should all quality software be.\n\nTom St Denis\n\n[/LICENSE #1]\n\n[LICENSE #2]\n\n            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE\n                    Version 2, December 2004\n\n Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>\n\n Everyone is permitted to copy and distribute verbatim or modified\n copies of this license document, and changing it is allowed as long\n as the name is changed.\n\n            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE\n   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION"
+    },
+    {
+      "path": "fsbl/lib/libtommath/LICENSE",
+      "detected_from_text": "Unlicense",
+      "excerpt": "                          The LibTom license\n\nThis is free and unencumbered software released into the public domain.\n\nAnyone is free to copy, modify, publish, use, compile, sell, or\ndistribute this software, either in source code form or as a compiled\nbinary, for any purpose, commercial or non-commercial, and by any\nmeans.\n\nIn jurisdictions that recognize copyright laws, the author or authors\nof this software dedicate any and all copyright interest in the\nsoftware to the public domain. We make this dedication for the benefit\nof the public at large and to the detriment of our heirs and\nsuccessors. We intend this dedication to be an overt act of\nrelinquishment in perpetuity of all present and future rights to this\nsoftware under copyright law.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR\nOTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,\nARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n"
+    },
+    {
+      "path": "fsbl/lib/lz4/LICENSE",
+      "detected_from_text": "unrecognized",
+      "excerpt": "LZ4 Library\nCopyright (c) 2011-2016, Yann Collet\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n* Redistributions of source code must retain the above copyright notice, this\n  list of conditions and the following disclaimer.\n\n* Redistributions in binary form must reproduce the above copyright notice, this\n  list of conditions and the following disclaimer in the documentation and/or\n  other materials provided with the distribution.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    },
+    {
+      "path": "linux_5.10/COPYING",
+      "detected_from_text": "unrecognized",
+      "excerpt": "The Linux Kernel is provided under:\n\n\tSPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note\n\nBeing under the terms of the GNU General Public License version 2 only,\naccording with:\n\n\tLICENSES/preferred/GPL-2.0\n\nWith an explicit syscall exception, as stated at:\n\n\tLICENSES/exceptions/Linux-syscall-note\n\nIn addition, other licenses may also apply. Please see:\n\n\tDocumentation/process/license-rules.rst\n\nfor more details.\n\nAll contributions to the Linux Kernel are subject to this COPYING file."
+    },
+    {
+      "path": "linux_5.10/Documentation/COPYING-logo",
+      "detected_from_text": "unrecognized",
+      "excerpt": "This is the full-colour version of the currently unofficial Linux logo\n(\"currently unofficial\" just means that there has been no paperwork and\nthat I have not really announced it yet).  It was created by Larry Ewing,\nand is freely usable as long as you acknowledge Larry as the original\nartist. \n\nNote that there are black-and-white versions of this available that\nscale down to smaller sizes and are better for letterheads or whatever\nyou want to use it for: for the full range of logos take a look at\nLarry's web-page:\n\n\thttps://www.isc.tamu.edu/~lewing/linux/\n"
+    }
+  ],
+  "bundle_files": [
+    "delta.bundle"
+  ],
+  "bundle_bytes": 12342674,
+  "bundle_sha256": "fc7d37899420e5b62a401cacaabd2455f95323209bf9896b42b63c7dabb9f689",
+  "delta_prerequisite_sha": "8e970aa49decfddc6f7f5bd66d0e798ffcf712c4",
+  "delta_prerequisite_repo": "milkv-duo/duo-buildroot-sdk"
+}

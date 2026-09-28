@@ -1,0 +1,35 @@
+{
+  "full_name": "kscalelabs/robot-reference-diagrams",
+  "upstream_url": "https://github.com/kscalelabs/robot-reference-diagrams",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 4133,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "Robot reference diagrams",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-01-22T03:03:07Z",
+  "branches": {
+    "master": "352325299507686b980f653b0d29e66ee1022fa4"
+  },
+  "tags": {},
+  "default_branch_sha": "352325299507686b980f653b0d29e66ee1022fa4",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 4233252,
+  "bundle_sha256": "4047b9ba934e6c426e47ee01a598892dbb42267e3e5df78d7e0afc6ad6eb9d6d",
+  "snapshot_bytes": 5387689,
+  "snapshot_files": 7
+}

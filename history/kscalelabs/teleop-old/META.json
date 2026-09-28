@@ -1,0 +1,49 @@
+{
+  "full_name": "kscalelabs/teleop-old",
+  "upstream_url": "https://github.com/kscalelabs/teleop-old",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 45560,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "no",
+  "notes": [
+    "Repo has .gitmodules. Submodule commits were not vendored; submodule URLs remain in the tree."
+  ],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "teleoperate stompy",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-11-21T00:38:15Z",
+  "branches": {
+    "claw-control": "4270c16d783e5b66b18415f91d773b616af14c0b",
+    "joycon": "e3a2bd225aa29af654f55277a2f7643b994cceda",
+    "joycons": "130934f1f816dd84ea74984ddb7a18d688528af6",
+    "master": "8d1818cb303b26e234307a99b1bff65dad93d140",
+    "mini-gripper": "43ad8af82e52a6cb0d00ddab2624b45b88fc61bb",
+    "pawel/more_fixes": "00f22a159332fd00f8647546d5b76a1765b85581",
+    "pawel/update_model_5dof": "59b8b6412a3f6b8acb149a07cb986804890f5d9d",
+    "pawel/update_model_7dof": "e120327abc5834e1156d945f1d89c34fa5129db7",
+    "wesley/arms": "dc515c5b22d72d789854d1dd23bb3f7a6772eda7"
+  },
+  "tags": {},
+  "default_branch_sha": "8d1818cb303b26e234307a99b1bff65dad93d140",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2024 K-Scale Labs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 61391988,
+  "bundle_sha256": "0d863909504a754f3192df0a6882de14db3cf04b96e6f99a833d2ef7e4bc915a"
+}

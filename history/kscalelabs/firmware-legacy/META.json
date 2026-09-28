@@ -1,0 +1,58 @@
+{
+  "full_name": "kscalelabs/firmware-legacy",
+  "upstream_url": "https://github.com/kscalelabs/firmware-legacy",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 7350,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [
+    "Repo has .gitmodules. Submodule commits were not vendored; submodule URLs remain in the tree."
+  ],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "The robot firmware",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-09-30T20:09:03Z",
+  "branches": {
+    "XiaomiSupport": "2eb510d3058ba7265cc1df3d7ce91d3cc89b03dd",
+    "audio-control": "60bd786f98fe629b7afc5dbfd697b3a50333d8cf",
+    "bionic-calibration": "eff148b1ea0ed9c7cc97f9772c55e15d2a5fb522",
+    "bionic-motors-dev": "2baf68a248216e4a7fe9a008a6b58d1e6c5b0f60",
+    "bionic-motors-test": "b2f51a5446c832e5afb3176da6e571ad4604add1",
+    "dev/torque-control": "936a0a5e77c85836c57ac327192e361ac62a7de8",
+    "docs": "cc33814e8f7b5ac1c941423f80f5c90fc0dfe3e7",
+    "lcd_eyes": "65fe908cb40932f5d144b91a5428288adeb06545",
+    "master": "56a43e47ec825f64dc2470c7a2884ec4e540cfdb",
+    "pawel/building": "b87666e859254c788264d3a45e50c5e19f5c4cf8",
+    "pawel/test_deployment": "6a43d989ff5d3061bfbbdf241d9e53dbaedb1551",
+    "robstride-params": "84660a023224df81e37722effee470c99d9fe332",
+    "rust-robstride": "122910df40226b8fb054b7af5214db09c51f9fb3",
+    "rust-test": "1c411737e4d631639804ad2aa0cc601f24642247",
+    "teleop-demo": "31b807cd4068047689e5ceca4423a44b65323339",
+    "ved/InfineonControl": "aa76390a21bd0fd223ecb38e24e095266de64d16"
+  },
+  "tags": {},
+  "default_branch_sha": "56a43e47ec825f64dc2470c7a2884ec4e540cfdb",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2023 Benjamin Bolte\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 7688113,
+  "bundle_sha256": "210063de010e15b86effbca38e889594a1c797431c5884a86bae9a7d45273f3e",
+  "snapshot_bytes": 216301,
+  "snapshot_files": 90
+}

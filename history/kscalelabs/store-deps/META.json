@@ -1,0 +1,38 @@
+{
+  "full_name": "kscalelabs/store-deps",
+  "upstream_url": "https://github.com/kscalelabs/store-deps",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 1116,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-09-27T19:23:27Z",
+  "branches": {
+    "master": "6d54d0fa6ea6ae1b3c2a5e5936bac474528231b5"
+  },
+  "tags": {
+    "test": "c0c90e19f35fd491e82e662df9748f4c44030be4",
+    "v0.0.2": "6d54d0fa6ea6ae1b3c2a5e5936bac474528231b5"
+  },
+  "default_branch_sha": "6d54d0fa6ea6ae1b3c2a5e5936bac474528231b5",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 1143712,
+  "bundle_sha256": "1a9dfde6acfac95134a5325efe85330d774c07294601adf654ff9d57b827422d",
+  "snapshot_bytes": 6148128,
+  "snapshot_files": 11
+}

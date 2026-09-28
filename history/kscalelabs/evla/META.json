@@ -1,0 +1,47 @@
+{
+  "full_name": "kscalelabs/evla",
+  "upstream_url": "https://github.com/kscalelabs/evla",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 265,
+  "inventory_default_branch": "main",
+  "inventory_fork": true,
+  "priority_tier": "3-fork",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "no",
+  "notes": [],
+  "default_branch": "main",
+  "fork": true,
+  "parent": "openvla/openvla",
+  "parent_default_branch": "main",
+  "github_license_spdx": "MIT",
+  "description": "EdgeVLA: An open-source edge vision-language-action model for robotics.",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-04-29T16:17:28Z",
+  "branches": {
+    "dependabot/pip/torch-2.6.0": "f15a719cfcb64f891554d1127411f244151937b7",
+    "dependabot/pip/transformers-4.50.0": "387a591658e0404455d8effea60150959b724c7f",
+    "main": "e814a13e76d2b5625c8809596478c40364382346"
+  },
+  "tags": {},
+  "default_branch_sha": "e814a13e76d2b5625c8809596478c40364382346",
+  "fork_compare": {
+    "ahead_by": 11,
+    "behind_by": 10,
+    "merge_base": "7a359de9bb8be6fd3c232d189784920dbc93391c",
+    "status": "diverged"
+  },
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2024 Moo Jin Kim, Karl Pertsch, Siddharth Karamcheti.\nCopyright (c) 2024 K-Scale Labs.\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 344899,
+  "bundle_sha256": "af39f59641f392d69225a715c0ea11b536b46e99014090126226a3d4e05400d0"
+}

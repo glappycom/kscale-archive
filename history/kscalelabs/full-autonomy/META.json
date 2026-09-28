@@ -1,0 +1,35 @@
+{
+  "full_name": "kscalelabs/full-autonomy",
+  "upstream_url": "https://github.com/kscalelabs/full-autonomy",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 691,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "Full Autonomy whitepaper",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-07-01T14:40:38Z",
+  "branches": {
+    "master": "eb9f0e7068cb647826f035b0a7f1a9f98e8722bb"
+  },
+  "tags": {},
+  "default_branch_sha": "eb9f0e7068cb647826f035b0a7f1a9f98e8722bb",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 707666,
+  "bundle_sha256": "0e8059fbeaad47188829eff9955bb2678e749166453173066a46feced07d9f8b",
+  "snapshot_bytes": 753736,
+  "snapshot_files": 9
+}

@@ -1,0 +1,35 @@
+{
+  "full_name": "kscalelabs/arduino-eyes",
+  "upstream_url": "https://github.com/kscalelabs/arduino-eyes",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 3,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": null,
+  "description": "Display an eye using the Arduino",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-04-12T22:03:04Z",
+  "branches": {
+    "master": "141692cfcaa23f19ff74d687c5d27ba0b175f7ee"
+  },
+  "tags": {},
+  "default_branch_sha": "141692cfcaa23f19ff74d687c5d27ba0b175f7ee",
+  "license_files": [],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 3768,
+  "bundle_sha256": "2f821692606065931a3ed03ded3ce0b472f39fa8bfda9d1678c09534db34127b",
+  "snapshot_bytes": 5152,
+  "snapshot_files": 5
+}

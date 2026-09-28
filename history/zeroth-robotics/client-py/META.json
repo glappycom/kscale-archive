@@ -1,0 +1,67 @@
+{
+  "full_name": "zeroth-robotics/client-py",
+  "upstream_url": "https://github.com/zeroth-robotics/client-py",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 39,
+  "inventory_default_branch": "main",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "n.a.",
+  "snapshot_status": "yes",
+  "notes": [],
+  "default_branch": "main",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "OpenLCH Python client",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2024-11-03T01:20:27Z",
+  "branches": {
+    "main": "30811d4041ec7d5de0d45847b4746cd21d9d388e"
+  },
+  "tags": {
+    "v0.0.1": "44891bcb19cfdc01070867bac0b92d2ef86781e8",
+    "v0.0.2": "0247c2d6dc504ca941dbc3323abc87c94b699a16",
+    "v0.1.0": "47f083d3e2aac2dc37f4dcf54155451b8c848839",
+    "v0.2.0": "9c12180395e7788f84c9577ebfd90c7133f38638",
+    "v0.2.1": "c08250b8037f29085ed85ed0eda450654f119753",
+    "v0.3.0": "b6133539306e1bb35e6af9f65695a57e4e871c5a",
+    "v0.4.0": "db242f0db57201d3a25f3c30d6d17cdca5350cc4",
+    "v0.4.1": "d61d8ad4ab5ef2a834c65922444bed46bc097642",
+    "v0.4.2": "0364aad58303fde2bdf44b37a06fb1b526c84031",
+    "v0.4.3": "c9228b19c793a9c54b6ccb3d93cdc9bba9bc5785",
+    "v0.4.4": "df9ae6c10aa2f478086edf87a9c881a67f6d0ba1",
+    "v0.4.5": "f724f4cfde5195116bf8f916eda27064e72a6049",
+    "v0.5.0": "55ac54dc599bbb40d1f756d9dccf73ead8397bc3",
+    "v0.5.1": "9c505a5d6b05d559497a86ff86298a038d1517b6",
+    "v0.5.2": "fb9caccf0d398dbbc15a143413397c739f89095b",
+    "v0.5.3": "b20ad9929c25cafa0685ffbedf8af3a3bfbac8c1",
+    "v0.5.4": "f21d6b1891779b3765eccf7e4fe4700b8a06ca49",
+    "v0.6.0": "3782190b0585791e790e936cf0e528157c670260",
+    "v0.6.1": "9ac40bd3687c16bff810e5fadc235488c1c0fbe0",
+    "v0.7.0": "509feaba25796787e6f67aa53ab3c32fe80ecbd2",
+    "v0.8.0": "0e47da8ff11e3ad8fddb3b569f31c68420c6ace4",
+    "v0.8.1": "0e47da8ff11e3ad8fddb3b569f31c68420c6ace4",
+    "v0.8.2": "f2e2d04a37aed446e3bd4d47ff83ed419ec8a646",
+    "v0.8.3": "78e56696e19c2a2d3afd69d11600c17d37c561b4",
+    "v0.9.0": "30811d4041ec7d5de0d45847b4746cd21d9d388e"
+  },
+  "default_branch_sha": "30811d4041ec7d5de0d45847b4746cd21d9d388e",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2023 OpenLCH Contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 51581,
+  "bundle_sha256": "952bd9abd482f2f8776c093b32c23c2413df12b2677545c4b8f0bd94d1b59ef1",
+  "snapshot_bytes": 88322,
+  "snapshot_files": 22
+}

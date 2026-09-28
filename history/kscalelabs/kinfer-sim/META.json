@@ -1,0 +1,68 @@
+{
+  "full_name": "kscalelabs/kinfer-sim",
+  "upstream_url": "https://github.com/kscalelabs/kinfer-sim",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 12437,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "1-core",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "yes",
+  "snapshot_status": "yes",
+  "notes": [
+    "Snapshot working tree includes fetched LFS objects (pointers checked out)."
+  ],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "Simulation backend for visualizing K-Infer models",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-10-24T22:31:49Z",
+  "branches": {
+    "master": "033c8f926940cb7ed9bb3c8aede56e3209236613",
+    "ref_error": "e33bf5959bd3abe6428fa27faca9af2b8224158a",
+    "wes-bart-sync": "c30b5cca227019ccec8f58f5ab19c8c6819e7628"
+  },
+  "tags": {
+    "0.0.2": "a9396d108a26d2d1e772485da748403db1e4db8d",
+    "0.0.3": "bd140934243e49319438b5bc9592a7f6053b04e8",
+    "0.0.4": "27d23deba87ae64d79a1946b895540627c230b99",
+    "0.0.5": "83d3523da6d2c1f54c5525cf4876389e8e956e67",
+    "0.0.6": "0826a1e75dd9699039b74a3ced94363b3308cd89",
+    "0.0.7": "96d41e95a2c88dc71dbf7b607ab70eeebe78f352",
+    "0.0.8": "473a8eabbed5e76491e93b9a6e4b56347296c2a5",
+    "0.0.84": "1a06da0c88a9b73666231ac0c43d04dee218613d",
+    "0.0.87": "f6b9432fca5fdd30c5c99dc3ad1c7c5b75ff5031",
+    "0.0.89": "7911df32e90294c525abb1e889671ad96202eadd",
+    "0.0.90": "af6ffc582fefb3488a080be729a67fd09acba385",
+    "0.0.91": "99ec8cb3299d57e74adc65cc32a87abf8a2a9b98",
+    "0.0.92": "4f2e516bb4f3be220b4c063b15160a4b8baaf176",
+    "0.0.93": "d7a74576f1cfefc06e70de9c0dd93e33aa4a0527",
+    "0.0.94": "033c8f926940cb7ed9bb3c8aede56e3209236613"
+  },
+  "default_branch_sha": "033c8f926940cb7ed9bb3c8aede56e3209236613",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2025 K-Scale Labs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 12850484,
+  "bundle_sha256": "1ddd13fef7208dd489b33be0b20ec61f6743b4ef43229328e356a689ae077eb4",
+  "lfs_pointer_bytes": 17000000,
+  "lfs_object_count": 3,
+  "lfs_files": [
+    "lfs-objects.tar"
+  ],
+  "lfs_archive_bytes": 16619520,
+  "lfs_archive_sha256": "b74637425191340b4c3c3a2c98eee2a68950a1a27439f30f0fea893cb3a595dc",
+  "snapshot_bytes": 14670148,
+  "snapshot_files": 27
+}
