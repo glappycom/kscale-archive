@@ -1,0 +1,55 @@
+{
+  "full_name": "kscalelabs/zbot-unit-tests",
+  "upstream_url": "https://github.com/kscalelabs/zbot-unit-tests",
+  "captured_at": "2026-09-28T17:52:43Z",
+  "inventory_size_kb": 8017,
+  "inventory_default_branch": "master",
+  "inventory_fork": false,
+  "priority_tier": "2-original",
+  "history_status": "yes",
+  "history_method": "git-bundle-all-refs",
+  "lfs_status": "yes",
+  "snapshot_status": "yes",
+  "notes": [
+    "Snapshot working tree includes fetched LFS objects (pointers checked out)."
+  ],
+  "default_branch": "master",
+  "fork": false,
+  "parent": null,
+  "parent_default_branch": null,
+  "github_license_spdx": "MIT",
+  "description": "Set of unit tests to run for Z-Bot",
+  "upstream_archived": false,
+  "upstream_pushed_at": "2025-02-28T01:59:52Z",
+  "branches": {
+    "deploy_policy_zbot": "03ba30cf6297efe6191bb545ec44f377d2b24c29",
+    "imu_test_updates": "4cafc5fd5c08a5752af5ae4316e21d3a961d5f08",
+    "master": "fad9dcf65c0503a7a48b082111d025a9ee0c9bfb",
+    "test-05": "9bd3272df6cc79a371b54e41edebb387ed18e72b",
+    "update-test-03": "5889587a12c22cfb2a340e58c3f32fe2809e5f54",
+    "walking-test": "2c4d8c17d02c92e1035f37214a8168d9701d7252"
+  },
+  "tags": {},
+  "default_branch_sha": "fad9dcf65c0503a7a48b082111d025a9ee0c9bfb",
+  "license_files": [
+    {
+      "path": "LICENSE",
+      "detected_from_text": "MIT",
+      "excerpt": "MIT License\n\nCopyright (c) 2023 K-Scale Labs\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+    }
+  ],
+  "bundle_files": [
+    "repo.bundle"
+  ],
+  "bundle_bytes": 37702003,
+  "bundle_sha256": "73247691a6531f6578087433af004941ac38bb910075e9b62259c5b6150e7ffa",
+  "lfs_pointer_bytes": 88503000,
+  "lfs_object_count": 23,
+  "lfs_files": [
+    "lfs-objects.tar"
+  ],
+  "lfs_archive_bytes": 88750080,
+  "lfs_archive_sha256": "1c8513711face19a76f329ef1516063391951a74daaf246acc2267f019501c38",
+  "snapshot_bytes": 23290118,
+  "snapshot_files": 33
+}
